@@ -11,7 +11,15 @@ Route::get('/', function () {
         'canRegister' => Route::has('register'),
         'projects'  => json_decode(File::get(base_path('projects.json')), true, JSON_UNESCAPED_SLASHES)
     ]);
-});
+})->name('welcome');
+
+Route::get('/about', function () {
+    return Inertia::render('About');
+})->name('about');
+
+Route::get('/contact', function () {
+    return Inertia::render('Contact');
+})->name('contact');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
