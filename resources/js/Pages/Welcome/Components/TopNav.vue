@@ -44,7 +44,7 @@ const showingNavigationDropdown = ref(false);
             <div class="flex justify-between h-16">
                 <div class="flex">
                     <div class="shrink-0 flex items-center">
-                        <a href="https://heinze.com.pl/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                        <a :href="route('welcome')" class="flex items-center space-x-3 rtl:space-x-reverse">
                             <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="DH Logo"/>
                             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Daniel Heinze</span>
                         </a>
@@ -52,17 +52,17 @@ const showingNavigationDropdown = ref(false);
 
                     <!-- Navigation Links -->
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                        <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                        <NavLink :href="route('about')" :active="route().current('about')">
                             <span class="font-semibold text-2xl">About Me</span>
                         </NavLink>
                     </div>
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                        <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                        <NavLink href="#projects" :active="route().current('projects')">
                             <span class="font-semibold text-2xl">My Projects</span>
                         </NavLink>
                     </div>
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                        <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                        <NavLink :href="route('contact')" :active="route().current('contact')">
                             <span class="font-semibold text-2xl">Contact</span>
                         </NavLink>
                     </div>
@@ -223,15 +223,15 @@ const showingNavigationDropdown = ref(false);
             class="sm:hidden"
         >
             <div class="pt-2 pb-3 space-y-1">
-                <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                <ResponsiveNavLink :href="route('about')" :active="route().current('about')">
                     About Me
                 </ResponsiveNavLink>
             </div>
 
-            <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
+            <ResponsiveNavLink href="#projects" :active="route().current('projects')">
                 My Projects
             </ResponsiveNavLink>
-            <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
+            <ResponsiveNavLink :href="route('contact')" :active="route().current('contact')">
                 Contact
             </ResponsiveNavLink>
         </div>
