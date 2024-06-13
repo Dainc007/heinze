@@ -77,7 +77,7 @@ const showingNavigationDropdown = ref(false);
                         <svg id="sun"
                              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                             class="hidden dark:block feather feather-sun text-liText-ternary-dark hover:text-amber-300 dark:text-liText-ternary-light dark:hover:text-liBorder-primary-light w-10">
+                             class="hidden dark:block feather feather-sun text-liText-ternary-dark hover:text-amber-50 dark:text-amber-300 dark:hover:border-2 dark:hover:rounded-full dark:hover:border-amber-100 w-10">
                             <circle cx="12" cy="12" r="5"></circle>
                             <line x1="12" y1="1" x2="12" y2="3"></line>
                             <line x1="12" y1="21" x2="12" y2="23"></line>
