@@ -1,11 +1,9 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
-import { ref } from 'vue'
 import Footer from '@/Pages/Welcome/Components/Footer.vue';
-import Background from '@/Pages/Welcome/Components/Background.vue';
 import Header from '@/Pages/Welcome/Components/Header.vue';
 import ScreenshotContainer from '@/Pages/Welcome/Components/ScreenshotContainer.vue';
-import CardContainer from '@/Pages/Welcome/Components/CardContainer.vue';
+import TopNav from "@/Pages/Welcome/Components/TopNav.vue";
 
 
 defineProps({
@@ -51,9 +49,9 @@ defineProps({
 
 </style>
 <template>
+    <TopNav></TopNav>
     <Head title="Welcome"/>
     <div class="bg-gray-50 text-black/50 dark:bg-slate-800 dark:text-white/50">
-<!--        <Background></Background>-->
         <div
             class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
             <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
