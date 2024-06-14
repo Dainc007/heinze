@@ -13,14 +13,14 @@ import Footer from "@/Pages/Welcome/Components/Footer.vue";
                     <div class="w-full  mb-7 "><img src="/images/about/me.jpg"
                                                                    class="rounded-xl w-100" alt=""></div>
                     <!-- About details -->
-                    <div class="w-full sm:w-3/4 text-left"><p
+                    <div class="w-full sm:w-3/4 text-left text-gray-500 dark:text-gray-300"><p
                         class="font-general-regular mb-4 text-ternary-dark dark:text-ternary-light text-lg">Hi there! I
                         am a dedicated PHP Developer residing in a quaint town near the mountains. With expertise in
                         WHMCS and Laravel, I am continuously expanding my knowledge by learning Vue.js. In my free time,
                         I enjoy hiking, diving into books, playing video games, and watching football. As a loyal
                         Arsenal supporter and avid Premier League fan, I am always on the edge of my seat during
                         matches.</p>
-                        <p class="font-general-regular mb-4 text-ternary-dark dark:text-ternary-light text-lg">I
+                        <p class="font-general-regular mb-4 text-ternary-dark dark:text-ternary-light text-lg text-gray-500 dark:text-gray-300">I
                             regularly dedicate my evenings and weekends to improving my apps which are strongly related to sport.</p></div>
                 </div>
             </div>
