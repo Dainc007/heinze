@@ -1,1 +1,67 @@
-{"1":{"id":1,"title":"Menagoleague based on Laravel Framework","category":"Laravel","img":"\/images\/projects\/menagoleague.jpg","url":"https:\/\/www.menagoleague.heinze.com.pl\/"},"2":{"id":2,"title":"Wordpress Manager for WHMCS","category":"WHMCS","img":"\/images\/projects\/wp.jpg","url":"https:\/\/www.modulesgarden.com\/products\/whmcs\/wordpress-manager"},"3":{"id":3,"title":"Quote Automation for WHMCS","category":"WHMCS","img":"\/images\/projects\/qa.jpg","url":"https:\/\/www.modulesgarden.com\/products\/whmcs\/quotes-automation"},"4":{"id":4,"title":"Multibrand","category":"WHMCS","img":"\/images\/projects\/multibrand.jpg","url":"https:\/\/www.modulesgarden.com\/products\/whmcs\/multibrand\/"},"5":{"id":5,"title":"Domain Order Extended","category":"WHMCS","img":"\/images\/projects\/doe.jpg","url":"https:\/\/www.modulesgarden.com\/products\/whmcs\/domain-orders-extended"},"6":{"id":6,"title":"Cpanel Extended for WHMCS","category":"WHMCS","img":"\/images\/projects\/cpanel.jpg","url":"https:\/\/www.modulesgarden.com\/products\/whmcs\/cpanel-extended"},"7":{"id":7,"title":"Plesk Extended for WHMCS","category":"WHMCS","img":"\/images\/projects\/plesk.jpg","url":"https:\/\/www.modulesgarden.com\/products\/whmcs\/plesk-extended"},"8":{"id":8,"title":"Direct Admin Extended for WHMCS","category":"WHMCS","img":"\/images\/projects\/dae.jpg","url":"https:\/\/www.modulesgarden.com\/products\/whmcs\/directadmin-extended"}}
+{
+    "1": {
+        "id": 1,
+        "title": "Menagoleague based on Laravel Framework",
+        "category": "Laravel",
+        "img": "\/images\/projects\/menagoleague.jpg",
+        "url": "https:\/\/www.menagoleague.heinze.com.pl\/",
+        "description": "Menago League is an online project that brings the excitement of EA Sport FC 24 Career Mode to life. Players can compete against each other in a virtual football league, managing their teams and making strategic decisions to lead their clubs to victory. With realistic gameplay and the thrill of online competition, \"Menago League\" offers a unique and immersive gaming experience for football fans."
+
+    },
+    "2": {
+        "id": 2,
+        "title": "Wordpress Manager for WHMCS",
+        "category": "WHMCS",
+        "img": "\/images\/projects\/wp.jpg",
+        "url": "https:\/\/www.modulesgarden.com\/products\/whmcs\/wordpress-manager",
+        "description": "WordPress Manager For WHMCS will provide your clients with a sought-after capability to install and manage WordPress instances in detail without the bother of ever leaving your WHMCS."
+    },
+    "3": {
+        "id": 3,
+        "title": "Quote Automation for WHMCS",
+        "category": "WHMCS",
+        "img": "\/images\/projects\/qa.jpg",
+        "url": "https:\/\/www.modulesgarden.com\/products\/whmcs\/quotes-automation",
+        "description": "Quotes Automation For WHMCS has been developed to shorten and simplify the entire process between quote preparation and order processing. With it, both the administrators and your clients will be allowed to place orders and then automatically generate invoices, all from the quote page directly."
+    },
+    "4": {
+        "id": 4,
+        "title": "Multibrand",
+        "category": "WHMCS",
+        "img": "\/images\/projects\/multibrand.jpg",
+        "url": "https:\/\/www.modulesgarden.com\/products\/whmcs\/multibrand\/",
+        "description": "Multibrand For WHMCS is a revolutionary module that will allow you to handle multiple businesses on multiple websites while using just a single WHMCS license! With it, your audience will be welcome to access personalized client areas, each with a different logo, templates and plenty more elements of a brand they ordered from."
+    },
+    "5": {
+        "id": 5,
+        "title": "Domain Order Extended",
+        "category": "WHMCS",
+        "img": "\/images\/projects\/doe.jpg",
+        "url": "https:\/\/www.modulesgarden.com\/products\/whmcs\/domain-orders-extended",
+        "description": "Domain Orders Extended For WHMCS will advance the collection of domain search tools in your system to let you organize TLDs into categories and perform assorted bulk actions on domains. You will be empowered to configure your own domain lookup submodules, but also choose from among 7 predefined ones, including the widely respected Enom, ResellerClub and OpenSRS."
+    },
+    "6": {
+        "id": 6,
+        "title": "Cpanel Extended for WHMCS",
+        "category": "WHMCS",
+        "img": "\/images\/projects\/cpanel.jpg",
+        "url": "https:\/\/www.modulesgarden.com\/products\/whmcs\/cpanel-extended",
+        "description": "cPanel Extended For WHMCS is a fully fledged module that automates the complete provisioning flow and enables careful management of web hosting accounts by relocating the bulk of essential cPanel features directly into your WHMCS."
+    },
+    "7": {
+        "id": 7,
+        "title": "Plesk Extended for WHMCS",
+        "category": "WHMCS",
+        "img": "\/images\/projects\/plesk.jpg",
+        "url": "https:\/\/www.modulesgarden.com\/products\/whmcs\/plesk-extended",
+        "description": "Plesk Extended For WHMCS will let you automate the provisioning of web hosting accounts, and supply your clients with a whole range of tools for their proficient management at the same time. Thanks to it, the control over accounts is optimized on all levels and takes place nowhere else but inside your system."
+    },
+    "8": {
+        "id": 8,
+        "title": "Direct Admin Extended for WHMCS",
+        "category": "WHMCS",
+        "img": "\/images\/projects\/dae.jpg",
+        "url": "https:\/\/www.modulesgarden.com\/products\/whmcs\/directadmin-extended",
+        "description": "DirectAdmin Extended For WHMCS introduces automation into provisioning of web hosting accounts and enables their fully remote management at the same time. Your customers will be spared the hassle of leaving your website, as every most commonly used DirectAdmin feature will be accessible in the WHMCS client area."
+    }
+}

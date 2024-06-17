@@ -87,7 +87,9 @@ defineProps({
                             :key="project.id"
                             :title="project.title"
                             :url="project.url"
-                            :image="project.img">
+                            :image="project.img"
+                            :description="project.description"
+                        >
                         </ScreenshotContainer>
                     </div>
                 </main>

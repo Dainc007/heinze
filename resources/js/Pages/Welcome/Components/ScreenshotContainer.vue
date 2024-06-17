@@ -1,6 +1,6 @@
 <script setup>
 
-defineProps(['id', 'title', 'url', 'image'])
+defineProps(['id', 'title', 'url', 'image', 'description'])
 
 function handleImageError() {
     document.getElementById('screenshot-container')?.classList.add('!hidden');
@@ -38,7 +38,7 @@ function handleImageError() {
                 <div class="pt-3 sm:pt-5 lg:pt-0">
                     <h2 class="text-xl font-semibold text-black dark:text-white">{{title}}</h2>
                     <p class="mt-4 text-sm/relaxed">
-                        {{title}}
+                        {{description}}
                     </p>
                 </div>
             </div>
