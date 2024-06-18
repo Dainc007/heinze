@@ -52,12 +52,12 @@ const showingNavigationDropdown = ref(false);
 
                     <!-- Navigation Links -->
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                        <NavLink :href="route('about')" :active="route().current('about')">
+                        <NavLink href="/about" :active="route().current('about')">
                             <span class="font-semibold text-2xl">About Me</span>
                         </NavLink>
                     </div>
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                        <NavLink :href="route('welcome')" :active="route().current('projects')">
+                        <NavLink href="/#projects" :active="route().current('projects')">
                             <span class="font-semibold text-2xl">My Projects</span>
                         </NavLink>
                     </div>
