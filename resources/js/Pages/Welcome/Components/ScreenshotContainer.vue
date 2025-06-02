@@ -37,7 +37,7 @@ function handleImageError() {
             <div id="docs-card-content" class="flex items-start gap-6 lg:flex-col">
                 <div class="pt-3 sm:pt-5 lg:pt-0">
                     <h2 class="text-xl font-semibold text-black dark:text-white">{{title}}</h2>
-                    <p class="hidden md:hidden lg:flex mt-4 text-sm/relaxed">
+                    <p class="mt-4 text-sm/relaxed">
                         {{description}}
                     </p>
                 </div>
