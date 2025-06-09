@@ -171,7 +171,7 @@ onMounted(() => {
                     <h1 
                         ref="pageTitle"
                         tabindex="-1"
-                        class="text-5xl md:text-6xl xl:text-7xl font-bold mb-6 focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-offset-2 focus:ring-offset-transparent rounded-lg"
+                        class="text-5xl md:text-6xl xl:text-7xl font-bold mb-6 focus:outline-none"
                     >
                         Hi, I'm <span class="text-yellow-300">Daniel</span>
                     </h1>
@@ -253,7 +253,7 @@ onMounted(() => {
                         Portfolio
                     </div>
 
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-offset-2 focus:ring-offset-transparent rounded-lg">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white focus:outline-none">
                         My <span class="text-yellow-300">Latest Work</span>
                     </h2>
                     <p class="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">

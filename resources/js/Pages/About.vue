@@ -97,7 +97,7 @@ onMounted(() => {
                     <h2 
                         ref="pageTitle"
                         tabindex="-1"
-                        class="text-4xl md:text-5xl font-bold mb-8 text-white leading-tight focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-offset-2 focus:ring-offset-transparent rounded-lg"
+                        class="text-4xl md:text-5xl font-bold mb-8 text-white leading-tight focus:outline-none"
                     >
                         Passionate Developer from
                         <span class="text-yellow-300">Poland</span>
