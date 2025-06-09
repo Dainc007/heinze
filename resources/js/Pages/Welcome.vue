@@ -1,9 +1,7 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
 import Footer from '@/Pages/Welcome/Components/Footer.vue';
-import Header from '@/Pages/Welcome/Components/Header.vue';
 import ScreenshotContainer from '@/Pages/Welcome/Components/ScreenshotContainer.vue';
-import TopNav from "@/Pages/Welcome/Components/TopNav.vue";
 import GuestLayout from "@/Layouts/GuestLayout.vue";
 
 const props = defineProps({
@@ -52,7 +50,7 @@ const props = defineProps({
 }
 
 .hero-pattern {
-    background-image: 
+    background-image:
         radial-gradient(circle at 25% 25%, #fbbf24 2px, transparent 2px),
         radial-gradient(circle at 75% 75%, #3b82f6 2px, transparent 2px);
     background-size: 60px 60px;
@@ -124,28 +122,11 @@ const props = defineProps({
     <GuestLayout>
     <Head title="Daniel Heinze - Full Stack Developer"/>
     <div class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white scroll-smooth">
-        
-        <!-- Navigation -->
-        <nav class="fixed top-0 w-full glass-effect z-50 border-b border-white/20">
-            <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                <div class="flex justify-between items-center h-16">
-                    <div class="font-bold text-xl text-white">
-                        Daniel Heinze
-                    </div>
-                    <div class="hidden md:flex space-x-8">
-                        <a href="#hero" class="text-white/80 hover:text-white transition-colors">Home</a>
-                        <a href="#about" class="text-white/80 hover:text-white transition-colors">About</a>
-                        <a href="#projects" class="text-white/80 hover:text-white transition-colors">Projects</a>
-                        <a href="#contact" class="text-white/80 hover:text-white transition-colors">Contact</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
 
         <!-- Hero Section -->
         <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden hero-pattern">
             <div class="absolute inset-0 gradient-bg opacity-95"></div>
-            
+
             <!-- Floating Background Shapes -->
             <div class="floating-shapes">
                 <div class="shape w-32 h-32 bg-yellow-400 rounded-full"></div>
@@ -153,12 +134,12 @@ const props = defineProps({
                 <div class="shape w-20 h-20 bg-purple-500 rounded-full"></div>
                 <div class="shape w-28 h-28 bg-green-400 rounded-lg rotate-12"></div>
             </div>
-            
+
             <!-- Additional Background Elements -->
             <div class="absolute top-10 left-10 w-64 h-64 bg-gradient-to-r from-yellow-400/20 to-orange-500/20 rounded-full blur-3xl"></div>
             <div class="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-full blur-3xl"></div>
             <div class="absolute top-1/2 left-1/4 w-40 h-40 bg-gradient-to-r from-pink-500/20 to-red-500/20 rounded-full blur-2xl"></div>
-            
+
             <div class="relative max-w-7xl mx-auto px-6 lg:px-8 text-center text-white z-10">
                 <div class="typing-animation">
                     <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold mb-6">
@@ -170,7 +151,7 @@ const props = defineProps({
                         <strong class="text-yellow-300">Full-stack Developer</strong>
                     </p>
                 </div>
-                
+
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12">
                     <a
                         href="#projects"
@@ -193,7 +174,7 @@ const props = defineProps({
                     </a>
                 </div>
             </div>
-            
+
             <!-- Hero Image -->
             <div class="absolute right-0 top-1/2 transform -translate-y-1/2 hidden lg:block opacity-30">
                 <img
@@ -203,16 +184,6 @@ const props = defineProps({
                 />
             </div>
 
-            <!-- Code Snippets Background -->
-            <div class="absolute top-20 left-20 opacity-10 hidden lg:block">
-                <div class="bg-gray-800 rounded-lg p-4 text-green-400 font-mono text-sm">
-                    <div>&lt;?php</div>
-                    <div>class Developer {</div>
-                    <div>&nbsp;&nbsp;public $name = 'Daniel';</div>
-                    <div>}</div>
-                </div>
-            </div>
-            
             <div class="absolute bottom-20 right-20 opacity-10 hidden lg:block">
                 <div class="bg-gray-800 rounded-lg p-4 text-blue-400 font-mono text-sm">
                     <div>const skills = [</div>
@@ -223,125 +194,39 @@ const props = defineProps({
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="py-24 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
-            <!-- Background Pattern -->
-            <div class="absolute inset-0 opacity-5">
-                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900"></div>
-            </div>
-            
-            <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
-                    <div class="order-2 lg:order-1">
-                        <div class="inline-flex items-center px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 rounded-full text-sm font-medium mb-6">
-                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                            About Me
-                        </div>
-                        
-                        <h2 class="text-4xl md:text-5xl font-bold mb-8 text-gray-900 dark:text-white leading-tight">
-                            Passionate Developer from 
-                            <span class="text-blue-600 dark:text-blue-400">Poland</span>
-                        </h2>
-                        
-                        <div class="space-y-6 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                            <p class="flex items-start">
-                                <svg class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                </svg>
-                                Hi there! I am a dedicated PHP Developer residing in a quaint town near the mountains. With expertise in WHMCS and Laravel, I am continuously expanding my knowledge by learning Vue.js.
-                            </p>
-                            
-                            <p class="flex items-start">
-                                <svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1a3 3 0 000-6h-1m4 6h1a3 3 0 000-6h-1m-4 6v6m4-6v6"/>
-                                </svg>
-                                In my free time, I enjoy hiking, diving into books, playing video games, and watching football. As a loyal Arsenal supporter and avid Premier League fan, I am always on the edge of my seat during matches.
-                            </p>
-                            
-                            <p class="flex items-start">
-                                <svg class="w-6 h-6 text-purple-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                                </svg>
-                                I regularly dedicate my evenings and weekends to improving my apps which are strongly related to sport.
-                            </p>
-                        </div>
-                        
-                        <!-- Stats -->
-                        <div class="grid grid-cols-3 gap-6 mt-12">
-                            <div class="text-center">
-                                <div class="text-3xl font-bold text-blue-600 dark:text-blue-400">11+</div>
-                                <div class="text-sm text-gray-600 dark:text-gray-400">Projects Completed</div>
-                            </div>
-                            <div class="text-center">
-                                <div class="text-3xl font-bold text-green-600 dark:text-green-400">5+</div>
-                                <div class="text-sm text-gray-600 dark:text-gray-400">Years Experience</div>
-                            </div>
-                            <div class="text-center">
-                                <div class="text-3xl font-bold text-purple-600 dark:text-purple-400">∞</div>
-                                <div class="text-sm text-gray-600 dark:text-gray-400">Learning Passion</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="order-1 lg:order-2 relative">
-                        <div class="relative">
-                            <!-- Background decoration -->
-                            <div class="absolute -top-4 -left-4 w-full h-full bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl opacity-20 transform rotate-3"></div>
-                            <div class="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl opacity-20 transform -rotate-3"></div>
-                            
-                            <!-- Main image -->
-                            <div class="relative overflow-hidden rounded-2xl shadow-2xl">
-                                <img
-                                    src="/images/about/me.jpg"
-                                    alt="Daniel Heinze"
-                                    class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500"
-                                />
-                                <div class="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent"></div>
-                            </div>
-                            
-                            <!-- Floating skill badges -->
-                            <div class="absolute -top-6 -right-6 bg-white dark:bg-gray-800 rounded-full p-4 shadow-lg">
-                                <div class="text-2xl">🐘</div>
-                            </div>
-                            <div class="absolute -bottom-6 -left-6 bg-white dark:bg-gray-800 rounded-full p-4 shadow-lg">
-                                <div class="text-2xl">⚡</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
         <!-- Projects Section -->
-        <section id="projects" class="py-24 bg-white dark:bg-gray-900 relative">
-            <!-- Background Pattern -->
-            <div class="absolute inset-0 opacity-5">
-                <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-                    <g fill="none" fill-rule="evenodd">
-                        <g fill="#4F46E5" fill-opacity="0.1">
-                            <circle cx="36" cy="36" r="12"/>
-                            <circle cx="6" cy="6" r="6"/>
-                        </g>
-                    </g>
-                </svg>
-            </div>
+        <section id="projects" class="py-24 relative overflow-hidden">
+            <!-- Gradient Background matching hero section -->
+            <div class="absolute inset-0 gradient-bg opacity-90"></div>
             
+            <!-- Floating Background Shapes -->
+            <div class="floating-shapes">
+                <div class="shape w-20 h-20 bg-yellow-400 rounded-full opacity-20"></div>
+                <div class="shape w-16 h-16 bg-blue-500 rounded-lg rotate-45 opacity-20"></div>
+                <div class="shape w-12 h-12 bg-purple-500 rounded-full opacity-20"></div>
+                <div class="shape w-24 h-24 bg-green-400 rounded-lg rotate-12 opacity-20"></div>
+            </div>
+
+            <!-- Background Blur Elements -->
+            <div class="absolute top-10 left-10 w-40 h-40 bg-gradient-to-r from-yellow-400/20 to-orange-500/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-56 h-56 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-full blur-3xl"></div>
+            <div class="absolute top-1/2 left-1/4 w-32 h-32 bg-gradient-to-r from-pink-500/20 to-red-500/20 rounded-full blur-2xl"></div>
+
             <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
                 <div class="text-center mb-16">
-                    <div class="inline-flex items-center px-4 py-2 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400 rounded-full text-sm font-medium mb-6">
+                    <div class="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-6 border border-white/30">
                         <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
                         </svg>
                         Portfolio
                     </div>
-                    
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-                        My <span class="text-purple-600 dark:text-purple-400">Latest Work</span>
+
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+                        My <span class="text-yellow-300">Latest Work</span>
                     </h2>
-                    <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    <p class="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
                         Here's a showcase of my work, featuring WHMCS modules, Laravel applications, and various web development projects that demonstrate my skills and passion for coding.
                     </p>
                 </div>
@@ -357,17 +242,8 @@ const props = defineProps({
                         />
                     </div>
                 </div>
-                
-                <!-- View More Button -->
-                <div class="text-center mt-12">
-                    <button class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                        <svg class="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
-                        </svg>
-                        View All Projects
-                    </button>
-                </div>
+
+
             </div>
         </section>
 
@@ -376,7 +252,7 @@ const props = defineProps({
             <!-- Background Elements -->
             <div class="absolute top-10 right-10 w-64 h-64 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl"></div>
             <div class="absolute bottom-10 left-10 w-80 h-80 bg-gradient-to-r from-yellow-400/20 to-orange-500/20 rounded-full blur-3xl"></div>
-            
+
             <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10">
                 <div class="inline-flex items-center px-4 py-2 bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-400 rounded-full text-sm font-medium mb-6">
                     <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -385,7 +261,7 @@ const props = defineProps({
                     </svg>
                     Get In Touch
                 </div>
-                
+
                 <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
                     Let's Work <span class="text-blue-600 dark:text-blue-400">Together</span>
                 </h2>
@@ -393,7 +269,7 @@ const props = defineProps({
                     I'm always interested in new opportunities and exciting projects.<br>
                     Ready to bring your ideas to life!
                 </p>
-                
+
                 <div class="flex flex-col sm:flex-row gap-6 justify-center">
                     <a
                         href="mailto:danielheinze96@gmail.com"

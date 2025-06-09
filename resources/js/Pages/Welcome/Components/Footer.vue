@@ -1,13 +1,30 @@
 <template>
-    <footer class="bg-gray-900 text-white">
+    <footer class="relative overflow-hidden">
+        <!-- Gradient Background matching hero section -->
+        <div class="absolute inset-0 gradient-bg opacity-95"></div>
+        
+        <!-- Floating Background Shapes -->
+        <div class="floating-shapes">
+            <div class="shape w-16 h-16 bg-yellow-400 rounded-full opacity-10"></div>
+            <div class="shape w-12 h-12 bg-blue-500 rounded-lg rotate-45 opacity-10"></div>
+            <div class="shape w-8 h-8 bg-purple-500 rounded-full opacity-10"></div>
+            <div class="shape w-20 h-20 bg-green-400 rounded-lg rotate-12 opacity-10"></div>
+        </div>
+
+        <!-- Background Blur Elements -->
+        <div class="absolute top-10 left-10 w-32 h-32 bg-gradient-to-r from-yellow-400/15 to-orange-500/15 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 right-10 w-48 h-48 bg-gradient-to-r from-blue-500/15 to-purple-600/15 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/2 right-1/4 w-24 h-24 bg-gradient-to-r from-pink-500/15 to-red-500/15 rounded-full blur-2xl"></div>
+        
+        <div class="relative z-10 text-white">
         <!-- Social Links Section -->
-        <div class="border-b border-gray-800">
+        <div class="border-b border-white/20">
             <div class="max-w-7xl mx-auto px-6 lg:px-8 py-8">
                 <div class="flex flex-col md:flex-row items-center justify-between">
                     <div class="mb-6 md:mb-0">
-                        <p class="text-lg text-gray-300">
-                            Get connected with me on social networks:
-                        </p>
+                                            <p class="text-lg text-gray-100">
+                        Get connected with me on social networks:
+                    </p>
                     </div>
                     
                     <!-- Social Icons -->
@@ -89,7 +106,7 @@
                         </svg>
                         <h3 class="text-lg font-bold text-white">Daniel Heinze</h3>
                     </div>
-                    <p class="text-gray-400 leading-relaxed">
+                    <p class="text-gray-200 leading-relaxed">
                         Thank You for visiting my website. I'm always open to discussing new opportunities and exciting projects.
                     </p>
                 </div>
@@ -160,7 +177,7 @@
         </div>
 
         <!-- Copyright -->
-        <div class="border-t border-gray-800">
+        <div class="border-t border-white/20">
             <div class="max-w-7xl mx-auto px-6 lg:px-8 py-6">
                 <div class="flex flex-col md:flex-row items-center justify-between">
                     <p class="text-gray-400 text-sm">
@@ -172,9 +189,57 @@
                 </div>
             </div>
         </div>
+        </div>
     </footer>
 </template>
 
 <script setup>
 // Any additional logic can be added here if needed
 </script>
+
+<style scoped>
+.gradient-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.floating-shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.shape {
+    position: absolute;
+    animation: float 8s ease-in-out infinite;
+}
+
+.shape:nth-child(1) {
+    top: 20%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.shape:nth-child(2) {
+    top: 70%;
+    left: 75%;
+    animation-delay: 3s;
+}
+
+.shape:nth-child(3) {
+    top: 50%;
+    left: 25%;
+    animation-delay: 6s;
+}
+
+.shape:nth-child(4) {
+    top: 30%;
+    left: 80%;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(180deg); }
+}
+</style>

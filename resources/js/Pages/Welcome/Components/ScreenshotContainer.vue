@@ -14,7 +14,7 @@ function handleImageError() {
     <a
         :href="url"
         id="docs-card"
-        class="flex flex-col items-start gap-6 overflow-hidden rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] md:row-span-3 lg:p-10 lg:pb-10 dark:bg-gray-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
+        class="flex flex-col items-start gap-6 overflow-hidden rounded-lg bg-white/10 backdrop-blur-md p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.15)] ring-1 ring-white/20 hover:bg-white/20 hover:ring-white/30 focus:outline-none focus-visible:ring-yellow-300 md:row-span-3 lg:p-10 lg:pb-10 transition-all duration-300 border border-white/10"
     >
         <div id="screenshot-container" class="relative flex w-full flex-1 items-stretch">
             <img
@@ -29,22 +29,22 @@ function handleImageError() {
                 class="hidden aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.25)] dark:block"
             />
             <div
-                class="absolute -bottom-16 -left-16 h-40 w-[calc(100%+8rem)] bg-gradient-to-b from-transparent via-white to-white dark:via-zinc-900 dark:to-gray-900"
+                class="absolute -bottom-16 -left-16 h-40 w-[calc(100%+8rem)] bg-gradient-to-b from-transparent via-white/80 to-white/90"
             ></div>
         </div>
 
         <div class="relative flex items-center gap-6 lg:items-end">
             <div id="docs-card-content" class="flex items-start gap-6 lg:flex-col">
                 <div class="pt-3 sm:pt-5 lg:pt-0">
-                    <h2 class="text-xl font-semibold text-black dark:text-white">{{title}}</h2>
-                    <p class="mt-4 text-sm/relaxed">
+                    <h2 class="text-xl font-semibold text-white">{{title}}</h2>
+                    <p class="mt-4 text-sm/relaxed text-gray-100">
                         {{description}}
                     </p>
                 </div>
             </div>
 
             <svg
-                class="size-6 shrink-0 stroke-[#FF2D20]"
+                class="size-6 shrink-0 stroke-yellow-300"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"

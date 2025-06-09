@@ -1,81 +1,198 @@
 <script setup>
 import GuestLayout from "@/Layouts/GuestLayout.vue";
 import Footer from "@/Pages/Welcome/Components/Footer.vue";
+import {useForm} from "@inertiajs/vue3";
+
+const form = useForm({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+});
+
+const submit = () => {
+    form.post(route('sendEmail'), {
+        onFinish: () => form.reset(),
+    });
+};
 </script>
+
 <template>
-<GuestLayout>
-<div class="container mx-auto flex flex-col-reverse md:flex-row py-5 md:py-10 md:mt-10 dark:bg-zinc-700">
-    <!-- Contact form -->
-    <div class="w-full md:w-1/2">
-        <div
-            class="leading-loose max-w-xl m-4 p-7 bg-secondary-light dark:bg-secondary-dark rounded-xl shadow-xl text-left">
-            <p class="font-general-medium text-primary-dark dark:text-primary-light text-2xl mb-8"> Contact Form </p>
-            <form action="#" class="font-general-regular space-y-7">
-                <div><label class="block mb-2 text-lg text-primary-dark dark:text-primary-light" for="Full Name">Full
-                    Name</label><input
-                    class="w-full px-5 py-3 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
-                    id="name" name="name" placeholder="Full Name" aria-label="name" type="text" required=""></div>
-                <div><label class="block mb-2 text-lg text-primary-dark dark:text-primary-light"
-                            for="Email">Email</label><input
-                    class="w-full px-5 py-3 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
-                    id="email" name="email" placeholder="Email" aria-label="email" type="email" required=""></div>
-                <div><label class="block mb-2 text-lg text-primary-dark dark:text-primary-light"
-                            for="Subject">Subject</label><input
-                    class="w-full px-5 py-3 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
-                    id="subject" name="subject" placeholder="Subject" aria-label="subject" type="text" required="">
+    <GuestLayout>
+        <!-- Hero Section -->
+        <div class="bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+            <div class="container mx-auto px-4 py-16 lg:py-24">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                        Get in Touch
+                    </h1>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        Have a question or want to work together? I'd love to hear from you.
+                    </p>
                 </div>
-                <div><label class="block text-lg text-primary-dark dark:text-primary-light mb-2"
-                            for="message">Message</label><textarea
-                    class="w-full px-5 py-2 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
-                    id="message" name="message" aria-label="message" placeholder="Message" cols="14"
-                    rows="6"></textarea></div>
-                <div>
-                    <button
-                        class="px-4 py-2.5 text-white tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg duration-500"
-                        type="submit" aria-label="Send Message">Send Message
-                    </button>
+
+                <div class="max-w-6xl mx-auto">
+                    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+                        <!-- Contact Form -->
+<!--                        <div class="order-2 lg:order-1">-->
+<!--                            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 lg:p-10">-->
+<!--                                <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-8">-->
+<!--                                    Send a Message-->
+<!--                                </h2>-->
+
+<!--                                <form @submit.prevent="submit"-->
+<!--                                      class="space-y-6"-->
+<!--                                >-->
+<!--                                    &lt;!&ndash; Name Field &ndash;&gt;-->
+<!--                                    <div>-->
+<!--                                        <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">-->
+<!--                                            Full Name *-->
+<!--                                        </label>-->
+<!--                                        <input-->
+<!--                                            v-model="form.name"-->
+<!--                                            type="text"-->
+<!--                                            id="name"-->
+<!--                                            name="name"-->
+<!--                                            required-->
+<!--                                            class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent dark:bg-gray-700 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 transition-all duration-200"-->
+<!--                                            placeholder="Enter your full name"-->
+<!--                                        />-->
+<!--                                    </div>-->
+
+<!--                                    &lt;!&ndash; Email Field &ndash;&gt;-->
+<!--                                    <div>-->
+<!--                                        <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">-->
+<!--                                            Email Address *-->
+<!--                                        </label>-->
+<!--                                        <input-->
+<!--                                            v-model="form.email"-->
+<!--                                            type="email"-->
+<!--                                            id="email"-->
+<!--                                            name="email"-->
+<!--                                            required-->
+<!--                                            class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent dark:bg-gray-700 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 transition-all duration-200"-->
+<!--                                            placeholder="Enter your email address"-->
+<!--                                        />-->
+<!--                                    </div>-->
+
+<!--                                    &lt;!&ndash; Subject Field &ndash;&gt;-->
+<!--                                    <div>-->
+<!--                                        <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">-->
+<!--                                            Subject *-->
+<!--                                        </label>-->
+<!--                                        <input-->
+<!--                                            v-model="form.subject"-->
+<!--                                            type="text"-->
+<!--                                            id="subject"-->
+<!--                                            name="subject"-->
+<!--                                            required-->
+<!--                                            class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent dark:bg-gray-700 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 transition-all duration-200"-->
+<!--                                            placeholder="What's this about?"-->
+<!--                                        />-->
+<!--                                    </div>-->
+
+<!--                                    &lt;!&ndash; Message Field &ndash;&gt;-->
+<!--                                    <div>-->
+<!--                                        <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">-->
+<!--                                            Message *-->
+<!--                                        </label>-->
+<!--                                        <textarea-->
+<!--                                            v-model="form.message"-->
+<!--                                            id="message"-->
+<!--                                            name="message"-->
+<!--                                            rows="5"-->
+<!--                                            required-->
+<!--                                            class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent dark:bg-gray-700 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 resize-none transition-all duration-200"-->
+<!--                                            placeholder="Tell me about your project or inquiry..."-->
+<!--                                        ></textarea>-->
+<!--                                    </div>-->
+
+<!--                                    &lt;!&ndash; Submit Button &ndash;&gt;-->
+<!--                                    <button-->
+<!--                                        type="submit"-->
+<!--                                        :disabled="form.processing"-->
+<!--                                        class="w-full bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-400 text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 flex items-center justify-center space-x-2"-->
+<!--                                    >-->
+<!--                                        <span v-if="!form.processing">Send Message</span>-->
+<!--                                        <span v-else class="flex items-center space-x-2">-->
+<!--                                            <svg class="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24">-->
+<!--                                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>-->
+<!--                                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>-->
+<!--                                            </svg>-->
+<!--                                            <span>Sending...</span>-->
+<!--                                        </span>-->
+<!--                                    </button>-->
+<!--                                </form>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+                        <!-- Contact Information -->
+                        <div class="order-1 lg:order-2">
+                            <div class="lg:sticky lg:top-8">
+                                <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-8">
+                                    Contact Information
+                                </h2>
+
+                                <div class="space-y-6">
+                                    <!-- Location -->
+                                    <div class="flex items-start space-x-4">
+                                        <div class="flex-shrink-0 w-12 h-12 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center">
+                                            <svg class="w-6 h-6 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-medium text-gray-900 dark:text-white">Location</h3>
+                                            <p class="text-gray-600 dark:text-gray-400 mt-1">58-340 Głuszyca, Poland</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Email -->
+                                    <div class="flex items-start space-x-4">
+                                        <div class="flex-shrink-0 w-12 h-12 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center">
+                                            <svg class="w-6 h-6 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-medium text-gray-900 dark:text-white">Email</h3>
+                                            <a
+                                                href="mailto:danielheinze96@gmail.com"
+                                                class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors duration-200 mt-1 block"
+                                            >
+                                                danielheinze96@gmail.com
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Response Time -->
+                                    <div class="flex items-start space-x-4">
+                                        <div class="flex-shrink-0 w-12 h-12 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center">
+                                            <svg class="w-6 h-6 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-medium text-gray-900 dark:text-white">Response Time</h3>
+                                            <p class="text-gray-600 dark:text-gray-400 mt-1">Usually within 24 hours</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-12 p-6 bg-indigo-50 dark:bg-indigo-900/20 rounded-xl">
+                                    <h3 class="font-medium text-gray-900 dark:text-white mb-2">Quick Response</h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                                        For urgent matters, please mention "URGENT" in your subject line. I'll prioritize your message and respond as quickly as possible.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </form>
+            </div>
         </div>
-    </div><!-- Contact details -->
-    <div class="w-full md:w-1/2">
-        <div class="text-left max-w-xl px-6"><h2
-            class="font-general-medium text-2xl text-primary-dark dark:text-primary-light mt-12 mb-8"> Contact
-            details </h2>
-            <ul class="font-general-regular">
-                <li class="flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                         class="feather feather-map-pin w-5 text-gray-500 dark:text-gray-400 mr-4">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                        <circle cx="12" cy="10" r="3"></circle>
-                    </svg>
-                    <a href="#" class="text-lg mb-4 text-ternary-dark dark:text-ternary-light"
-                       aria-label="Website and Phone">58-340 Głuszyca, Poland</a></li>
-                <li class="flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                         class="feather feather-mail w-5 text-gray-500 dark:text-gray-400 mr-4">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    <a href="#"
-                       class="text-lg mb-4 text-ternary-dark dark:text-ternary-light hover:underline cursor-pointer"
-                       aria-label="Website and Phone">danielheinze96@gmail.com</a></li>
-                <li class="flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                         class="feather feather-phone w-5 text-gray-500 dark:text-gray-400 mr-4">
-                        <path
-                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                    </svg>
-                    <a href="#"
-                       class="text-lg mb-4 text-ternary-dark dark:text-ternary-light hover:underline cursor-pointer"
-                       aria-label="Website and Phone"></a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-    <Footer></Footer>
-</GuestLayout>
+
+        <Footer />
+    </GuestLayout>
 </template>
