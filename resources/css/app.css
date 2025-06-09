@@ -3,3 +3,20 @@
 @tailwind utilities;
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
+
+/* Global smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Page transitions */
+.page-transition-enter-active,
+.page-transition-leave-active {
+    transition: all 0.3s ease;
+}
+
+.page-transition-enter-from,
+.page-transition-leave-to {
+    opacity: 0;
+    transform: translateY(20px);
+}
