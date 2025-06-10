@@ -168,6 +168,8 @@ onMounted(() => {
                             :title="project.title"
                             :url="project.url"
                             :image="project.img"
+                            :image2="project.img2"
+                            :image3="project.img3"
                             :description="project.description"
                         />
                     </div>

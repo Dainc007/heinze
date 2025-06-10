@@ -109,14 +109,14 @@ const showingMobileMenu = ref(false);
                     Home
                 </Link>
                 <Link
-                    :href="route('welcome') + '#side-projects'"
+                    :href="route('side-projects')"
                     @click="showingMobileMenu = false"
                     class="text-white/80 hover:text-white hover:bg-white/10 block px-3 py-2 rounded-md text-base font-medium transition-all duration-300"
                 >
                     Side Projects
                 </Link>
                 <Link
-                    :href="route('welcome') + '#projects'"
+                    :href="route('projects')"
                     @click="showingMobileMenu = false"
                     class="text-white/80 hover:text-white hover:bg-white/10 block px-3 py-2 rounded-md text-base font-medium transition-all duration-300"
                 >

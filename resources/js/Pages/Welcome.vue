@@ -1,11 +1,10 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
 import Footer from '@/Pages/Welcome/Components/Footer.vue';
-import ScreenshotContainer from '@/Pages/Welcome/Components/ScreenshotContainer.vue';
 import SideProjectsSection from '@/Pages/Welcome/Components/SideProjectsSection.vue';
 import ProjectsSection from '@/Pages/Welcome/Components/ProjectsSection.vue';
 import GuestLayout from "@/Layouts/GuestLayout.vue";
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
 
 const props = defineProps({
     canLogin: {
@@ -33,30 +32,6 @@ const props = defineProps({
 });
 
 const pageTitle = ref(null);
-
-// Focus management for accessibility
-onMounted(() => {
-    // Check if we're navigating to a specific section
-    const hash = window.location.hash;
-    if (hash === '#projects') {
-        // If navigating to projects section, focus on projects title
-        setTimeout(() => {
-            const projectsTitle = document.querySelector('#projects h2');
-            if (projectsTitle) {
-                projectsTitle.setAttribute('tabindex', '-1');
-                projectsTitle.focus();
-            }
-        }, 200);
-    } else {
-        // Otherwise focus on main heading
-        setTimeout(() => {
-            if (pageTitle.value) {
-                pageTitle.value.focus();
-            }
-        }, 100);
-    }
-});
-
 </script>
 
 <style>
@@ -229,8 +204,8 @@ onMounted(() => {
                         </svg>
                     </a>
                     <a
-                        download="cv-eng.pdf"
-                        href="/files/cv-eng.pdf"
+                        download="danielheinze.pdf"
+                        href="/files/danielheinze.pdf"
                         class="inline-flex items-center px-8 py-3 text-lg font-medium rounded-lg bg-transparent text-white border-2 border-white hover:bg-white hover:text-gray-900 transition-all duration-300"
                     >
                         <svg class="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
