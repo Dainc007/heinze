@@ -11,9 +11,21 @@ Route::get('/', function () {
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'projects'  => json_decode(File::get(base_path('projects.json')), true, JSON_UNESCAPED_SLASHES),
-        'own-projects'  => json_decode(File::get(base_path('own-projects.json')), true, JSON_UNESCAPED_SLASHES)
+        'ownProjects'  => json_decode(File::get(base_path('own-projects.json')), true, JSON_UNESCAPED_SLASHES)
     ]);
 })->name('welcome');
+
+Route::get('/projects', function () {
+    return Inertia::render('Projects', [
+        'projects'  => json_decode(File::get(base_path('projects.json')), true, JSON_UNESCAPED_SLASHES),
+    ]);
+})->name('projects');
+
+Route::get('/side-projects', function () {
+    return Inertia::render('SideProjects', [
+        'ownProjects'  => json_decode(File::get(base_path('own-projects.json')), true, JSON_UNESCAPED_SLASHES)
+    ]);
+})->name('side-projects');
 
 Route::get('/about', function () {
     return Inertia::render('About');

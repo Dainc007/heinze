@@ -31,8 +31,7 @@ const showingMobileMenu = ref(false);
                         Side Projects
                     </Link>
                     <Link
-                        href="#projects"
-                        @click="scrollToSection('projects', $event)"
+                        :href="route('projects')"
                         class="text-white/80 hover:text-white transition-all duration-300 hover:scale-105"
                     >
                         Projects

@@ -2,6 +2,8 @@
 import { Head, Link } from '@inertiajs/vue3';
 import Footer from '@/Pages/Welcome/Components/Footer.vue';
 import ScreenshotContainer from '@/Pages/Welcome/Components/ScreenshotContainer.vue';
+import SideProjectsSection from '@/Pages/Welcome/Components/SideProjectsSection.vue';
+import ProjectsSection from '@/Pages/Welcome/Components/ProjectsSection.vue';
 import GuestLayout from "@/Layouts/GuestLayout.vue";
 import { ref, onMounted } from 'vue';
 
@@ -275,45 +277,8 @@ onMounted(() => {
             <div class="absolute top-10 left-10 w-40 h-40 bg-gradient-to-r from-yellow-400/20 to-orange-500/20 rounded-full blur-3xl"></div>
             <div class="absolute bottom-10 right-10 w-56 h-56 bg-gradient-to-r from-pink-500/20 to-purple-600/20 rounded-full blur-3xl"></div>
             <div class="absolute top-1/2 left-1/4 w-32 h-32 bg-gradient-to-r from-orange-500/20 to-pink-500/20 rounded-full blur-2xl"></div>
-            <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-                <div class="text-center mb-12">
-                    <div class="animate-bounce inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-6 border border-white/30">
-                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                        </svg>
-                        Coming Soon
-                    </div>
 
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white focus:outline-none">
-                        My <span class="text-yellow-300">Side Projects</span>
-                    </h2>
-                    <p class="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
-                        These are my personal passion projects that I'm working on in my spare time. Each one represents innovative ideas and cutting-edge solutions.
-                    </p>
-                </div>
-
-                <!-- Side Projects Grid (3 columns) -->
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div v-for="project in ownProjects" :key="project.id" class="project-card side-project-card h-full">
-                        <div class="relative">
-                            <!-- Coming Soon Badge -->
-                            <div class="coming-soon-badge">
-                                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                                </svg>
-                                SOON
-                            </div>
-
-                            <ScreenshotContainer
-                                :title="project.title"
-                                :url="project.url"
-                                :image="project.img"
-                                :description="project.description"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <SideProjectsSection :ownProjects="ownProjects" />
         </section>
 
         <!-- Projects Section -->
@@ -334,63 +299,7 @@ onMounted(() => {
             <div class="absolute bottom-10 right-10 w-56 h-56 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-full blur-3xl"></div>
             <div class="absolute top-1/2 left-1/4 w-32 h-32 bg-gradient-to-r from-pink-500/20 to-red-500/20 rounded-full blur-2xl"></div>
 
-            <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-                <div class="text-center mb-16">
-                    <div class="animate-bounce inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-6 border border-white/30">
-                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
-                        </svg>
-                        Portfolio
-                    </div>
-
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white focus:outline-none">
-                        My Latest<span class="text-yellow-300"> Work </span>&<span class="text-yellow-300"> Clients</span>
-                    </h2>
-                    <p class="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
-                        Here's a showcase of my work, featuring WHMCS modules, Laravel applications, and various web development projects that demonstrate my skills and passion for coding.
-                    </p>
-                </div>
-
-                <!-- Projects Grid -->
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div v-for="project in projects" :key="project.id" class="project-card h-full">
-                        <ScreenshotContainer
-                            :title="project.title"
-                            :url="project.url"
-                            :image="project.img"
-                            :description="project.description"
-                        />
-                    </div>
-
-                    <!-- Fake card if odd number of projects -->
-                    <div class="project-card h-full">
-                        <div class="flex flex-col items-center justify-center gap-6 h-full rounded-lg bg-white/10 backdrop-blur-md p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.15)] ring-1 ring-white/20 border border-white/10 text-center min-h-[400px]">
-                            <div class="flex flex-col items-center gap-4">
-                                <div class="w-20 h-20 bg-gradient-to-br from-yellow-300 to-orange-400 rounded-full flex items-center justify-center">
-                                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
-                                    </svg>
-                                </div>
-                                <h3 class="text-2xl font-bold text-white">A place for your project!</h3>
-                                <p class="text-gray-100 max-w-sm">
-                                    Have an exciting project in mind? Let's work together to bring your vision to life.
-                                </p>
-                            </div>
-                            <a
-                                :href="route('contact')"
-                                class="animate-bounce inline-flex items-center px-8 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-100 rounded-lg font-medium hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:from-yellow-300 hover:to-orange-400"
-                            >
-                                <svg class="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                                </svg>
-                                Hire Me
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
+            <ProjectsSection :projects="projects" />
         </section>
 
         <!-- Contact Section -->

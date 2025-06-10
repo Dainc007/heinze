@@ -70,7 +70,7 @@ onMounted(() => {
     <section id="about" class="py-24 relative overflow-hidden min-h-screen">
         <!-- Gradient Background matching hero section -->
         <div class="absolute inset-0 gradient-bg opacity-95"></div>
-        
+
         <!-- Floating Background Shapes -->
         <div class="floating-shapes">
             <div class="shape w-20 h-20 bg-yellow-400 rounded-full opacity-20"></div>
@@ -94,7 +94,7 @@ onMounted(() => {
                         About Me
                     </div>
 
-                    <h2 
+                    <h2
                         ref="pageTitle"
                         tabindex="-1"
                         class="text-4xl md:text-5xl font-bold mb-8 text-white leading-tight focus:outline-none"
@@ -109,15 +109,13 @@ onMounted(() => {
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                             </svg>
-                            Hi there! I am a dedicated PHP Developer residing in a quaint town near the mountains. With expertise in WHMCS and Laravel, I am continuously expanding my knowledge by learning Vue.js.
-                        </p>
+                            As a PHP developer with deep expertise in Laravel framework and WHMCS platform development, I create scalable web solutions that streamline business operations. Currently expanding my frontend capabilities with Vue.js to deliver full-stack experiences. I work from my home base in the Polish mountains, where the peaceful environment fuels my creativity and focus.                        </p>
 
                         <p class="flex items-start">
                             <svg class="w-6 h-6 text-green-400 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1a3 3 0 000-6h-1m4 6h1a3 3 0 000-6h-1m-4 6v6m4-6v6"/>
                             </svg>
-                            In my free time, I enjoy hiking, diving into books, playing video games, and watching football. As a loyal Arsenal supporter and avid Premier League fan, I am always on the edge of my seat during matches.
-                        </p>
+                            When I'm not coding, you'll find me exploring mountain trails, immersed in a good book, or engaged in strategic gaming sessions. As a passionate Arsenal fan, I never miss a Premier League match – the excitement of football provides the perfect counterbalance to the analytical world of development.                        </p>
 
                         <p class="flex items-start">
                             <svg class="w-6 h-6 text-purple-400 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

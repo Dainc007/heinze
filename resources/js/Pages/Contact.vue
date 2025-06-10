@@ -36,7 +36,7 @@ onMounted(() => {
         <div class="relative overflow-hidden min-h-screen">
             <!-- Gradient Background matching hero section -->
             <div class="absolute inset-0 gradient-bg opacity-95"></div>
-            
+
             <!-- Floating Background Shapes -->
             <div class="floating-shapes">
                 <div class="shape w-20 h-20 bg-yellow-400 rounded-full opacity-20"></div>
@@ -51,7 +51,7 @@ onMounted(() => {
             <div class="absolute top-1/2 left-1/4 w-32 h-32 bg-gradient-to-r from-pink-500/20 to-red-500/20 rounded-full blur-2xl"></div>
             <div class="container mx-auto px-4 py-16 lg:py-24 relative z-10">
                 <div class="text-center mb-16">
-                    <h1 
+                    <h1
                         ref="pageTitle"
                         tabindex="-1"
                         class="text-4xl lg:text-5xl font-bold text-white mb-4 focus:outline-none"
@@ -84,9 +84,9 @@ onMounted(() => {
                             <!-- Email CTA -->
                             <div class="mb-12">
                                 <p class="text-lg text-gray-200 mb-6">Drop me a line and let's discuss your project:</p>
-                                <a 
+                                <a
                                     href="mailto:danielheinze96@gmail.com"
-                                    class="group inline-flex items-center px-6 sm:px-8 lg:px-12 py-3 sm:py-4 text-lg sm:text-xl font-semibold rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 hover:from-yellow-300 hover:to-orange-400 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2"
+                                    class="group inline-flex items-center px-6 sm:px-8 lg:px-12 py-3 sm:py-4 text-lg sm:text-xl font-semibold rounded-xl bg-gradient-to-r from-yellow-600 to-orange-500 text-gray-50 hover:from-yellow-300 hover:to-orange-400 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2"
                                 >
                                     <svg class="mr-2 sm:mr-3 w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
@@ -100,8 +100,8 @@ onMounted(() => {
                                 <p class="text-lg text-gray-200 mb-6">Or connect with me on social media:</p>
                                 <div class="flex justify-center space-x-6">
                                     <!-- GitHub -->
-                                    <a 
-                                        href="https://github.com/Dainc007" 
+                                    <a
+                                        href="https://github.com/Dainc007"
                                         target="_blank"
                                         class="group w-14 h-14 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/30 hover:bg-white/30 hover:border-white/50 transition-all duration-300 hover:scale-110"
                                     >
@@ -111,8 +111,8 @@ onMounted(() => {
                                     </a>
 
                                     <!-- Facebook -->
-                                    <a 
-                                        href="https://www.facebook.com/danielvandaniel" 
+                                    <a
+                                        href="https://www.facebook.com/danielvandaniel"
                                         target="_blank"
                                         class="group w-14 h-14 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/30 hover:bg-white/30 hover:border-white/50 transition-all duration-300 hover:scale-110"
                                     >
@@ -122,8 +122,8 @@ onMounted(() => {
                                     </a>
 
                                     <!-- LinkedIn -->
-                                    <a 
-                                        href="#" 
+                                    <a
+                                        href="https://www.linkedin.com/in/daniel-heinze-199ab4209/"
                                         class="group w-14 h-14 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/30 hover:bg-white/30 hover:border-white/50 transition-all duration-300 hover:scale-110"
                                     >
                                         <svg class="w-7 h-7 text-white group-hover:text-yellow-300 transition-colors" fill="currentColor" viewBox="0 0 448 512">
@@ -132,8 +132,9 @@ onMounted(() => {
                                     </a>
 
                                     <!-- Twitter -->
-                                    <a 
-                                        href="#" 
+                                    <a
+                                        href=""
+                                        onclick="event.preventDefault();"
                                         class="group w-14 h-14 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/30 hover:bg-white/30 hover:border-white/50 transition-all duration-300 hover:scale-110"
                                     >
                                         <svg class="w-7 h-7 text-white group-hover:text-yellow-300 transition-colors" fill="currentColor" viewBox="0 0 512 512">
