@@ -1,0 +1,26 @@
+{
+    "1": {
+        "id": 1,
+        "title": "Filament ScanbotSDK",
+        "category": "Laravel Filament Plugins",
+        "img": "\/images\/projects\/scanbotsdk.png",
+        "url": "https:\/\/scanbot.io\/",
+        "description": "A custom Laravel Filament component/plugin that integrates the powerful Scanbot SDK for document scanning and processing capabilities. This integration brings enterprise-grade document capture functionality directly into Filament admin panels, allowing users to scan, process, and manage documents seamlessly within their Laravel applications. The plugin leverages Scanbot's advanced OCR, barcode recognition, and document detection features, providing a streamlined workflow for businesses that require efficient document digitization and management solutions."
+    },
+    "2": {
+        "id": 2,
+        "title": "Onside Pro Clubs",
+        "category": "Own Project Based On Laravel",
+        "img": "\/images\/projects\/onside.png",
+        "url": "#",
+        "description": "An innovative EA FC community platform that revolutionizes the Pro Clubs experience by focusing on authentic 11v11 gameplay with an advanced AI-powered Career Mode Online system. Similar to virtualprogamming.com, this project creates a comprehensive ecosystem where players can participate in structured leagues, manage their virtual careers, and engage in realistic football simulation. The platform features sophisticated AI algorithms that enhance gameplay dynamics, strategic decision-making, and player development, creating an immersive football management experience that bridges the gap between casual gaming and professional esports competition."
+    },
+    "3": {
+        "id": 3,
+        "title": "Onside Empire",
+        "category": "Own Project Based On Laravel",
+        "img": "\/images\/projects\/empire.png",
+        "url": "#",
+        "description": "This project is a collection of strategic browser games that seamlessly blend city-building elements with classic real-time strategy (RTS) mechanics, inspired by the Civilization series. Players will engage in constructing and managing their cities while navigating complex strategic challenges, fostering a unique gaming experience that combines resource management, tactical warfare, and civilization development."
+    }
+}

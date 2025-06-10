@@ -23,6 +23,10 @@ const props = defineProps({
     projects: {
         type: Array,
         required: true
+    },
+    ownProjects: {
+        type: Array,
+        required: true
     }
 });
 
@@ -142,6 +146,36 @@ onMounted(() => {
     transform: perspective(1000px) rotateY(-5deg) translateY(-10px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
+
+/* Side Projects Clean Styles */
+.side-project-card {
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: default;
+    pointer-events: none;
+}
+
+.side-project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.coming-soon-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #fbbf24;
+    color: #1f2937;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    box-shadow: 0 2px 8px rgba(251, 191, 36, 0.3);
+}
 </style>
 
 <template>
@@ -168,7 +202,7 @@ onMounted(() => {
 
             <div class="relative max-w-7xl mx-auto px-6 lg:px-8 text-center text-white z-10">
                 <div class="typing-animation">
-                    <h1 
+                    <h1
                         ref="pageTitle"
                         tabindex="-1"
                         class="text-5xl md:text-6xl xl:text-7xl font-bold mb-6 focus:outline-none"
@@ -222,15 +256,71 @@ onMounted(() => {
                     <div>];</div>
                 </div>
             </div>
+                </section>
+
+        <!-- My Side Projects Section -->
+        <section id="side-projects" class="py-16 relative overflow-hidden">
+            <!-- Gradient Background matching other sections -->
+            <div class="absolute inset-0 gradient-bg opacity-90"></div>
+
+            <!-- Floating Background Shapes -->
+            <div class="floating-shapes">
+                <div class="shape w-20 h-20 bg-yellow-400 rounded-full opacity-20"></div>
+                <div class="shape w-16 h-16 bg-orange-500 rounded-lg rotate-45 opacity-20"></div>
+                <div class="shape w-12 h-12 bg-pink-500 rounded-full opacity-20"></div>
+                <div class="shape w-24 h-24 bg-purple-400 rounded-lg rotate-12 opacity-20"></div>
+            </div>
+
+            <!-- Background Blur Elements -->
+            <div class="absolute top-10 left-10 w-40 h-40 bg-gradient-to-r from-yellow-400/20 to-orange-500/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-56 h-56 bg-gradient-to-r from-pink-500/20 to-purple-600/20 rounded-full blur-3xl"></div>
+            <div class="absolute top-1/2 left-1/4 w-32 h-32 bg-gradient-to-r from-orange-500/20 to-pink-500/20 rounded-full blur-2xl"></div>
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-12">
+                    <div class="animate-bounce inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-6 border border-white/30">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        Coming Soon
+                    </div>
+
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white focus:outline-none">
+                        My <span class="text-yellow-300">Side Projects</span>
+                    </h2>
+                    <p class="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
+                        These are my personal passion projects that I'm working on in my spare time. Each one represents innovative ideas and cutting-edge solutions.
+                    </p>
+                </div>
+
+                <!-- Side Projects Grid (3 columns) -->
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div v-for="project in ownProjects" :key="project.id" class="project-card side-project-card h-full">
+                        <div class="relative">
+                            <!-- Coming Soon Badge -->
+                            <div class="coming-soon-badge">
+                                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                SOON
+                            </div>
+
+                            <ScreenshotContainer
+                                :title="project.title"
+                                :url="project.url"
+                                :image="project.img"
+                                :description="project.description"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-
-
 
         <!-- Projects Section -->
         <section id="projects" class="py-24 relative overflow-hidden">
             <!-- Gradient Background matching hero section -->
             <div class="absolute inset-0 gradient-bg opacity-90"></div>
-            
+
             <!-- Floating Background Shapes -->
             <div class="floating-shapes">
                 <div class="shape w-20 h-20 bg-yellow-400 rounded-full opacity-20"></div>
@@ -246,7 +336,7 @@ onMounted(() => {
 
             <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
                 <div class="text-center mb-16">
-                    <div class="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-6 border border-white/30">
+                    <div class="animate-bounce inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-6 border border-white/30">
                         <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
                         </svg>
@@ -254,7 +344,7 @@ onMounted(() => {
                     </div>
 
                     <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white focus:outline-none">
-                        My <span class="text-yellow-300">Latest Work</span>
+                        My Latest<span class="text-yellow-300"> Work </span>&<span class="text-yellow-300"> Clients</span>
                     </h2>
                     <p class="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
                         Here's a showcase of my work, featuring WHMCS modules, Laravel applications, and various web development projects that demonstrate my skills and passion for coding.
@@ -271,9 +361,9 @@ onMounted(() => {
                             :description="project.description"
                         />
                     </div>
-                    
+
                     <!-- Fake card if odd number of projects -->
-                    <div v-if="projects.length % 2 !== 0" class="project-card h-full">
+                    <div class="project-card h-full">
                         <div class="flex flex-col items-center justify-center gap-6 h-full rounded-lg bg-white/10 backdrop-blur-md p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.15)] ring-1 ring-white/20 border border-white/10 text-center min-h-[400px]">
                             <div class="flex flex-col items-center gap-4">
                                 <div class="w-20 h-20 bg-gradient-to-br from-yellow-300 to-orange-400 rounded-full flex items-center justify-center">
@@ -286,9 +376,9 @@ onMounted(() => {
                                     Have an exciting project in mind? Let's work together to bring your vision to life.
                                 </p>
                             </div>
-                            <a 
+                            <a
                                 :href="route('contact')"
-                                class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 rounded-lg font-medium hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:from-yellow-300 hover:to-orange-400"
+                                class="animate-bounce inline-flex items-center px-8 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-100 rounded-lg font-medium hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:from-yellow-300 hover:to-orange-400"
                             >
                                 <svg class="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
@@ -307,7 +397,7 @@ onMounted(() => {
         <section id="contact" class="py-24 relative overflow-hidden">
             <!-- Gradient Background matching hero section -->
             <div class="absolute inset-0 gradient-bg opacity-90"></div>
-            
+
             <!-- Floating Background Shapes -->
             <div class="floating-shapes">
                 <div class="shape w-24 h-24 bg-yellow-400 rounded-full opacity-15"></div>
@@ -322,7 +412,7 @@ onMounted(() => {
             <div class="absolute top-1/3 right-1/3 w-40 h-40 bg-gradient-to-r from-pink-500/20 to-red-500/20 rounded-full blur-2xl"></div>
 
             <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10">
-                <div class="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-6 border border-white/30">
+                <div class="animate-bounce inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-6 border border-white/30">
                     <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
                         <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
