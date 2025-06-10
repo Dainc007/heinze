@@ -2,16 +2,28 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SendEmailController;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
+
+    $projects = json_decode(File::get(base_path('projects.json')), true, JSON_UNESCAPED_SLASHES);
+    $ownProjects = json_decode(File::get(base_path('own-projects.json')), true, JSON_UNESCAPED_SLASHES);
+//    foreach($projects as $project) {
+//        if(str_contains($project['url'], 'laravel.cloud')) {
+//            defer(function () use ($project) {
+//                return Http::get($project['url']);
+//            });
+//        }
+//    }
+
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
-        'projects'  => json_decode(File::get(base_path('projects.json')), true, JSON_UNESCAPED_SLASHES),
-        'ownProjects'  => json_decode(File::get(base_path('own-projects.json')), true, JSON_UNESCAPED_SLASHES)
+        'projects'  => $projects,
+        'ownProjects'  => $ownProjects
     ]);
 })->name('welcome');
 
