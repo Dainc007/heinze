@@ -1,0 +1,126 @@
+{
+    "lang": "English",
+    "meta": {
+        "title": "Daniel Heinze — Laravel developer",
+        "description": "Daniel Heinze, Laravel developer from Poland. Web apps, admin panels and integrations built with Laravel, Filament and Livewire."
+    },
+    "skip": "Skip to content",
+    "menu": "Menu",
+    "nav": {
+        "about": "About",
+        "work": "Work",
+        "experience": "Experience",
+        "after": "After hours",
+        "contact": "Contact"
+    },
+    "hero": {
+        "role": "Laravel developer",
+        "tagline": "I build web apps and admin panels that businesses run on every day.",
+        "status": "Open for new projects",
+        "cta": "Write to me"
+    },
+    "about": {
+        "title": "About",
+        "body": [
+            "Hi, I'm Daniel, a PHP developer from Poland.",
+            "For three years at ModulesGarden I built WHMCS modules used by hosting companies. Now I build Laravel apps and admin panels for clients, plus OnSide, my own platform for EA FC Pro Clubs.",
+            "I like simple, reliable code and admin panels that are fast to work with."
+        ]
+    },
+    "work": {
+        "title": "Selected work",
+        "visit": "Visit site",
+        "own": "Own product",
+        "client": "Client project",
+        "more": "More projects",
+        "projects": {
+            "onside": {
+                "title": "OnSide",
+                "kind": "Own product",
+                "text": "A home for EA FC Pro Clubs leagues: teams, fixtures, tables and player stats, synced with EA's match data."
+            },
+            "partio": {
+                "title": "Partio",
+                "kind": "Automotive parts",
+                "text": "Fast product import and search over a database of millions of records, with file uploads for the team."
+            },
+            "grupapwc": {
+                "title": "Grupa PWC",
+                "kind": "Construction",
+                "text": "One panel for staff and machinery: worked hours, meetings and holidays."
+            },
+            "scanbot": {
+                "title": "Scanbot for Filament",
+                "kind": "Plugin for Leistungslotse",
+                "text": "A custom Filament component that brings Scanbot SDK document scanning into an admin panel."
+            },
+            "fivio": {
+                "title": "Fivio",
+                "kind": "Supply",
+                "text": "Tells suppliers what products are in demand and runs an auction for the best offer."
+            }
+        },
+        "moreProjects": {
+            "menago": { "title": "Menago League", "note": "Own project · EA FC career-mode league" },
+            "wordpress": { "title": "WordPress Manager for WHMCS", "note": "ModulesGarden team" },
+            "cpanel": { "title": "cPanel Extended for WHMCS", "note": "ModulesGarden team" },
+            "plesk": { "title": "Plesk Extended for WHMCS", "note": "ModulesGarden team" },
+            "directadmin": { "title": "DirectAdmin Extended for WHMCS", "note": "ModulesGarden team" },
+            "multibrand": { "title": "Multibrand for WHMCS", "note": "ModulesGarden team" },
+            "quotes": { "title": "Quotes Automation for WHMCS", "note": "ModulesGarden team" },
+            "domains": { "title": "Domain Orders Extended for WHMCS", "note": "ModulesGarden team" }
+        }
+    },
+    "testimonials": {
+        "title": "What clients say"
+    },
+    "experience": {
+        "title": "Experience",
+        "now": "now",
+        "jobs": {
+            "now": {
+                "from": "2024",
+                "to": "now",
+                "role": "Freelance Laravel developer",
+                "company": "",
+                "text": "Laravel apps and admin panels for clients, and building OnSide."
+            },
+            "modulesgarden": {
+                "from": "2021",
+                "to": "2024",
+                "role": "Software developer",
+                "company": "ModulesGarden",
+                "text": "Built and maintained WHMCS addon modules for hosting automation, and fixed issues reported by clients."
+            },
+            "jomafive": {
+                "from": "2021",
+                "to": "2021",
+                "role": "Software developer",
+                "company": "Jomafive",
+                "text": "A web app for organising events and tournaments for kids' football."
+            }
+        },
+        "stack": "Daily tools"
+    },
+    "after": {
+        "title": "After hours",
+        "cards": {
+            "arsenal": { "label": "Football", "title": "Arsenal", "text": "Every Premier League match. No exceptions." },
+            "proclubs": { "label": "Gaming", "title": "EA FC Pro Clubs", "text": "Playing with the squad, and building OnSide for the whole community." },
+            "outdoors": { "label": "Offline", "title": "Mountains & books", "text": "Trails close to home, and a good book after." }
+        }
+    },
+    "contact": {
+        "title": "Contact",
+        "lead": "Have a project in mind? Tell me about it.",
+        "email": "Email me"
+    },
+    "footer": {
+        "built": "Built with HTML, Tailwind and Alpine.js.",
+        "support": "Like OnSide?",
+        "beer": "Buy me a beer",
+        "patronite": "Patronite",
+        "kick": "Kick the ball",
+        "goals": "Goals"
+    }
+}

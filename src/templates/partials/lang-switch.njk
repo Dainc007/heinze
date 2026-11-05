@@ -1,0 +1,9 @@
+<nav aria-label="Language / Język" class="flex rounded-full border border-ink-700 p-0.5 font-mono text-xs">
+    {% for alt in alternates %}
+    {% if alt.locale == locale %}
+    <a href="{{ alt.url }}" hreflang="{{ alt.locale }}" lang="{{ alt.locale }}" aria-current="page" class="flex min-h-8 items-center rounded-full bg-fg px-3 text-ink-950">{{ alt.locale | upper }}</a>
+    {% else %}
+    <a href="{{ alt.url }}" hreflang="{{ alt.locale }}" lang="{{ alt.locale }}" class="flex min-h-8 items-center rounded-full px-3 text-muted transition-colors hover:text-fg">{{ alt.locale | upper }}</a>
+    {% endif %}
+    {% endfor %}
+</nav>

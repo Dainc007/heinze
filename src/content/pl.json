@@ -1,0 +1,126 @@
+{
+    "lang": "Polski",
+    "meta": {
+        "title": "Daniel Heinze — programista Laravel",
+        "description": "Daniel Heinze, programista Laravel z Polski. Aplikacje webowe, panele administracyjne i integracje w Laravel, Filament i Livewire."
+    },
+    "skip": "Przejdź do treści",
+    "menu": "Menu",
+    "nav": {
+        "about": "O mnie",
+        "work": "Projekty",
+        "experience": "Doświadczenie",
+        "after": "Po godzinach",
+        "contact": "Kontakt"
+    },
+    "hero": {
+        "role": "Programista Laravel",
+        "tagline": "Tworzę aplikacje webowe i panele administracyjne, na których firmy pracują na co dzień.",
+        "status": "Przyjmuję nowe projekty",
+        "cta": "Napisz do mnie"
+    },
+    "about": {
+        "title": "O mnie",
+        "body": [
+            "Cześć, jestem Daniel, programista PHP z Polski.",
+            "Przez trzy lata w ModulesGarden tworzyłem moduły WHMCS, z których korzystają firmy hostingowe. Dziś buduję aplikacje i panele w Laravelu dla klientów, a także OnSide, własną platformę dla EA FC Pro Clubs.",
+            "Lubię prosty, niezawodny kod i panele, w których szybko się pracuje."
+        ]
+    },
+    "work": {
+        "title": "Wybrane projekty",
+        "visit": "Zobacz stronę",
+        "own": "Własny produkt",
+        "client": "Projekt dla klienta",
+        "more": "Inne projekty",
+        "projects": {
+            "onside": {
+                "title": "OnSide",
+                "kind": "Własny produkt",
+                "text": "Miejsce dla lig EA FC Pro Clubs: drużyny, terminarze, tabele i statystyki zawodników, synchronizowane z danymi meczów EA."
+            },
+            "partio": {
+                "title": "Partio",
+                "kind": "Części samochodowe",
+                "text": "Szybki import i wyszukiwanie produktów w bazie liczącej miliony rekordów oraz wgrywanie plików przez zespół."
+            },
+            "grupapwc": {
+                "title": "Grupa PWC",
+                "kind": "Budownictwo",
+                "text": "Jeden panel dla pracowników i maszyn: przepracowane godziny, spotkania i urlopy."
+            },
+            "scanbot": {
+                "title": "Scanbot dla Filament",
+                "kind": "Wtyczka dla Leistungslotse",
+                "text": "Własny komponent Filament, który wprowadza skanowanie dokumentów Scanbot SDK do panelu administracyjnego."
+            },
+            "fivio": {
+                "title": "Fivio",
+                "kind": "Zaopatrzenie",
+                "text": "Informuje dostawców o zapotrzebowaniu na produkty i prowadzi aukcję na najlepszą ofertę."
+            }
+        },
+        "moreProjects": {
+            "menago": { "title": "Menago League", "note": "Własny projekt · liga trybu kariery EA FC" },
+            "wordpress": { "title": "WordPress Manager for WHMCS", "note": "Zespół ModulesGarden" },
+            "cpanel": { "title": "cPanel Extended for WHMCS", "note": "Zespół ModulesGarden" },
+            "plesk": { "title": "Plesk Extended for WHMCS", "note": "Zespół ModulesGarden" },
+            "directadmin": { "title": "DirectAdmin Extended for WHMCS", "note": "Zespół ModulesGarden" },
+            "multibrand": { "title": "Multibrand for WHMCS", "note": "Zespół ModulesGarden" },
+            "quotes": { "title": "Quotes Automation for WHMCS", "note": "Zespół ModulesGarden" },
+            "domains": { "title": "Domain Orders Extended for WHMCS", "note": "Zespół ModulesGarden" }
+        }
+    },
+    "testimonials": {
+        "title": "Co mówią klienci"
+    },
+    "experience": {
+        "title": "Doświadczenie",
+        "now": "obecnie",
+        "jobs": {
+            "now": {
+                "from": "2024",
+                "to": "obecnie",
+                "role": "Programista Laravel (freelance)",
+                "company": "",
+                "text": "Aplikacje i panele w Laravelu dla klientów oraz rozwój OnSide."
+            },
+            "modulesgarden": {
+                "from": "2021",
+                "to": "2024",
+                "role": "Programista",
+                "company": "ModulesGarden",
+                "text": "Tworzenie i utrzymanie modułów WHMCS do automatyzacji hostingu oraz naprawa błędów zgłaszanych przez klientów."
+            },
+            "jomafive": {
+                "from": "2021",
+                "to": "2021",
+                "role": "Programista",
+                "company": "Jomafive",
+                "text": "Aplikacja webowa do organizowania wydarzeń i turniejów piłkarskich dla dzieci."
+            }
+        },
+        "stack": "Na co dzień"
+    },
+    "after": {
+        "title": "Po godzinach",
+        "cards": {
+            "arsenal": { "label": "Piłka nożna", "title": "Arsenal", "text": "Każdy mecz Premier League. Bez wyjątków." },
+            "proclubs": { "label": "Gry", "title": "EA FC Pro Clubs", "text": "Gram ze składem i buduję OnSide dla całej społeczności." },
+            "outdoors": { "label": "Offline", "title": "Góry i książki", "text": "Szlaki niedaleko domu, a potem dobra książka." }
+        }
+    },
+    "contact": {
+        "title": "Kontakt",
+        "lead": "Masz pomysł na projekt? Opowiedz mi o nim.",
+        "email": "Napisz maila"
+    },
+    "footer": {
+        "built": "Zbudowane w HTML, Tailwind i Alpine.js.",
+        "support": "Podoba ci się OnSide?",
+        "beer": "Postaw mi piwo",
+        "patronite": "Patronite",
+        "kick": "Kopnij piłkę",
+        "goals": "Gole"
+    }
+}

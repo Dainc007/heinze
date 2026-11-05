@@ -1,0 +1,109 @@
+/* Self-hosted fonts (no Google Fonts requests, better for GDPR). */
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/jetbrains-mono";
+@import "tailwindcss";
+
+/* Templates live outside the default scan paths in some setups; make it explicit. */
+@source "../templates";
+
+/*
+ * Design tokens. Change the look of the whole site here.
+ * Use them as Tailwind classes: bg-ink-950, text-muted, text-accent, font-mono, …
+ */
+@theme {
+    --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+
+    --color-ink-950: #0b0c0e; /* page background */
+    --color-ink-900: #121418; /* cards */
+    --color-ink-800: #1d2026; /* borders */
+    --color-ink-700: #2b2f37; /* strong borders, hover */
+    --color-fg: #f2f2f0; /* main text */
+    --color-muted: #a1a4ab; /* secondary text (passes 4.5:1 on ink-950 and ink-900) */
+    --color-accent: #c8f169; /* lime: links, highlights */
+    --color-accent-ink: #0b0c0e; /* text on accent */
+    --color-arsenal: #db0007;
+}
+
+@layer base {
+    html {
+        @apply scroll-smooth bg-ink-950 text-fg antialiased;
+        scroll-padding-top: 5rem;
+    }
+
+    body {
+        @apply font-sans;
+    }
+
+    [x-cloak] {
+        display: none !important;
+    }
+
+    ::selection {
+        @apply bg-accent text-accent-ink;
+    }
+
+    :focus-visible {
+        @apply outline-2 outline-offset-4 outline-accent;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            @apply scroll-auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+}
+
+@layer components {
+    .section-label {
+        @apply mb-6 flex items-center gap-3 font-mono text-xs tracking-widest text-muted uppercase;
+    }
+
+    .section-label::after {
+        @apply h-px flex-1 bg-ink-800 content-[''];
+    }
+
+    .tag {
+        @apply rounded-full bg-ink-800 px-2.5 py-1 font-mono text-xs text-fg/80;
+    }
+
+    .nav-link {
+        @apply flex items-center gap-3 py-1.5 text-sm text-muted transition-colors hover:text-fg;
+    }
+
+    .nav-link::before {
+        @apply h-px w-6 bg-ink-700 transition-all content-[''];
+    }
+
+    .nav-link.is-active {
+        @apply text-fg;
+    }
+
+    .nav-link.is-active::before {
+        @apply w-12 bg-accent;
+    }
+}
+
+/* Footer easter egg: the ball rolls into the net. */
+@keyframes kick {
+    0% {
+        transform: translateX(0) rotate(0);
+    }
+    60% {
+        transform: translateX(3.25rem) rotate(540deg);
+    }
+    100% {
+        transform: translateX(0) rotate(720deg);
+    }
+}
+
+.ball-kicked {
+    animation: kick 0.7s cubic-bezier(0.3, 0.7, 0.4, 1);
+}

@@ -1,0 +1,36 @@
+{% from "partials/icons.njk" import arrow %}
+{# Intro + navigation. Sticky on the left from lg up, a normal block on phones. #}
+<header class="pt-10 pb-6 lg:sticky lg:top-0 lg:flex lg:h-dvh lg:flex-col lg:justify-between lg:py-20">
+    <div>
+        <div class="flex flex-wrap items-center gap-4">
+            <img src="{{ site.photo }}" alt="{{ site.name }}" width="72" height="72" class="size-18 rounded-full object-cover object-top ring-1 ring-ink-700">
+            <p class="inline-flex items-center gap-2 rounded-full border border-ink-800 bg-ink-900 px-3 py-1.5 text-xs text-muted">
+                <span class="relative flex size-2"><span class="absolute inline-flex size-full animate-ping rounded-full bg-accent opacity-60"></span><span class="relative inline-flex size-2 rounded-full bg-accent"></span></span>
+                {{ t.hero.status }}
+            </p>
+        </div>
+
+        <h1 class="mt-7 text-4xl font-semibold tracking-tight sm:text-5xl">
+            <a href="{{ url }}">{{ site.name }}</a>
+        </h1>
+        <p class="mt-3 font-mono text-sm text-accent">&gt; {{ t.hero.role | lower }}<span class="animate-pulse">_</span></p>
+        <p class="mt-5 max-w-sm text-lg/relaxed text-muted">{{ t.hero.tagline }}</p>
+
+        <nav aria-label="{{ t.menu }}" class="mt-14 hidden lg:block">
+            <ul>
+                {% for id in site.sections %}
+                <li><a href="#{{ id }}" class="nav-link" :class="{ 'is-active': active === '{{ id }}' }">{{ t.nav[id] }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+
+    <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="mailto:{{ site.email }}" class="inline-flex min-h-11 items-center rounded-full bg-accent px-5 text-sm font-medium text-accent-ink transition hover:brightness-110">{{ t.hero.cta }}</a>
+        <ul class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted">
+            <li><a href="{{ site.links.github }}" class="inline-flex items-center gap-1 hover:text-fg">GitHub {{ arrow("size-3.5") }}</a></li>
+            <li><a href="{{ site.links.linkedin }}" class="inline-flex items-center gap-1 hover:text-fg">LinkedIn {{ arrow("size-3.5") }}</a></li>
+        </ul>
+        <div class="hidden lg:block">{% include "partials/lang-switch.njk" %}</div>
+    </div>
+</header>

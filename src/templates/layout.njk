@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="{{ locale }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ t.meta.title }}</title>
+    <meta name="description" content="{{ t.meta.description }}">
+    <meta name="theme-color" content="#0b0c0e">
+
+    <link rel="canonical" href="{{ site.url }}{{ url }}">
+    {% for alt in alternates %}
+    <link rel="alternate" hreflang="{{ alt.locale }}" href="{{ site.url }}{{ alt.url }}">
+    {% endfor %}
+    <link rel="alternate" hreflang="x-default" href="{{ site.url }}/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ site.name }}">
+    <meta property="og:title" content="{{ t.meta.title }}">
+    <meta property="og:description" content="{{ t.meta.description }}">
+    <meta property="og:url" content="{{ site.url }}{{ url }}">
+    <meta property="og:locale" content="{{ 'pl_PL' if locale == 'pl' else 'en_GB' }}">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/src/styles/app.css">
+    <script type="module" src="/src/js/app.js"></script>
+</head>
+<body x-data="scrollspy">
+    <a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:bg-accent focus:px-4 focus:py-2 focus:text-accent-ink">{{ t.skip }}</a>
+
+    {% block body %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,128 @@
+{
+    "url": "https://heinze.com.pl",
+    "name": "Daniel Heinze",
+    "email": "danielheinze96@gmail.com",
+    "photo": "/images/me.webp",
+    "sections": [
+        "about",
+        "work",
+        "experience",
+        "after",
+        "contact"
+    ],
+    "links": {
+        "github": "https://github.com/Dainc007",
+        "linkedin": "https://www.linkedin.com/in/daniel-heinze-199ab4209/",
+        "useme": "https://useme.com/en/roles/contractor/daniel-heinze,137196/"
+    },
+    "support": {
+        "beer": "#TODO-buy-me-a-beer",
+        "patronite": "#TODO-patronite"
+    },
+    "stack": [
+        "PHP",
+        "Laravel",
+        "Filament",
+        "Livewire",
+        "Alpine.js",
+        "Tailwind",
+        "MySQL",
+        "WHMCS"
+    ],
+    "projects": [
+        {
+            "id": "onside",
+            "image": "/images/onside.webp",
+            "url": "",
+            "stack": [
+                "Laravel",
+                "Filament",
+                "Livewire"
+            ],
+            "featured": true
+        },
+        {
+            "id": "partio",
+            "image": "/images/partio.webp",
+            "url": "https://www.partio.pl/",
+            "stack": [
+                "Laravel",
+                "MySQL"
+            ]
+        },
+        {
+            "id": "grupapwc",
+            "image": "/images/grupapwc.webp",
+            "url": "https://www.grupapwc.pl/",
+            "stack": [
+                "Laravel"
+            ]
+        },
+        {
+            "id": "scanbot",
+            "image": "/images/scanbot.webp",
+            "url": "https://leistungslotse.com/",
+            "stack": [
+                "Filament",
+                "Scanbot SDK"
+            ]
+        },
+        {
+            "id": "fivio",
+            "image": "/images/fivio.webp",
+            "url": "https://www.fivio.pl/",
+            "stack": [
+                "Laravel"
+            ]
+        }
+    ],
+    "moreProjects": [
+        {
+            "id": "menago",
+            "url": "https://www.menagoleague.heinze.com.pl/"
+        },
+        {
+            "id": "wordpress",
+            "url": "https://www.modulesgarden.com/products/whmcs/wordpress-manager"
+        },
+        {
+            "id": "cpanel",
+            "url": "https://www.modulesgarden.com/products/whmcs/cpanel-extended"
+        },
+        {
+            "id": "plesk",
+            "url": "https://www.modulesgarden.com/products/whmcs/plesk-extended"
+        },
+        {
+            "id": "directadmin",
+            "url": "https://www.modulesgarden.com/products/whmcs/directadmin-extended"
+        },
+        {
+            "id": "multibrand",
+            "url": "https://www.modulesgarden.com/products/whmcs/multibrand"
+        },
+        {
+            "id": "quotes",
+            "url": "https://www.modulesgarden.com/products/whmcs/quotes-automation"
+        },
+        {
+            "id": "domains",
+            "url": "https://www.modulesgarden.com/products/whmcs/domain-orders-extended"
+        }
+    ],
+    "experience": [
+        {
+            "id": "now",
+            "url": ""
+        },
+        {
+            "id": "modulesgarden",
+            "url": "https://www.modulesgarden.com/"
+        },
+        {
+            "id": "jomafive",
+            "url": "https://jomafive.com/"
+        }
+    ],
+    "testimonials": []
+}

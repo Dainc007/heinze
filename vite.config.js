@@ -1,20 +1,15 @@
+import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
-import laravel from 'laravel-vite-plugin';
-import vue from '@vitejs/plugin-vue';
+import pages from './plugins/pages.js';
 
 export default defineConfig({
     plugins: [
-        laravel({
-            input: 'resources/js/app.js',
-            ssr: 'resources/js/ssr.js',
-            refresh: true,
-        }),
-        vue({
-            template: {
-                transformAssetUrls: {
-                    base: null,
-                    includeAbsolute: false,
-                },
+        tailwindcss(),
+        pages({
+            // Entry file => template + language. Add a page here and create its stub file.
+            entries: {
+                'index.html': { template: 'home.njk', locale: 'en' },
+                'pl/index.html': { template: 'home.njk', locale: 'pl' },
             },
         }),
     ],
