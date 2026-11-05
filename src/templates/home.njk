@@ -20,7 +20,15 @@
                 {% endif %}
             </p>
             <h1 class="mt-6 text-balance font-display text-[clamp(2.5rem,6vw,4rem)] leading-[1.04] font-semibold tracking-[-0.035em]">
-                {{ t.hero.title }} <span class="text-accent">{{ t.hero.titleAccent }}</span>
+                {{ t.hero.title }}
+                {# Typed endings. All phrases share one grid cell, so the slot is as wide as the longest one and the headline never reflows. #}
+                <span x-data="headlineTyper" class="inline-grid text-accent">
+                    {% for phrase in t.hero.titlePhrases %}
+                    <span data-phrase class="invisible col-start-1 row-start-1 whitespace-nowrap" aria-hidden="true">{{ phrase }}</span>
+                    {% endfor %}
+                    <span class="col-start-1 row-start-1 whitespace-nowrap" aria-hidden="true"><span x-ref="text">{{ t.hero.titlePhrases[0] }}</span><span x-ref="caret" class="headline-caret is-idle"></span></span>
+                    <span class="sr-only">{{ t.hero.titlePhrases[0] }}</span>
+                </span>
             </h1>
             <p class="mt-7 max-w-[36rem] text-lg/relaxed text-muted sm:text-[19px]">{{ t.hero.lead }}</p>
             <div class="mt-9 flex flex-wrap gap-3">

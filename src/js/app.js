@@ -59,6 +59,38 @@ Alpine.data('typewriter', () => ({
     },
 }));
 
+/**
+ * Headline: deletes the green ending and types the next one, in a loop.
+ * Phrases come from the [data-phrase] elements (hero.titlePhrases in the language files).
+ * The first phrase is in the HTML, so the headline reads fine without JS or with reduced motion.
+ */
+Alpine.data('headlineTyper', () => ({
+    async init() {
+        const phrases = [...this.$el.querySelectorAll('[data-phrase]')].map((el) => el.textContent.trim());
+        if (phrases.length < 2 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+        const text = this.$refs.text;
+        const caret = this.$refs.caret;
+        const idle = (on) => caret.classList.toggle('is-idle', on);
+
+        for (let i = 1; ; i = (i + 1) % phrases.length) {
+            await sleep(2600);
+            idle(false);
+            while (text.textContent.length) {
+                text.textContent = text.textContent.slice(0, -1);
+                await sleep(28);
+            }
+            await sleep(260);
+            for (const char of phrases[i]) {
+                text.textContent += char;
+                await sleep(55 + Math.random() * 50);
+            }
+            idle(true);
+        }
+    },
+}));
+
 /** Footer easter egg. */
 Alpine.data('ball', () => ({
     goals: 0,

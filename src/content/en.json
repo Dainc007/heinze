@@ -15,7 +15,11 @@
         "eyebrow": "PHP & Laravel developer · Poland",
         "available": "Open for projects",
         "title": "I build software that businesses",
-        "titleAccent": "actually run on.",
+        "titlePhrases": [
+            "actually run on.",
+            "use every day.",
+            "can rely on."
+        ],
         "lead": "Hi, I'm Daniel. At CloudLinux I work on Imunify Connect, a malware scanning API for WordPress and PHP plugins. After hours I build OnSide, my own platform for EA FC Pro Clubs.",
         "primary": "See my work",
         "secondary": "Write to me",

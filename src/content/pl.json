@@ -15,7 +15,11 @@
         "eyebrow": "Programista PHP i Laravel · Polska",
         "available": "Przyjmuję projekty",
         "title": "Tworzę oprogramowanie, na którym firmy",
-        "titleAccent": "naprawdę pracują.",
+        "titlePhrases": [
+            "naprawdę pracują.",
+            "pracują każdego dnia.",
+            "mogą polegać."
+        ],
         "lead": "Cześć, jestem Daniel. W CloudLinux pracuję nad Imunify Connect, API do skanowania malware dla wtyczek WordPress i PHP. Po godzinach rozwijam OnSide, własną platformę dla EA FC Pro Clubs.",
         "primary": "Zobacz projekty",
         "secondary": "Napisz do mnie",
