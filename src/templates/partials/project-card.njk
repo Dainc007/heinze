@@ -1,8 +1,8 @@
 {#
     Project building blocks. Usage:
-    {% from "partials/project-card.njk" import featured, row %}
+    {% from "partials/project-card.njk" import featured, card %}
     {{ featured(p, t.work.projects[p.id], t) }}   big card with a browser-framed screenshot
-    {{ row(p, t.work.projects[p.id], t) }}        compact list row for client work
+    {{ card(p, t.work.projects[p.id], t) }}       client project card
 #}
 
 {% macro arrowIcon(class) %}<svg class="{{ class }}" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg>{% endmacro %}
@@ -48,21 +48,21 @@
 </article>
 {% endmacro %}
 
-{% macro row(p, tp, t) %}
-<li class="group relative grid grid-cols-[6.5rem_minmax(0,1fr)] gap-4 border-b border-ink-800 py-5 transition-colors sm:grid-cols-[11rem_minmax(0,1fr)_auto] sm:items-center sm:gap-6 sm:px-3 sm:hover:bg-ink-900/70">
-    <img src="{{ p.image }}" alt="" loading="lazy" class="aspect-[16/10] w-full rounded-lg border border-ink-800 object-cover object-top">
-    <div class="min-w-0">
-        <p class="font-mono text-[11px] tracking-wide text-muted uppercase">{{ tp.kind }}</p>
-        <h4 class="mt-1 font-display text-lg font-semibold tracking-tight sm:text-xl">
-            {% if p.url %}<a href="{{ p.url }}" class="after:absolute after:inset-0">{{ tp.title }}</a>{% else %}{{ tp.title }}{% endif %}
+{# Client project card: screenshot on top, text below. The whole card is the link. #}
+{% macro card(p, tp, t) %}
+<article class="group relative flex flex-col overflow-hidden rounded-[18px] border border-ink-800 bg-ink-900 transition hover:border-ink-700">
+    <img src="{{ p.image }}" alt="{{ tp.title }}" loading="lazy" class="aspect-video w-full border-b border-ink-800 object-cover object-top">
+    <div class="flex flex-1 flex-col p-6 sm:p-7">
+        <p class="font-mono text-xs tracking-wide text-accent uppercase">{{ tp.kind }}</p>
+        <h4 class="mt-2 font-display text-2xl font-semibold tracking-tight">
+            {% if p.url %}
+            <a href="{{ p.url }}" class="inline-flex items-center gap-1.5 after:absolute after:inset-0 group-hover:text-accent">{{ tp.title }}{{ arrowIcon("size-5") }}</a>
+            {% else %}{{ tp.title }}{% endif %}
         </h4>
-        <p class="mt-1 text-sm/relaxed text-muted">{{ tp.text }}</p>
-        <ul class="mt-3 flex flex-wrap gap-2">
+        <p class="mt-2 text-muted">{{ tp.text }}</p>
+        <ul class="mt-auto flex flex-wrap gap-2 pt-5">
             {% for tech in p.stack %}<li class="tag">{{ tech }}</li>{% endfor %}
         </ul>
     </div>
-    {% if p.url %}
-    <span class="hidden size-11 place-items-center rounded-full border border-ink-700 text-muted transition group-hover:border-accent group-hover:text-accent sm:grid" aria-hidden="true">{{ arrowIcon("size-4") }}</span>
-    {% endif %}
-</li>
+</article>
 {% endmacro %}

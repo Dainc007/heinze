@@ -1,6 +1,6 @@
 {% extends "layout.njk" %}
 {% from "partials/icons.njk" import arrow, ball %}
-{% from "partials/project-card.njk" import featured, row %}
+{% from "partials/project-card.njk" import featured, card %}
 
 {% block body %}
 {% include "partials/header.njk" %}
@@ -66,12 +66,12 @@
             {% endif %}{% endfor %}
         </div>
 
-        <h3 class="mt-16 mb-2 font-mono text-xs tracking-widest text-muted uppercase">{{ t.work.clients }}</h3>
-        <ul class="border-t border-ink-800">
+        <h3 class="mt-16 font-mono text-xs tracking-widest text-muted uppercase">{{ t.work.clients }}</h3>
+        <div class="mt-4 grid gap-6 md:grid-cols-2">
             {% for p in site.projects %}{% if not p.featured %}
-            {{ row(p, t.work.projects[p.id], t) }}
+            {{ card(p, t.work.projects[p.id], t) }}
             {% endif %}{% endfor %}
-        </ul>
+        </div>
 
         <h3 class="mt-14 mb-3 font-mono text-xs tracking-widest text-muted uppercase">{{ t.work.more }}</h3>
         <ul class="grid border-t border-ink-800 md:grid-cols-2 md:gap-x-10">
