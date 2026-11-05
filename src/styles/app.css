@@ -95,6 +95,17 @@
     }
 }
 
+/* Hero terminal cursor. */
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.term-cursor {
+    animation: blink 1.1s steps(1) infinite;
+}
+
 /* Footer easter egg: the ball rolls into the net. */
 @keyframes kick {
     0% {

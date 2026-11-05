@@ -2,7 +2,6 @@
     "url": "https://heinze.com.pl",
     "name": "Daniel Heinze",
     "email": "danielheinze96@gmail.com",
-    "photo": "/images/me.webp",
     "available": true,
     "sections": ["work", "about", "after", "contact"],
     "links": {

@@ -19,7 +19,7 @@
                 </span>
                 {% endif %}
             </p>
-            <h1 class="mt-6 font-display text-[clamp(2.5rem,6vw,4rem)] leading-[1.04] font-semibold tracking-[-0.035em]">
+            <h1 class="mt-6 text-balance font-display text-[clamp(2.5rem,6vw,4rem)] leading-[1.04] font-semibold tracking-[-0.035em]">
                 {{ t.hero.title }} <span class="text-accent">{{ t.hero.titleAccent }}</span>
             </h1>
             <p class="mt-7 max-w-[36rem] text-lg/relaxed text-muted sm:text-[19px]">{{ t.hero.lead }}</p>
@@ -28,8 +28,20 @@
                 <a href="#contact" class="btn-secondary">{{ t.hero.secondary }}</a>
             </div>
         </div>
-        <div class="w-full max-w-[380px] flex-[1_1_300px]">
-            <img src="{{ site.photo }}" alt="{{ t.hero.photoAlt }}" width="800" height="1000" class="aspect-[4/5] w-full rounded-[20px] object-cover object-top grayscale-[25%]">
+        <div x-data="typewriter" class="w-full max-w-[470px] min-w-0 flex-[1_1_340px] overflow-hidden rounded-[18px] border border-ink-800 bg-ink-900">
+            <div class="flex items-center gap-2 border-b border-ink-800 px-4 py-3">
+                <span class="size-2.5 rounded-full bg-ink-700"></span><span class="size-2.5 rounded-full bg-ink-700"></span><span class="size-2.5 rounded-full bg-ink-700"></span>
+                <span class="ml-2 font-mono text-xs text-muted">daniel@heinze: ~</span>
+            </div>
+            <div class="grid gap-1.5 p-5 font-mono text-[13px]/relaxed sm:text-sm/relaxed" role="img" aria-label="{{ t.hero.terminalLabel }}">
+                {% for step in t.hero.terminal %}
+                <p data-row="cmd" class="{{ '' if loop.first else 'mt-3' }}"><span class="text-accent">$</span> <span data-type>{{ step.cmd }}</span></p>
+                {% for line in step.out %}
+                <p data-row="out" class="whitespace-pre-wrap text-muted">{{ line }}</p>
+                {% endfor %}
+                {% endfor %}
+                <p data-row="prompt" class="mt-3"><span class="text-accent">$</span> <span x-ref="cursor" class="term-cursor inline-block h-[1.1em] w-[0.6em] translate-y-[0.15em] bg-accent" aria-hidden="true"></span></p>
+            </div>
         </div>
     </section>
 

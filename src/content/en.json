@@ -19,7 +19,28 @@
         "lead": "Hi, I'm Daniel. At CloudLinux I work on Imunify Connect, a malware scanning API for WordPress and PHP plugins. After hours I build OnSide, my own platform for EA FC Pro Clubs.",
         "primary": "See my work",
         "secondary": "Write to me",
-        "photoAlt": "Daniel Heinze"
+        "terminalLabel": "Terminal: Daniel Heinze, PHP & Laravel developer. Works on Imunify Connect at CloudLinux and on OnSide.",
+        "terminal": [
+            {
+                "cmd": "whoami",
+                "out": [
+                    "Daniel Heinze, PHP & Laravel developer"
+                ]
+            },
+            {
+                "cmd": "cat work.txt",
+                "out": [
+                    "CloudLinux  → Imunify Connect",
+                    "OnSide      → onside.com.pl"
+                ]
+            },
+            {
+                "cmd": "ls stack/",
+                "out": [
+                    "php  laravel  filament  livewire  alpine"
+                ]
+            }
+        ]
     },
     "work": {
         "title": "Selected work",
@@ -59,14 +80,38 @@
             }
         },
         "moreProjects": {
-            "menago": { "title": "Menago League", "note": "Own project · EA FC career-mode league" },
-            "wordpress": { "title": "WordPress Manager for WHMCS", "note": "ModulesGarden team" },
-            "cpanel": { "title": "cPanel Extended for WHMCS", "note": "ModulesGarden team" },
-            "plesk": { "title": "Plesk Extended for WHMCS", "note": "ModulesGarden team" },
-            "directadmin": { "title": "DirectAdmin Extended for WHMCS", "note": "ModulesGarden team" },
-            "multibrand": { "title": "Multibrand for WHMCS", "note": "ModulesGarden team" },
-            "quotes": { "title": "Quotes Automation for WHMCS", "note": "ModulesGarden team" },
-            "domains": { "title": "Domain Orders Extended for WHMCS", "note": "ModulesGarden team" }
+            "menago": {
+                "title": "Menago League",
+                "note": "Own project · EA FC career-mode league"
+            },
+            "wordpress": {
+                "title": "WordPress Manager for WHMCS",
+                "note": "ModulesGarden team"
+            },
+            "cpanel": {
+                "title": "cPanel Extended for WHMCS",
+                "note": "ModulesGarden team"
+            },
+            "plesk": {
+                "title": "Plesk Extended for WHMCS",
+                "note": "ModulesGarden team"
+            },
+            "directadmin": {
+                "title": "DirectAdmin Extended for WHMCS",
+                "note": "ModulesGarden team"
+            },
+            "multibrand": {
+                "title": "Multibrand for WHMCS",
+                "note": "ModulesGarden team"
+            },
+            "quotes": {
+                "title": "Quotes Automation for WHMCS",
+                "note": "ModulesGarden team"
+            },
+            "domains": {
+                "title": "Domain Orders Extended for WHMCS",
+                "note": "ModulesGarden team"
+            }
         }
     },
     "testimonials": {
@@ -110,9 +155,21 @@
     "after": {
         "title": "After hours",
         "cards": {
-            "arsenal": { "label": "Football", "title": "Arsenal, every match", "text": "Premier League weekends are not negotiable." },
-            "proclubs": { "label": "Gaming", "title": "EA FC Pro Clubs", "text": "Playing with the squad, and building OnSide for the whole community." },
-            "outdoors": { "label": "Offline", "title": "Mountains & books", "text": "Trails close to home, and a good book after." }
+            "arsenal": {
+                "label": "Football",
+                "title": "Arsenal, every match",
+                "text": "Premier League weekends are not negotiable."
+            },
+            "proclubs": {
+                "label": "Gaming",
+                "title": "EA FC Pro Clubs",
+                "text": "Playing with the squad, and building OnSide for the whole community."
+            },
+            "outdoors": {
+                "label": "Offline",
+                "title": "Mountains & books",
+                "text": "Trails close to home, and a good book after."
+            }
         }
     },
     "contact": {

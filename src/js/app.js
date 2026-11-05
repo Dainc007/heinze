@@ -19,6 +19,46 @@ Alpine.data('scrollspy', () => ({
     },
 }));
 
+/**
+ * Hero terminal: types each command, then shows its output.
+ * The full text is in the HTML, so it reads fine without JS or with reduced motion.
+ * Rows: data-row="cmd" (its [data-type] text gets typed), "out", "prompt"; x-ref="cursor".
+ */
+Alpine.data('typewriter', () => ({
+    async init() {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+        const cursor = this.$refs.cursor;
+        const rows = [...this.$el.querySelectorAll('[data-row]')];
+        const texts = rows.map((row) => row.querySelector('[data-type]')?.textContent ?? '');
+
+        // Hide rows but keep their space, so the box does not jump while typing.
+        rows.forEach((row) => (row.style.visibility = 'hidden'));
+        await sleep(400);
+
+        for (const [i, row] of rows.entries()) {
+            row.style.visibility = 'visible';
+
+            if (row.dataset.row === 'cmd') {
+                const target = row.querySelector('[data-type]');
+                target.textContent = '';
+                target.after(cursor);
+                await sleep(300);
+                for (const char of texts[i]) {
+                    target.textContent += char;
+                    await sleep(45 + Math.random() * 55);
+                }
+                await sleep(250);
+            } else if (row.dataset.row === 'out') {
+                await sleep(110);
+            } else {
+                row.append(cursor);
+            }
+        }
+    },
+}));
+
 /** Footer easter egg. */
 Alpine.data('ball', () => ({
     goals: 0,

@@ -19,7 +19,28 @@
         "lead": "Cześć, jestem Daniel. W CloudLinux pracuję nad Imunify Connect, API do skanowania malware dla wtyczek WordPress i PHP. Po godzinach rozwijam OnSide, własną platformę dla EA FC Pro Clubs.",
         "primary": "Zobacz projekty",
         "secondary": "Napisz do mnie",
-        "photoAlt": "Daniel Heinze"
+        "terminalLabel": "Terminal: Daniel Heinze, programista PHP i Laravel. Pracuje nad Imunify Connect w CloudLinux i nad OnSide.",
+        "terminal": [
+            {
+                "cmd": "whoami",
+                "out": [
+                    "Daniel Heinze, programista PHP i Laravel"
+                ]
+            },
+            {
+                "cmd": "cat work.txt",
+                "out": [
+                    "CloudLinux  → Imunify Connect",
+                    "OnSide      → onside.com.pl"
+                ]
+            },
+            {
+                "cmd": "ls stack/",
+                "out": [
+                    "php  laravel  filament  livewire  alpine"
+                ]
+            }
+        ]
     },
     "work": {
         "title": "Wybrane projekty",
@@ -59,14 +80,38 @@
             }
         },
         "moreProjects": {
-            "menago": { "title": "Menago League", "note": "Własny projekt · liga trybu kariery EA FC" },
-            "wordpress": { "title": "WordPress Manager for WHMCS", "note": "Zespół ModulesGarden" },
-            "cpanel": { "title": "cPanel Extended for WHMCS", "note": "Zespół ModulesGarden" },
-            "plesk": { "title": "Plesk Extended for WHMCS", "note": "Zespół ModulesGarden" },
-            "directadmin": { "title": "DirectAdmin Extended for WHMCS", "note": "Zespół ModulesGarden" },
-            "multibrand": { "title": "Multibrand for WHMCS", "note": "Zespół ModulesGarden" },
-            "quotes": { "title": "Quotes Automation for WHMCS", "note": "Zespół ModulesGarden" },
-            "domains": { "title": "Domain Orders Extended for WHMCS", "note": "Zespół ModulesGarden" }
+            "menago": {
+                "title": "Menago League",
+                "note": "Własny projekt · liga trybu kariery EA FC"
+            },
+            "wordpress": {
+                "title": "WordPress Manager for WHMCS",
+                "note": "Zespół ModulesGarden"
+            },
+            "cpanel": {
+                "title": "cPanel Extended for WHMCS",
+                "note": "Zespół ModulesGarden"
+            },
+            "plesk": {
+                "title": "Plesk Extended for WHMCS",
+                "note": "Zespół ModulesGarden"
+            },
+            "directadmin": {
+                "title": "DirectAdmin Extended for WHMCS",
+                "note": "Zespół ModulesGarden"
+            },
+            "multibrand": {
+                "title": "Multibrand for WHMCS",
+                "note": "Zespół ModulesGarden"
+            },
+            "quotes": {
+                "title": "Quotes Automation for WHMCS",
+                "note": "Zespół ModulesGarden"
+            },
+            "domains": {
+                "title": "Domain Orders Extended for WHMCS",
+                "note": "Zespół ModulesGarden"
+            }
         }
     },
     "testimonials": {
@@ -110,9 +155,21 @@
     "after": {
         "title": "Po godzinach",
         "cards": {
-            "arsenal": { "label": "Piłka nożna", "title": "Arsenal, każdy mecz", "text": "Weekendy z Premier League nie podlegają negocjacjom." },
-            "proclubs": { "label": "Gry", "title": "EA FC Pro Clubs", "text": "Gram ze składem i buduję OnSide dla całej społeczności." },
-            "outdoors": { "label": "Offline", "title": "Góry i książki", "text": "Szlaki niedaleko domu, a potem dobra książka." }
+            "arsenal": {
+                "label": "Piłka nożna",
+                "title": "Arsenal, każdy mecz",
+                "text": "Weekendy z Premier League nie podlegają negocjacjom."
+            },
+            "proclubs": {
+                "label": "Gry",
+                "title": "EA FC Pro Clubs",
+                "text": "Gram ze składem i buduję OnSide dla całej społeczności."
+            },
+            "outdoors": {
+                "label": "Offline",
+                "title": "Góry i książki",
+                "text": "Szlaki niedaleko domu, a potem dobra książka."
+            }
         }
     },
     "contact": {
