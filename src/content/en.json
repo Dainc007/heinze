@@ -1,7 +1,7 @@
 {
     "meta": {
-        "title": "Daniel Heinze — PHP & Laravel developer",
-        "description": "Daniel Heinze, PHP and Laravel developer from Poland. Software engineer at CloudLinux, working on Imunify Connect, and creator of OnSide."
+        "title": "Daniel Heinze — Software Developer",
+        "description": "Daniel Heinze, Software Developer from Poland. Works on Imunify Connect at CloudLinux and builds OnSide, a platform for EA FC Pro Clubs."
     },
     "skip": "Skip to content",
     "menu": "Menu",
@@ -12,7 +12,7 @@
         "contact": "Contact"
     },
     "hero": {
-        "eyebrow": "PHP & Laravel developer · Poland",
+        "eyebrow": "Software Developer · Poland",
         "available": "Open for projects",
         "title": "I build software that businesses",
         "titlePhrases": [
@@ -23,12 +23,12 @@
         "lead": "Hi, I'm Daniel. At CloudLinux I work on Imunify Connect, a malware scanning API for WordPress and PHP plugins. After hours I build OnSide, my own platform for EA FC Pro Clubs.",
         "primary": "See my work",
         "secondary": "Write to me",
-        "terminalLabel": "Terminal: Daniel Heinze, PHP & Laravel developer. Works on Imunify Connect at CloudLinux and on OnSide.",
+        "terminalLabel": "Terminal: Daniel Heinze, Software Developer. Works on Imunify Connect at CloudLinux and on OnSide.",
         "terminal": [
             {
                 "cmd": "whoami",
                 "out": [
-                    "Daniel Heinze, PHP & Laravel developer"
+                    "Daniel Heinze, Software Developer"
                 ]
             },
             {
@@ -50,36 +50,37 @@
         "title": "Selected work",
         "subtitle": "My own product, my day job and client projects",
         "more": "More projects",
+        "clients": "Client projects",
         "screenshotSoon": "Screenshot coming soon",
         "projects": {
             "onside": {
                 "title": "OnSide",
-                "kind": "My own product · onside.com.pl",
+                "kind": "My own product",
                 "text": "Everything for EA FC Pro Clubs in one place: self-service sign-up, teams, auto-generated fixtures, results verified through the EA API, public leagues, stats, rankings and achievements."
             },
             "imunify": {
                 "title": "Imunify Connect",
-                "kind": "CloudLinux · Day job",
+                "kind": "Day job at CloudLinux",
                 "text": "An API and PHP library that lets WordPress and PHP security plugins add Imunify's malware detection and cleanup under their own brand. Scans files by hash and, since the latest release, the WordPress database too."
             },
             "partio": {
                 "title": "Partio",
-                "kind": "Client · Automotive parts",
+                "kind": "Automotive parts",
                 "text": "Fast product import and search over a database of millions of records, with file uploads for the team."
             },
             "grupapwc": {
                 "title": "Grupa PWC",
-                "kind": "Client · Construction",
+                "kind": "Construction",
                 "text": "One panel for staff and machinery: worked hours, meetings and holidays."
             },
             "scanbot": {
                 "title": "Scanbot for Filament",
-                "kind": "Client · Leistungslotse",
+                "kind": "Filament plugin · Leistungslotse",
                 "text": "A custom Filament component that brings Scanbot SDK document scanning into an admin panel."
             },
             "fivio": {
                 "title": "Fivio",
-                "kind": "Client · Supply",
+                "kind": "Supply",
                 "text": "Tells suppliers what products are in demand and runs an auction for the best offer."
             }
         },
@@ -116,7 +117,8 @@
                 "title": "Domain Orders Extended for WHMCS",
                 "note": "ModulesGarden team"
             }
-        }
+        },
+        "visit": "Visit"
     },
     "testimonials": {
         "title": "What clients say",
@@ -158,22 +160,26 @@
     },
     "after": {
         "title": "After hours",
-        "cards": {
-            "arsenal": {
-                "label": "Football",
-                "title": "Arsenal, every match",
-                "text": "Premier League weekends are not negotiable."
-            },
-            "proclubs": {
-                "label": "Gaming",
-                "title": "EA FC Pro Clubs",
-                "text": "Playing with the squad, and building OnSide for the whole community."
-            },
-            "outdoors": {
-                "label": "Offline",
-                "title": "Mountains & books",
-                "text": "Trails close to home, and a good book after."
-            }
+        "arsenal": {
+            "label": "Matchday",
+            "title": "Arsenal",
+            "text": "Every Premier League match. Weekends are planned around kick-off.",
+            "admit": "Admit one",
+            "seatLabel": "Seat",
+            "seat": "My sofa",
+            "seasonLabel": "Season",
+            "season": "2026/27"
+        },
+        "proclubs": {
+            "label": "Now playing",
+            "title": "EA FC Pro Clubs",
+            "text": "Evenings with the squad. It's also why OnSide exists.",
+            "link": "See OnSide"
+        },
+        "outdoors": {
+            "label": "Offline",
+            "title": "Mountains & books",
+            "text": "Trails close to home, and a good book after."
         }
     },
     "contact": {

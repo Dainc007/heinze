@@ -19,6 +19,7 @@
         {
             "id": "onside",
             "image": "/images/onside.webp",
+            "domain": "onside.com.pl",
             "url": "https://onside.com.pl",
             "stack": ["Laravel", "Filament", "Livewire", "EA API"],
             "featured": true

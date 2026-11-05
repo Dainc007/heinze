@@ -1,36 +1,68 @@
 {#
-    One project card. Usage:
-    {% from "partials/project-card.njk" import card %}
-    {{ card(p, t.work.projects[p.id], t) }}
+    Project building blocks. Usage:
+    {% from "partials/project-card.njk" import featured, row %}
+    {{ featured(p, t.work.projects[p.id], t) }}   big card with a browser-framed screenshot
+    {{ row(p, t.work.projects[p.id], t) }}        compact list row for client work
 #}
-{% macro card(p, tp, t) %}
-<article class="group relative flex flex-col overflow-hidden rounded-[18px] border border-ink-800 bg-ink-900 transition hover:border-ink-700 {{ 'md:col-span-2' if p.featured else '' }}">
+
+{% macro arrowIcon(class) %}<svg class="{{ class }}" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg>{% endmacro %}
+
+{# Screenshot inside a simple browser window. Without `image` it shows a labelled placeholder. #}
+{% macro frame(p, tp, t) %}
+<div class="overflow-hidden rounded-xl border border-ink-700 bg-ink-950 shadow-[0_24px_60px_-30px_rgb(0_0_0/0.9)]">
+    <div class="flex items-center gap-1.5 border-b border-ink-800 px-3 py-2.5">
+        <span class="size-2 rounded-full bg-ink-700"></span><span class="size-2 rounded-full bg-ink-700"></span><span class="size-2 rounded-full bg-ink-700"></span>
+        <span class="ml-2 truncate rounded bg-ink-900 px-2.5 py-0.5 font-mono text-[11px] text-muted">{{ p.domain }}</span>
+    </div>
     {% if p.image %}
-    <img src="{{ p.image }}" alt="{{ tp.title }}" loading="lazy" class="w-full border-b border-ink-800 object-cover object-top {{ 'aspect-video md:aspect-[16/7]' if p.featured else 'aspect-video' }}">
+    <img src="{{ p.image }}" alt="{{ tp.title }}" loading="lazy" class="aspect-[16/10] w-full object-cover object-top">
     {% else %}
-    {# No screenshot yet: a neutral browser frame with the address. Set `image` in site.json to replace it. #}
-    <div class="flex flex-col border-b border-ink-800 bg-ink-950 {{ 'aspect-video md:aspect-[16/5]' if p.featured else 'aspect-video' }}">
-        <div class="flex items-center gap-2 border-b border-ink-800 px-4 py-3">
-            <span class="size-2.5 rounded-full bg-ink-700"></span><span class="size-2.5 rounded-full bg-ink-700"></span><span class="size-2.5 rounded-full bg-ink-700"></span>
-            <span class="ml-3 rounded-md bg-ink-900 px-3 py-1 font-mono text-xs text-muted">{{ p.domain }}</span>
-        </div>
-        <div class="flex flex-1 flex-col items-center justify-center gap-2 p-6 text-center">
-            <p class="font-display text-3xl font-semibold tracking-tight md:text-4xl">{{ tp.title }}</p>
-            <p class="font-mono text-xs text-muted">{{ t.work.screenshotSoon }}</p>
+    <div class="grid aspect-[16/10] place-items-center p-6 text-center">
+        <div>
+            <p class="font-display text-2xl font-semibold tracking-tight">{{ tp.title }}</p>
+            <p class="mt-1 font-mono text-xs text-muted">{{ t.work.screenshotSoon }}</p>
         </div>
     </div>
     {% endif %}
-    <div class="flex flex-1 flex-col p-6 sm:p-7">
+</div>
+{% endmacro %}
+
+{% macro featured(p, tp, t) %}
+<article class="grid overflow-hidden rounded-[20px] border border-ink-800 bg-ink-900 md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
+    <div class="flex flex-col p-6 sm:p-9">
         <p class="font-mono text-xs tracking-wide text-accent uppercase">{{ tp.kind }}</p>
-        <h3 class="mt-2 font-display font-semibold tracking-tight {{ 'text-3xl' if p.featured else 'text-2xl' }}">
-            {% if p.url %}
-            <a href="{{ p.url }}" class="inline-flex items-center gap-1.5 after:absolute after:inset-0 group-hover:text-accent">{{ tp.title }}<svg class="size-5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-            {% else %}{{ tp.title }}{% endif %}
-        </h3>
-        <p class="mt-2 text-muted {{ 'max-w-2xl' if p.featured else '' }}">{{ tp.text }}</p>
-        <ul class="mt-auto flex flex-wrap gap-2 pt-5">
+        <h3 class="mt-3 font-display text-3xl font-semibold tracking-tight sm:text-4xl">{{ tp.title }}</h3>
+        <p class="mt-3 text-muted">{{ tp.text }}</p>
+        <ul class="mt-5 flex flex-wrap gap-2">
+            {% for tech in p.stack %}<li class="tag">{{ tech }}</li>{% endfor %}
+        </ul>
+        {% if p.url %}
+        <a href="{{ p.url }}" class="mt-8 inline-flex min-h-11 items-center gap-2 self-start rounded-full border border-ink-700 px-5 text-sm font-medium transition hover:border-accent hover:text-accent">
+            {{ t.work.visit }} {{ p.domain }} {{ arrowIcon("size-4") }}
+        </a>
+        {% endif %}
+    </div>
+    <div class="border-t border-ink-800 bg-ink-950/60 p-4 sm:p-6 md:border-t-0 md:border-l md:p-8">
+        {{ frame(p, tp, t) }}
+    </div>
+</article>
+{% endmacro %}
+
+{% macro row(p, tp, t) %}
+<li class="group relative grid grid-cols-[6.5rem_minmax(0,1fr)] gap-4 border-b border-ink-800 py-5 transition-colors sm:grid-cols-[11rem_minmax(0,1fr)_auto] sm:items-center sm:gap-6 sm:px-3 sm:hover:bg-ink-900/70">
+    <img src="{{ p.image }}" alt="" loading="lazy" class="aspect-[16/10] w-full rounded-lg border border-ink-800 object-cover object-top">
+    <div class="min-w-0">
+        <p class="font-mono text-[11px] tracking-wide text-muted uppercase">{{ tp.kind }}</p>
+        <h4 class="mt-1 font-display text-lg font-semibold tracking-tight sm:text-xl">
+            {% if p.url %}<a href="{{ p.url }}" class="after:absolute after:inset-0">{{ tp.title }}</a>{% else %}{{ tp.title }}{% endif %}
+        </h4>
+        <p class="mt-1 text-sm/relaxed text-muted">{{ tp.text }}</p>
+        <ul class="mt-3 flex flex-wrap gap-2">
             {% for tech in p.stack %}<li class="tag">{{ tech }}</li>{% endfor %}
         </ul>
     </div>
-</article>
+    {% if p.url %}
+    <span class="hidden size-11 place-items-center rounded-full border border-ink-700 text-muted transition group-hover:border-accent group-hover:text-accent sm:grid" aria-hidden="true">{{ arrowIcon("size-4") }}</span>
+    {% endif %}
+</li>
 {% endmacro %}

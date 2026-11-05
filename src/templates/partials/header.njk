@@ -2,7 +2,7 @@
 {# Top bar: logo, section links, language switch. On phones the links fold into a menu. #}
 <header x-data="{ open: false }" @keydown.escape.window="open = false" class="sticky top-0 z-30 border-b border-transparent bg-ink-950/85 backdrop-blur" :class="{ 'border-ink-800!': open }">
     <div class="mx-auto flex h-18 max-w-6xl items-center justify-between gap-4 px-6">
-        <a href="{{ url }}" class="font-display text-xl font-bold tracking-tight">heinze<span class="text-accent">.</span></a>
+        <a href="{{ url }}" class="font-display text-lg font-semibold tracking-tight">{{ site.name }}</a>
 
         <nav aria-label="{{ t.menu }}" class="hidden items-center gap-7 text-[15px] md:flex">
             {% for id in site.sections %}

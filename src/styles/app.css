@@ -60,6 +60,7 @@
         *::before,
         *::after {
             animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
             transition-duration: 0.01ms !important;
         }
     }
@@ -119,6 +120,65 @@
 
 .headline-caret.is-idle {
     animation: blink 1.1s steps(1) infinite;
+}
+
+/* After hours: ticket stub notches, cut in the page background. */
+.ticket-stub::before,
+.ticket-stub::after {
+    content: "";
+    position: absolute;
+    left: -11px;
+    width: 20px;
+    height: 20px;
+    border-radius: 9999px;
+    background: var(--color-ink-950);
+}
+
+.ticket-stub::before {
+    top: -10px;
+}
+
+.ticket-stub::after {
+    bottom: -10px;
+}
+
+/* After hours: "now playing" equalizer. */
+.eq {
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 12px;
+}
+
+.eq span {
+    width: 3px;
+    height: 100%;
+    border-radius: 1px;
+    background: currentColor;
+    transform-origin: bottom;
+    animation: eq 1.1s ease-in-out infinite;
+}
+
+.eq span:nth-child(2) {
+    animation-delay: -0.4s;
+}
+
+.eq span:nth-child(3) {
+    animation-delay: -0.75s;
+}
+
+.eq span:nth-child(4) {
+    animation-delay: -0.2s;
+}
+
+@keyframes eq {
+    0%,
+    100% {
+        transform: scaleY(0.3);
+    }
+    50% {
+        transform: scaleY(1);
+    }
 }
 
 /* Footer easter egg: the ball rolls into the net. */

@@ -1,6 +1,6 @@
 {% extends "layout.njk" %}
 {% from "partials/icons.njk" import arrow, ball %}
-{% from "partials/project-card.njk" import card %}
+{% from "partials/project-card.njk" import featured, row %}
 
 {% block body %}
 {% include "partials/header.njk" %}
@@ -22,11 +22,11 @@
             <h1 class="mt-6 text-balance font-display text-[clamp(2.5rem,6vw,4rem)] leading-[1.04] font-semibold tracking-[-0.035em]">
                 {{ t.hero.title }}
                 {# Typed endings. All phrases share one grid cell, so the slot is as wide as the longest one and the headline never reflows. #}
-                <span x-data="headlineTyper" class="inline-grid text-accent">
+                <span x-data="headlineTyper" class="inline-grid max-w-full text-accent">
                     {% for phrase in t.hero.titlePhrases %}
-                    <span data-phrase class="invisible col-start-1 row-start-1 whitespace-nowrap" aria-hidden="true">{{ phrase }}</span>
+                    <span data-phrase class="invisible col-start-1 row-start-1 sm:whitespace-nowrap" aria-hidden="true">{{ phrase }}</span>
                     {% endfor %}
-                    <span class="col-start-1 row-start-1 whitespace-nowrap" aria-hidden="true"><span x-ref="text">{{ t.hero.titlePhrases[0] }}</span><span x-ref="caret" class="headline-caret is-idle"></span></span>
+                    <span class="col-start-1 row-start-1 sm:whitespace-nowrap" aria-hidden="true"><span x-ref="text">{{ t.hero.titlePhrases[0] }}</span><span x-ref="caret" class="headline-caret is-idle"></span></span>
                     <span class="sr-only">{{ t.hero.titlePhrases[0] }}</span>
                 </span>
             </h1>
@@ -60,11 +60,18 @@
             <p class="text-muted">{{ t.work.subtitle }}</p>
         </div>
 
-        <div class="grid gap-6 md:grid-cols-2">
-            {% for p in site.projects %}
-            {{ card(p, t.work.projects[p.id], t) }}
-            {% endfor %}
+        <div class="grid gap-6">
+            {% for p in site.projects %}{% if p.featured %}
+            {{ featured(p, t.work.projects[p.id], t) }}
+            {% endif %}{% endfor %}
         </div>
+
+        <h3 class="mt-16 mb-2 font-mono text-xs tracking-widest text-muted uppercase">{{ t.work.clients }}</h3>
+        <ul class="border-t border-ink-800">
+            {% for p in site.projects %}{% if not p.featured %}
+            {{ row(p, t.work.projects[p.id], t) }}
+            {% endif %}{% endfor %}
+        </ul>
 
         <h3 class="mt-14 mb-3 font-mono text-xs tracking-widest text-muted uppercase">{{ t.work.more }}</h3>
         <ul class="grid border-t border-ink-800 md:grid-cols-2 md:gap-x-10">
@@ -127,21 +134,59 @@
         </div>
     </section>
 
-    {# AFTER HOURS #}
+    {# AFTER HOURS: a match ticket, a "now playing" card and a trail profile #}
+    {% set a = t.after %}
     <section id="after" aria-labelledby="after-title" class="mx-auto max-w-6xl px-6 py-14">
-        <h2 id="after-title" class="section-title mb-8">{{ t.after.title }}</h2>
-        <ul class="grid gap-5 md:grid-cols-3">
-            {% for id in ['arsenal', 'proclubs', 'outdoors'] %}
-            {% set card = t.after.cards[id] %}
-            <li class="rounded-[18px] border border-ink-800 bg-ink-900 p-7">
-                <p class="mb-8 flex items-center gap-2 font-mono text-xs tracking-wider uppercase {{ 'text-arsenal-soft' if id == 'arsenal' else 'text-muted' }}">
-                    {% if id == 'arsenal' %}<span class="size-2 rounded-full bg-arsenal"></span>{% endif %}{{ card.label }}
+        <h2 id="after-title" class="section-title mb-8">{{ a.title }}</h2>
+        <div class="grid gap-5 md:grid-cols-3">
+
+            {# Football: a matchday ticket #}
+            <article class="ticket relative flex min-h-56 overflow-hidden rounded-[18px] bg-arsenal text-white md:col-span-2">
+                <div class="flex min-w-0 flex-1 flex-col justify-between gap-8 p-6 sm:p-8">
+                    <p class="font-mono text-xs tracking-[0.2em] uppercase opacity-90">{{ a.arsenal.label }}</p>
+                    <div>
+                        <h3 class="font-display text-[clamp(2.5rem,7vw,4rem)] leading-none font-bold tracking-[-0.03em]">{{ a.arsenal.title }}</h3>
+                        <p class="mt-3 max-w-sm opacity-90">{{ a.arsenal.text }}</p>
+                    </div>
+                </div>
+                <div class="ticket-stub relative flex w-28 shrink-0 flex-col justify-between border-l-2 border-dashed border-white/40 p-4 font-mono text-[11px] uppercase sm:w-40 sm:p-6">
+                    <p class="tracking-[0.2em] opacity-90">{{ a.arsenal.admit }}</p>
+                    <dl class="grid gap-3">
+                        <div><dt class="opacity-75">{{ a.arsenal.seatLabel }}</dt><dd class="text-sm font-semibold normal-case">{{ a.arsenal.seat }}</dd></div>
+                        <div><dt class="opacity-75">{{ a.arsenal.seasonLabel }}</dt><dd class="text-sm font-semibold">{{ a.arsenal.season }}</dd></div>
+                    </dl>
+                </div>
+            </article>
+
+            {# Gaming: now playing #}
+            <article class="flex flex-col justify-between gap-8 rounded-[18px] border border-ink-800 bg-ink-900 p-6 sm:p-7">
+                <p class="flex items-center gap-3 font-mono text-xs tracking-[0.2em] text-accent uppercase">
+                    <span class="eq" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                    {{ a.proclubs.label }}
                 </p>
-                <h3 class="font-display text-[22px] font-semibold tracking-tight">{{ card.title }}</h3>
-                <p class="mt-2 text-muted">{{ card.text }}</p>
-            </li>
-            {% endfor %}
-        </ul>
+                <div>
+                    <h3 class="font-display text-2xl font-semibold tracking-tight">{{ a.proclubs.title }}</h3>
+                    <p class="mt-2 text-muted">{{ a.proclubs.text }}</p>
+                    <a href="{{ site.links.onside }}" class="mt-4 inline-flex min-h-11 items-center gap-1.5 text-sm font-medium text-accent hover:underline">{{ a.proclubs.link }} {{ arrow("size-4") }}</a>
+                </div>
+            </article>
+
+            {# Offline: a trail elevation profile #}
+            <article class="relative overflow-hidden rounded-[18px] border border-ink-800 bg-ink-900 md:col-span-3">
+                <div class="relative z-10 flex flex-wrap items-end justify-between gap-x-8 gap-y-2 p-6 pb-24 sm:p-8 sm:pb-28">
+                    <div>
+                        <p class="font-mono text-xs tracking-[0.2em] text-muted uppercase">{{ a.outdoors.label }}</p>
+                        <h3 class="mt-3 font-display text-2xl font-semibold tracking-tight">{{ a.outdoors.title }}</h3>
+                    </div>
+                    <p class="max-w-sm text-muted">{{ a.outdoors.text }}</p>
+                </div>
+                <svg class="absolute inset-x-0 bottom-0 h-24 w-full sm:h-28" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M0 120V96L70 80 120 88 190 52 240 66 300 30 350 46 410 18 470 50 520 40 580 72 640 58 700 26 760 44 820 36 880 70 940 60 1000 78V120Z" fill="var(--color-accent)" fill-opacity="0.08"/>
+                    <path d="M0 96L70 80 120 88 190 52 240 66 300 30 350 46 410 18 470 50 520 40 580 72 640 58 700 26 760 44 820 36 880 70 940 60 1000 78" fill="none" stroke="var(--color-accent)" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
+                    <circle cx="410" cy="18" r="4" fill="var(--color-accent)"/>
+                </svg>
+            </article>
+        </div>
     </section>
 
     {# CONTACT #}
