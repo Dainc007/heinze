@@ -1,62 +1,60 @@
 {
-    "lang": "English",
     "meta": {
-        "title": "Daniel Heinze — Laravel developer",
-        "description": "Daniel Heinze, Laravel developer from Poland. Web apps, admin panels and integrations built with Laravel, Filament and Livewire."
+        "title": "Daniel Heinze — PHP & Laravel developer",
+        "description": "Daniel Heinze, PHP and Laravel developer from Poland. Software engineer at CloudLinux, working on Imunify Connect, and creator of OnSide."
     },
     "skip": "Skip to content",
     "menu": "Menu",
     "nav": {
-        "about": "About",
         "work": "Work",
-        "experience": "Experience",
+        "about": "About",
         "after": "After hours",
         "contact": "Contact"
     },
     "hero": {
-        "role": "Laravel developer",
-        "tagline": "I build web apps and admin panels that businesses run on every day.",
-        "status": "Open for new projects",
-        "cta": "Write to me"
-    },
-    "about": {
-        "title": "About",
-        "body": [
-            "Hi, I'm Daniel, a PHP developer from Poland.",
-            "For three years at ModulesGarden I built WHMCS modules used by hosting companies. Now I build Laravel apps and admin panels for clients, plus OnSide, my own platform for EA FC Pro Clubs.",
-            "I like simple, reliable code and admin panels that are fast to work with."
-        ]
+        "eyebrow": "PHP & Laravel developer · Poland",
+        "available": "Open for projects",
+        "title": "I build software that businesses",
+        "titleAccent": "actually run on.",
+        "lead": "Hi, I'm Daniel. At CloudLinux I work on Imunify Connect, a malware scanning API for WordPress and PHP plugins. After hours I build OnSide, my own platform for EA FC Pro Clubs.",
+        "primary": "See my work",
+        "secondary": "Write to me",
+        "photoAlt": "Daniel Heinze"
     },
     "work": {
         "title": "Selected work",
-        "visit": "Visit site",
-        "own": "Own product",
-        "client": "Client project",
+        "subtitle": "My own product, my day job and client projects",
         "more": "More projects",
+        "screenshotSoon": "Screenshot coming soon",
         "projects": {
             "onside": {
                 "title": "OnSide",
-                "kind": "Own product",
-                "text": "A home for EA FC Pro Clubs leagues: teams, fixtures, tables and player stats, synced with EA's match data."
+                "kind": "My own product · onside.com.pl",
+                "text": "Everything for EA FC Pro Clubs in one place: self-service sign-up, teams, auto-generated fixtures, results verified through the EA API, public leagues, stats, rankings and achievements."
+            },
+            "imunify": {
+                "title": "Imunify Connect",
+                "kind": "CloudLinux · Day job",
+                "text": "An API and PHP library that lets WordPress and PHP security plugins add Imunify's malware detection and cleanup under their own brand. Scans files by hash and, since the latest release, the WordPress database too."
             },
             "partio": {
                 "title": "Partio",
-                "kind": "Automotive parts",
+                "kind": "Client · Automotive parts",
                 "text": "Fast product import and search over a database of millions of records, with file uploads for the team."
             },
             "grupapwc": {
                 "title": "Grupa PWC",
-                "kind": "Construction",
+                "kind": "Client · Construction",
                 "text": "One panel for staff and machinery: worked hours, meetings and holidays."
             },
             "scanbot": {
                 "title": "Scanbot for Filament",
-                "kind": "Plugin for Leistungslotse",
+                "kind": "Client · Leistungslotse",
                 "text": "A custom Filament component that brings Scanbot SDK document scanning into an admin panel."
             },
             "fivio": {
                 "title": "Fivio",
-                "kind": "Supply",
+                "kind": "Client · Supply",
                 "text": "Tells suppliers what products are in demand and runs an auction for the best offer."
             }
         },
@@ -72,48 +70,54 @@
         }
     },
     "testimonials": {
-        "title": "What clients say"
+        "title": "What clients say",
+        "quotes": {}
     },
-    "experience": {
-        "title": "Experience",
-        "now": "now",
+    "about": {
+        "title": "About",
+        "body": [
+            "Five years of PHP, most of them in web hosting. First WHMCS modules at ModulesGarden, now security products at CloudLinux, the company behind CloudLinux OS and Imunify360.",
+            "Next to that I build Laravel apps for clients and my own platform, OnSide. I like simple, reliable code and admin panels that are fast to work with."
+        ],
+        "stack": "Daily tools",
         "jobs": {
-            "now": {
-                "from": "2024",
-                "to": "now",
+            "cloudlinux": {
+                "dates": "[year] — now",
+                "role": "Software developer",
+                "company": "CloudLinux",
+                "text": "Imunify Connect: malware scanning API and PHP library for WordPress and PHP plugin developers."
+            },
+            "freelance": {
+                "dates": "2024 — now",
                 "role": "Freelance Laravel developer",
                 "company": "",
-                "text": "Laravel apps and admin panels for clients, and building OnSide."
+                "text": "Laravel apps and admin panels for clients."
             },
             "modulesgarden": {
-                "from": "2021",
-                "to": "2024",
+                "dates": "2021 — 2024",
                 "role": "Software developer",
                 "company": "ModulesGarden",
-                "text": "Built and maintained WHMCS addon modules for hosting automation, and fixed issues reported by clients."
+                "text": "WHMCS modules for hosting automation: cPanel, Plesk, DirectAdmin, WordPress Manager."
             },
             "jomafive": {
-                "from": "2021",
-                "to": "2021",
+                "dates": "2021",
                 "role": "Software developer",
                 "company": "Jomafive",
                 "text": "A web app for organising events and tournaments for kids' football."
             }
-        },
-        "stack": "Daily tools"
+        }
     },
     "after": {
         "title": "After hours",
         "cards": {
-            "arsenal": { "label": "Football", "title": "Arsenal", "text": "Every Premier League match. No exceptions." },
+            "arsenal": { "label": "Football", "title": "Arsenal, every match", "text": "Premier League weekends are not negotiable." },
             "proclubs": { "label": "Gaming", "title": "EA FC Pro Clubs", "text": "Playing with the squad, and building OnSide for the whole community." },
             "outdoors": { "label": "Offline", "title": "Mountains & books", "text": "Trails close to home, and a good book after." }
         }
     },
     "contact": {
         "title": "Contact",
-        "lead": "Have a project in mind? Tell me about it.",
-        "email": "Email me"
+        "lead": "Have a project in mind?"
     },
     "footer": {
         "built": "Built with HTML, Tailwind and Alpine.js.",

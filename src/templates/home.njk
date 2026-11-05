@@ -1,179 +1,162 @@
 {% extends "layout.njk" %}
-{% from "partials/icons.njk" import arrow, mail, ball %}
+{% from "partials/icons.njk" import arrow, ball %}
+{% from "partials/project-card.njk" import card %}
 
 {% block body %}
-<div class="mx-auto max-w-6xl px-6 lg:grid lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16 lg:px-12">
-    {% include "partials/mobile-bar.njk" %}
-    {% include "partials/sidebar.njk" %}
+{% include "partials/header.njk" %}
 
-    <main id="content" class="pb-10 lg:py-20">
+<main id="content">
 
-        {# ABOUT #}
-        <section id="about" aria-labelledby="about-title" class="mb-20 pt-6 lg:pt-0">
-            <h2 id="about-title" class="section-label">{{ t.about.title }}</h2>
-            <div class="space-y-4 text-lg/relaxed text-muted">
-                {% for paragraph in t.about.body %}
-                <p class="{{ 'text-fg' if loop.first else '' }}">{{ paragraph }}</p>
-                {% endfor %}
-            </div>
-        </section>
-
-        {# WORK #}
-        <section id="work" aria-labelledby="work-title" class="mb-20">
-            <h2 id="work-title" class="section-label">{{ t.work.title }}</h2>
-
-            <div class="grid gap-4">
-                {% for p in site.projects %}
-                {% set tp = t.work.projects[p.id] %}
-                {% if p.featured %}
-                <article class="group relative overflow-hidden rounded-2xl border border-ink-800 bg-ink-900 transition hover:border-ink-700">
-                    <img src="{{ p.image }}" alt="" loading="lazy" class="aspect-[16/8] w-full border-b border-ink-800 object-cover object-top">
-                    <div class="p-6">
-                        <p class="font-mono text-xs tracking-wider text-accent uppercase">{{ tp.kind }}</p>
-                        <h3 class="mt-2 text-2xl font-semibold tracking-tight">
-                            {% if p.url %}<a href="{{ p.url }}" class="after:absolute after:inset-0">{{ tp.title }}</a>{% else %}{{ tp.title }}{% endif %}
-                        </h3>
-                        <p class="mt-2 max-w-xl text-muted">{{ tp.text }}</p>
-                        <ul class="mt-4 flex flex-wrap gap-2">
-                            {% for tech in p.stack %}<li class="tag">{{ tech }}</li>{% endfor %}
-                        </ul>
-                    </div>
-                </article>
-                {% else %}
-                <article class="group relative grid gap-4 rounded-2xl border border-transparent p-3 transition hover:border-ink-800 hover:bg-ink-900 sm:grid-cols-[12rem_minmax(0,1fr)] sm:gap-5">
-                    <img src="{{ p.image }}" alt="" loading="lazy" class="aspect-[16/10] w-full rounded-lg border border-ink-800 object-cover object-top">
-                    <div class="py-1">
-                        <p class="font-mono text-xs tracking-wider text-muted uppercase">{{ tp.kind }}</p>
-                        <h3 class="mt-1 text-lg font-semibold">
-                            {% if p.url %}
-                            <a href="{{ p.url }}" class="inline-flex items-center gap-1 after:absolute after:inset-0 group-hover:text-accent">{{ tp.title }} {{ arrow() }}</a>
-                            {% else %}{{ tp.title }}{% endif %}
-                        </h3>
-                        <p class="mt-1 text-sm/relaxed text-muted">{{ tp.text }}</p>
-                        <ul class="mt-3 flex flex-wrap gap-2">
-                            {% for tech in p.stack %}<li class="tag">{{ tech }}</li>{% endfor %}
-                        </ul>
-                    </div>
-                </article>
+    {# HERO #}
+    <section class="mx-auto flex max-w-6xl flex-wrap items-center gap-12 px-6 pt-14 pb-20 md:pt-20 lg:gap-14">
+        <div class="min-w-0 flex-[999_1_560px]">
+            <p class="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-xs tracking-wider text-muted uppercase">
+                <span>{{ t.hero.eyebrow }}</span>
+                {% if site.available %}
+                <span class="inline-flex items-center gap-2 rounded-full border border-ink-800 bg-ink-900 px-3 py-1 normal-case tracking-normal">
+                    <span class="relative flex size-2"><span class="absolute inline-flex size-full animate-ping rounded-full bg-accent opacity-60"></span><span class="relative inline-flex size-2 rounded-full bg-accent"></span></span>
+                    {{ t.hero.available }}
+                </span>
                 {% endif %}
-                {% endfor %}
+            </p>
+            <h1 class="mt-6 font-display text-[clamp(2.5rem,6vw,4rem)] leading-[1.04] font-semibold tracking-[-0.035em]">
+                {{ t.hero.title }} <span class="text-accent">{{ t.hero.titleAccent }}</span>
+            </h1>
+            <p class="mt-7 max-w-[36rem] text-lg/relaxed text-muted sm:text-[19px]">{{ t.hero.lead }}</p>
+            <div class="mt-9 flex flex-wrap gap-3">
+                <a href="#work" class="btn-primary">{{ t.hero.primary }}</a>
+                <a href="#contact" class="btn-secondary">{{ t.hero.secondary }}</a>
             </div>
+        </div>
+        <div class="w-full max-w-[380px] flex-[1_1_300px]">
+            <img src="{{ site.photo }}" alt="{{ t.hero.photoAlt }}" width="800" height="1000" class="aspect-[4/5] w-full rounded-[20px] object-cover object-top grayscale-[25%]">
+        </div>
+    </section>
 
-            <h3 class="mt-12 mb-3 font-mono text-xs tracking-widest text-muted uppercase">{{ t.work.more }}</h3>
-            <ul class="divide-y divide-ink-800 border-y border-ink-800">
-                {% for p in site.moreProjects %}
-                {% set tp = t.work.moreProjects[p.id] %}
-                <li>
-                    <a href="{{ p.url }}" class="group flex min-h-12 flex-wrap items-center justify-between gap-x-4 gap-y-1 py-3">
-                        <span class="font-medium group-hover:text-accent">{{ tp.title }}</span>
-                        <span class="inline-flex items-center gap-2 font-mono text-xs text-muted">{{ tp.note }} {{ arrow("size-3.5") }}</span>
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
-        </section>
+    {# WORK #}
+    <section id="work" aria-labelledby="work-title" class="mx-auto max-w-6xl px-6 py-14">
+        <div class="mb-10 flex flex-wrap items-baseline justify-between gap-4">
+            <h2 id="work-title" class="section-title">{{ t.work.title }}</h2>
+            <p class="text-muted">{{ t.work.subtitle }}</p>
+        </div>
 
-        {# TESTIMONIALS (shown once site.json has some) #}
-        {% if site.testimonials | length %}
-        <section id="testimonials" aria-labelledby="testimonials-title" class="mb-20">
-            <h2 id="testimonials-title" class="section-label">{{ t.testimonials.title }}</h2>
-            <div class="grid gap-4 sm:grid-cols-2">
-                {% for item in site.testimonials %}
-                <figure class="rounded-2xl border border-ink-800 bg-ink-900 p-6">
-                    <blockquote class="text-fg">“{{ t.testimonials.quotes[item.id] }}”</blockquote>
-                    <figcaption class="mt-4 text-sm text-muted">{{ item.name }} · {{ item.company }}</figcaption>
-                </figure>
-                {% endfor %}
+        <div class="grid gap-6 md:grid-cols-2">
+            {% for p in site.projects %}
+            {{ card(p, t.work.projects[p.id], t) }}
+            {% endfor %}
+        </div>
+
+        <h3 class="mt-14 mb-3 font-mono text-xs tracking-widest text-muted uppercase">{{ t.work.more }}</h3>
+        <ul class="grid border-t border-ink-800 md:grid-cols-2 md:gap-x-10">
+            {% for p in site.moreProjects %}
+            {% set tp = t.work.moreProjects[p.id] %}
+            <li class="border-b border-ink-800">
+                <a href="{{ p.url }}" class="group flex min-h-12 flex-wrap items-center justify-between gap-x-4 gap-y-1 py-3">
+                    <span class="font-medium group-hover:text-accent">{{ tp.title }}</span>
+                    <span class="inline-flex items-center gap-2 font-mono text-xs text-muted">{{ tp.note }} {{ arrow("size-3.5") }}</span>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    {# TESTIMONIALS (shown once site.json has some) #}
+    {% if site.testimonials | length %}
+    <section id="testimonials" aria-labelledby="testimonials-title" class="mx-auto max-w-6xl px-6 py-14">
+        <h2 id="testimonials-title" class="section-title mb-10">{{ t.testimonials.title }}</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+            {% for item in site.testimonials %}
+            <figure class="rounded-[18px] border border-ink-800 bg-ink-900 p-7">
+                <blockquote class="text-lg">“{{ t.testimonials.quotes[item.id] }}”</blockquote>
+                <figcaption class="mt-4 text-sm text-muted">{{ item.name }} · {{ item.company }}</figcaption>
+            </figure>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    {# ABOUT + EXPERIENCE #}
+    <section id="about" aria-labelledby="about-title" class="mx-auto flex max-w-6xl flex-wrap gap-12 px-6 py-14">
+        <div class="flex-[1_1_320px]">
+            <h2 id="about-title" class="section-title mb-5">{{ t.about.title }}</h2>
+            <div class="max-w-md space-y-4 text-muted">
+                {% for paragraph in t.about.body %}<p>{{ paragraph }}</p>{% endfor %}
             </div>
-        </section>
-        {% endif %}
-
-        {# EXPERIENCE #}
-        <section id="experience" aria-labelledby="experience-title" class="mb-20">
-            <h2 id="experience-title" class="section-label">{{ t.experience.title }}</h2>
-            <ol class="grid gap-8">
+        </div>
+        <div class="min-w-0 flex-[999_1_560px]">
+            <ol class="border-b border-ink-800">
                 {% for job in site.experience %}
-                {% set tj = t.experience.jobs[job.id] %}
-                <li class="grid gap-1 sm:grid-cols-[8rem_minmax(0,1fr)] sm:gap-6">
-                    <p class="pt-1 font-mono text-xs text-muted">{{ tj.from }}{% if tj.to != tj.from %} — {{ tj.to }}{% endif %}</p>
-                    <div>
-                        <h3 class="font-semibold">
+                {% set tj = t.about.jobs[job.id] %}
+                <li class="flex flex-wrap gap-x-6 gap-y-1 border-t border-ink-800 py-5">
+                    <span class="flex-[0_0_9.5rem] pt-0.5 font-mono text-sm text-muted">{{ tj.dates }}</span>
+                    <div class="flex-[1_1_18rem]">
+                        <p class="font-medium">
                             {{ tj.role }}{% if tj.company %} ·
                             {% if job.url %}<a href="{{ job.url }}" class="text-accent hover:underline">{{ tj.company }}</a>{% else %}{{ tj.company }}{% endif %}
                             {% endif %}
-                        </h3>
-                        <p class="mt-1 text-sm/relaxed text-muted">{{ tj.text }}</p>
+                        </p>
+                        <p class="mt-0.5 text-muted">{{ tj.text }}</p>
                     </div>
                 </li>
                 {% endfor %}
             </ol>
-
-            <div class="mt-10 sm:ml-38">
-                <h3 class="mb-3 font-mono text-xs tracking-widest text-muted uppercase">{{ t.experience.stack }}</h3>
-                <ul class="flex flex-wrap gap-2">
-                    {% for tech in site.stack %}<li class="tag">{{ tech }}</li>{% endfor %}
-                </ul>
-            </div>
-        </section>
-
-        {# AFTER HOURS #}
-        <section id="after" aria-labelledby="after-title" class="mb-20">
-            <h2 id="after-title" class="section-label">{{ t.after.title }}</h2>
-            <ul class="grid gap-3 sm:grid-cols-3">
-                {% set arsenal = t.after.cards.arsenal %}
-                <li class="flex min-h-48 flex-col justify-between rounded-2xl bg-arsenal p-5 text-white">
-                    <p class="font-mono text-xs tracking-widest uppercase opacity-85">{{ arsenal.label }}</p>
-                    <div>
-                        <h3 class="text-2xl font-bold tracking-tight">{{ arsenal.title }}</h3>
-                        <p class="mt-1 text-sm opacity-90">{{ arsenal.text }}</p>
-                    </div>
-                </li>
-                {% for id in ['proclubs', 'outdoors'] %}
-                {% set item = t.after.cards[id] %}
-                <li class="flex min-h-48 flex-col justify-between rounded-2xl border border-ink-800 bg-ink-900 p-5">
-                    <p class="font-mono text-xs tracking-widest text-muted uppercase">{{ item.label }}</p>
-                    <div>
-                        <h3 class="text-xl font-semibold tracking-tight">{{ item.title }}</h3>
-                        <p class="mt-1 text-sm text-muted">{{ item.text }}</p>
-                    </div>
-                </li>
-                {% endfor %}
+            <h3 class="mt-8 mb-3 font-mono text-xs tracking-widest text-muted uppercase">{{ t.about.stack }}</h3>
+            <ul class="flex flex-wrap gap-2">
+                {% for tech in site.stack %}<li class="tag">{{ tech }}</li>{% endfor %}
             </ul>
-        </section>
+        </div>
+    </section>
 
-        {# CONTACT #}
-        <section id="contact" aria-labelledby="contact-title" class="mb-16">
-            <h2 id="contact-title" class="section-label">{{ t.contact.title }}</h2>
-            <div class="rounded-2xl border border-ink-800 bg-ink-900 p-6 sm:p-8">
-                <p class="text-xl text-fg">{{ t.contact.lead }}</p>
-                <a href="mailto:{{ site.email }}" class="mt-3 block text-xl font-semibold tracking-tight break-words text-accent hover:underline sm:text-3xl">{{ site.email }}</a>
-                <div class="mt-6 flex flex-wrap gap-3">
-                    <a href="mailto:{{ site.email }}" class="inline-flex min-h-11 items-center gap-2 rounded-full bg-accent px-5 text-sm font-medium text-accent-ink transition hover:brightness-110">{{ mail() }} {{ t.contact.email }}</a>
-                    <a href="{{ site.links.linkedin }}" class="inline-flex min-h-11 items-center gap-1 rounded-full border border-ink-700 px-5 text-sm hover:border-muted">LinkedIn {{ arrow("size-3.5") }}</a>
-                    <a href="{{ site.links.github }}" class="inline-flex min-h-11 items-center gap-1 rounded-full border border-ink-700 px-5 text-sm hover:border-muted">GitHub {{ arrow("size-3.5") }}</a>
-                    <a href="{{ site.links.useme }}" class="inline-flex min-h-11 items-center gap-1 rounded-full border border-ink-700 px-5 text-sm hover:border-muted">Useme {{ arrow("size-3.5") }}</a>
-                </div>
-            </div>
-        </section>
+    {# AFTER HOURS #}
+    <section id="after" aria-labelledby="after-title" class="mx-auto max-w-6xl px-6 py-14">
+        <h2 id="after-title" class="section-title mb-8">{{ t.after.title }}</h2>
+        <ul class="grid gap-5 md:grid-cols-3">
+            {% for id in ['arsenal', 'proclubs', 'outdoors'] %}
+            {% set card = t.after.cards[id] %}
+            <li class="rounded-[18px] border border-ink-800 bg-ink-900 p-7">
+                <p class="mb-8 flex items-center gap-2 font-mono text-xs tracking-wider uppercase {{ 'text-arsenal-soft' if id == 'arsenal' else 'text-muted' }}">
+                    {% if id == 'arsenal' %}<span class="size-2 rounded-full bg-arsenal"></span>{% endif %}{{ card.label }}
+                </p>
+                <h3 class="font-display text-[22px] font-semibold tracking-tight">{{ card.title }}</h3>
+                <p class="mt-2 text-muted">{{ card.text }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
 
-        <footer class="flex flex-wrap items-center justify-between gap-x-8 gap-y-6 border-t border-ink-800 pt-8 text-sm text-muted">
-            <div>
-                <p>© {{ year }} {{ site.name }}</p>
-                <p class="mt-1 text-xs">{{ t.footer.built }}</p>
+    {# CONTACT #}
+    <section id="contact" aria-labelledby="contact-title" class="mx-auto max-w-6xl px-6 pt-14 pb-16">
+        <h2 id="contact-title" class="sr-only">{{ t.contact.title }}</h2>
+        <div class="flex flex-wrap items-end justify-between gap-8 rounded-3xl border border-ink-800 bg-ink-900 px-7 py-12 sm:px-12 sm:py-14">
+            <div class="min-w-0 flex-[1_1_420px]">
+                <p class="mb-3 text-muted">{{ t.contact.lead }}</p>
+                <a href="mailto:{{ site.email }}" class="font-display text-[clamp(1.5rem,4.5vw,2.75rem)] leading-tight font-semibold tracking-[-0.03em] break-words text-accent hover:underline">{{ site.email }}</a>
             </div>
-            <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
-                <span>{{ t.footer.support }}</span>
-                <a href="{{ site.support.beer }}" class="text-fg hover:text-accent">{{ t.footer.beer }}</a>
-                <a href="{{ site.support.patronite }}" class="text-fg hover:text-accent">{{ t.footer.patronite }}</a>
-            </div>
-            <div x-data="ball" class="flex items-center gap-3">
-                <button type="button" @click="kick()" aria-label="{{ t.footer.kick }}" title="{{ t.footer.kick }}" class="relative flex h-11 w-24 items-center rounded-full border border-ink-800 px-2 hover:border-ink-700">
-                    <span class="inline-flex" :class="kicking && 'ball-kicked'">{{ ball("size-6") }}</span>
-                    <span aria-hidden="true" class="absolute top-1/2 right-2 h-6 w-3 -translate-y-1/2 rounded-r border-2 border-l-0 border-muted/60"></span>
-                </button>
-                <span class="font-mono text-xs" aria-live="polite">{{ t.footer.goals }}: <span x-text="goals">0</span></span>
-            </div>
-        </footer>
-    </main>
-</div>
+            <ul class="flex flex-wrap gap-x-6 gap-y-3 text-[15px]">
+                <li><a href="{{ site.links.github }}" class="inline-flex min-h-11 items-center gap-1 hover:text-accent">GitHub {{ arrow("size-3.5") }}</a></li>
+                <li><a href="{{ site.links.linkedin }}" class="inline-flex min-h-11 items-center gap-1 hover:text-accent">LinkedIn {{ arrow("size-3.5") }}</a></li>
+                <li><a href="{{ site.links.useme }}" class="inline-flex min-h-11 items-center gap-1 hover:text-accent">Useme {{ arrow("size-3.5") }}</a></li>
+            </ul>
+        </div>
+    </section>
+</main>
+
+<footer class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-8 gap-y-5 border-t border-ink-800 px-6 pt-6 pb-10 text-sm text-muted">
+    <div>
+        <p>© {{ year }} {{ site.name }}</p>
+        <p class="mt-1 text-xs">{{ t.footer.built }}</p>
+    </div>
+    <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+        <span>{{ t.footer.support }}</span>
+        <a href="{{ site.support.beer }}" class="text-fg hover:text-accent">{{ t.footer.beer }}</a>
+        <a href="{{ site.support.patronite }}" class="text-fg hover:text-accent">{{ t.footer.patronite }}</a>
+    </div>
+    <div x-data="ball" class="flex items-center gap-3">
+        <button type="button" @click="kick()" aria-label="{{ t.footer.kick }}" title="{{ t.footer.kick }}" class="relative flex h-11 w-24 items-center rounded-full border border-ink-800 px-2 hover:border-ink-700">
+            <span class="inline-flex" :class="kicking && 'ball-kicked'">{{ ball("size-6") }}</span>
+            <span aria-hidden="true" class="absolute top-1/2 right-2 h-6 w-3 -translate-y-1/2 rounded-r border-2 border-l-0 border-muted/60"></span>
+        </button>
+        <span class="font-mono text-xs" aria-live="polite">{{ t.footer.goals }}: <span x-text="goals">0</span></span>
+    </div>
+</footer>
 {% endblock %}

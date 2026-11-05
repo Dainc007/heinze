@@ -5,7 +5,7 @@ import Alpine from 'alpinejs';
  * Usage: <body x-data="scrollspy"> and :class="{ 'is-active': active === 'work' }".
  */
 Alpine.data('scrollspy', () => ({
-    active: 'about',
+    active: '',
 
     init() {
         const observer = new IntersectionObserver(

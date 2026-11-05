@@ -1,62 +1,60 @@
 {
-    "lang": "Polski",
     "meta": {
-        "title": "Daniel Heinze — programista Laravel",
-        "description": "Daniel Heinze, programista Laravel z Polski. Aplikacje webowe, panele administracyjne i integracje w Laravel, Filament i Livewire."
+        "title": "Daniel Heinze — programista PHP i Laravel",
+        "description": "Daniel Heinze, programista PHP i Laravel z Polski. Pracuje w CloudLinux nad Imunify Connect i tworzy platformę OnSide."
     },
     "skip": "Przejdź do treści",
     "menu": "Menu",
     "nav": {
-        "about": "O mnie",
         "work": "Projekty",
-        "experience": "Doświadczenie",
+        "about": "O mnie",
         "after": "Po godzinach",
         "contact": "Kontakt"
     },
     "hero": {
-        "role": "Programista Laravel",
-        "tagline": "Tworzę aplikacje webowe i panele administracyjne, na których firmy pracują na co dzień.",
-        "status": "Przyjmuję nowe projekty",
-        "cta": "Napisz do mnie"
-    },
-    "about": {
-        "title": "O mnie",
-        "body": [
-            "Cześć, jestem Daniel, programista PHP z Polski.",
-            "Przez trzy lata w ModulesGarden tworzyłem moduły WHMCS, z których korzystają firmy hostingowe. Dziś buduję aplikacje i panele w Laravelu dla klientów, a także OnSide, własną platformę dla EA FC Pro Clubs.",
-            "Lubię prosty, niezawodny kod i panele, w których szybko się pracuje."
-        ]
+        "eyebrow": "Programista PHP i Laravel · Polska",
+        "available": "Przyjmuję projekty",
+        "title": "Tworzę oprogramowanie, na którym firmy",
+        "titleAccent": "naprawdę pracują.",
+        "lead": "Cześć, jestem Daniel. W CloudLinux pracuję nad Imunify Connect, API do skanowania malware dla wtyczek WordPress i PHP. Po godzinach rozwijam OnSide, własną platformę dla EA FC Pro Clubs.",
+        "primary": "Zobacz projekty",
+        "secondary": "Napisz do mnie",
+        "photoAlt": "Daniel Heinze"
     },
     "work": {
         "title": "Wybrane projekty",
-        "visit": "Zobacz stronę",
-        "own": "Własny produkt",
-        "client": "Projekt dla klienta",
+        "subtitle": "Własny produkt, praca na etacie i projekty dla klientów",
         "more": "Inne projekty",
+        "screenshotSoon": "Zrzut ekranu wkrótce",
         "projects": {
             "onside": {
                 "title": "OnSide",
-                "kind": "Własny produkt",
-                "text": "Miejsce dla lig EA FC Pro Clubs: drużyny, terminarze, tabele i statystyki zawodników, synchronizowane z danymi meczów EA."
+                "kind": "Mój produkt · onside.com.pl",
+                "text": "Wszystko do EA FC Pro Clubs w jednym miejscu: samodzielna rejestracja, drużyny, automatyczne terminarze, wyniki weryfikowane przez API EA, publiczne ligi, statystyki, rankingi i osiągnięcia."
+            },
+            "imunify": {
+                "title": "Imunify Connect",
+                "kind": "CloudLinux · Praca",
+                "text": "API i biblioteka PHP, dzięki którym wtyczki bezpieczeństwa WordPress i PHP dodają wykrywanie i usuwanie malware od Imunify pod własną marką. Skanuje pliki po hashach, a od ostatniego wydania także bazę danych WordPress."
             },
             "partio": {
                 "title": "Partio",
-                "kind": "Części samochodowe",
+                "kind": "Klient · Części samochodowe",
                 "text": "Szybki import i wyszukiwanie produktów w bazie liczącej miliony rekordów oraz wgrywanie plików przez zespół."
             },
             "grupapwc": {
                 "title": "Grupa PWC",
-                "kind": "Budownictwo",
+                "kind": "Klient · Budownictwo",
                 "text": "Jeden panel dla pracowników i maszyn: przepracowane godziny, spotkania i urlopy."
             },
             "scanbot": {
                 "title": "Scanbot dla Filament",
-                "kind": "Wtyczka dla Leistungslotse",
+                "kind": "Klient · Leistungslotse",
                 "text": "Własny komponent Filament, który wprowadza skanowanie dokumentów Scanbot SDK do panelu administracyjnego."
             },
             "fivio": {
                 "title": "Fivio",
-                "kind": "Zaopatrzenie",
+                "kind": "Klient · Zaopatrzenie",
                 "text": "Informuje dostawców o zapotrzebowaniu na produkty i prowadzi aukcję na najlepszą ofertę."
             }
         },
@@ -72,48 +70,54 @@
         }
     },
     "testimonials": {
-        "title": "Co mówią klienci"
+        "title": "Co mówią klienci",
+        "quotes": {}
     },
-    "experience": {
-        "title": "Doświadczenie",
-        "now": "obecnie",
+    "about": {
+        "title": "O mnie",
+        "body": [
+            "Pięć lat z PHP, głównie w branży hostingowej. Najpierw moduły WHMCS w ModulesGarden, dziś produkty bezpieczeństwa w CloudLinux, firmie stojącej za CloudLinux OS i Imunify360.",
+            "Obok tego tworzę aplikacje w Laravelu dla klientów i własną platformę OnSide. Lubię prosty, niezawodny kod i panele, w których szybko się pracuje."
+        ],
+        "stack": "Na co dzień",
         "jobs": {
-            "now": {
-                "from": "2024",
-                "to": "obecnie",
+            "cloudlinux": {
+                "dates": "[rok] — obecnie",
+                "role": "Programista",
+                "company": "CloudLinux",
+                "text": "Imunify Connect: API do skanowania malware i biblioteka PHP dla twórców wtyczek WordPress i PHP."
+            },
+            "freelance": {
+                "dates": "2024 — obecnie",
                 "role": "Programista Laravel (freelance)",
                 "company": "",
-                "text": "Aplikacje i panele w Laravelu dla klientów oraz rozwój OnSide."
+                "text": "Aplikacje i panele administracyjne w Laravelu dla klientów."
             },
             "modulesgarden": {
-                "from": "2021",
-                "to": "2024",
+                "dates": "2021 — 2024",
                 "role": "Programista",
                 "company": "ModulesGarden",
-                "text": "Tworzenie i utrzymanie modułów WHMCS do automatyzacji hostingu oraz naprawa błędów zgłaszanych przez klientów."
+                "text": "Moduły WHMCS do automatyzacji hostingu: cPanel, Plesk, DirectAdmin, WordPress Manager."
             },
             "jomafive": {
-                "from": "2021",
-                "to": "2021",
+                "dates": "2021",
                 "role": "Programista",
                 "company": "Jomafive",
                 "text": "Aplikacja webowa do organizowania wydarzeń i turniejów piłkarskich dla dzieci."
             }
-        },
-        "stack": "Na co dzień"
+        }
     },
     "after": {
         "title": "Po godzinach",
         "cards": {
-            "arsenal": { "label": "Piłka nożna", "title": "Arsenal", "text": "Każdy mecz Premier League. Bez wyjątków." },
+            "arsenal": { "label": "Piłka nożna", "title": "Arsenal, każdy mecz", "text": "Weekendy z Premier League nie podlegają negocjacjom." },
             "proclubs": { "label": "Gry", "title": "EA FC Pro Clubs", "text": "Gram ze składem i buduję OnSide dla całej społeczności." },
             "outdoors": { "label": "Offline", "title": "Góry i książki", "text": "Szlaki niedaleko domu, a potem dobra książka." }
         }
     },
     "contact": {
         "title": "Kontakt",
-        "lead": "Masz pomysł na projekt? Opowiedz mi o nim.",
-        "email": "Napisz maila"
+        "lead": "Masz pomysł na projekt?"
     },
     "footer": {
         "built": "Zbudowane w HTML, Tailwind i Alpine.js.",

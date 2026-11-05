@@ -1,0 +1,36 @@
+{#
+    One project card. Usage:
+    {% from "partials/project-card.njk" import card %}
+    {{ card(p, t.work.projects[p.id], t) }}
+#}
+{% macro card(p, tp, t) %}
+<article class="group relative flex flex-col overflow-hidden rounded-[18px] border border-ink-800 bg-ink-900 transition hover:border-ink-700 {{ 'md:col-span-2' if p.featured else '' }}">
+    {% if p.image %}
+    <img src="{{ p.image }}" alt="{{ tp.title }}" loading="lazy" class="w-full border-b border-ink-800 object-cover object-top {{ 'aspect-video md:aspect-[16/7]' if p.featured else 'aspect-video' }}">
+    {% else %}
+    {# No screenshot yet: a neutral browser frame with the address. Set `image` in site.json to replace it. #}
+    <div class="flex flex-col border-b border-ink-800 bg-ink-950 {{ 'aspect-video md:aspect-[16/5]' if p.featured else 'aspect-video' }}">
+        <div class="flex items-center gap-2 border-b border-ink-800 px-4 py-3">
+            <span class="size-2.5 rounded-full bg-ink-700"></span><span class="size-2.5 rounded-full bg-ink-700"></span><span class="size-2.5 rounded-full bg-ink-700"></span>
+            <span class="ml-3 rounded-md bg-ink-900 px-3 py-1 font-mono text-xs text-muted">{{ p.domain }}</span>
+        </div>
+        <div class="flex flex-1 flex-col items-center justify-center gap-2 p-6 text-center">
+            <p class="font-display text-3xl font-semibold tracking-tight md:text-4xl">{{ tp.title }}</p>
+            <p class="font-mono text-xs text-muted">{{ t.work.screenshotSoon }}</p>
+        </div>
+    </div>
+    {% endif %}
+    <div class="flex flex-1 flex-col p-6 sm:p-7">
+        <p class="font-mono text-xs tracking-wide text-accent uppercase">{{ tp.kind }}</p>
+        <h3 class="mt-2 font-display font-semibold tracking-tight {{ 'text-3xl' if p.featured else 'text-2xl' }}">
+            {% if p.url %}
+            <a href="{{ p.url }}" class="inline-flex items-center gap-1.5 after:absolute after:inset-0 group-hover:text-accent">{{ tp.title }}<svg class="size-5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
+            {% else %}{{ tp.title }}{% endif %}
+        </h3>
+        <p class="mt-2 text-muted {{ 'max-w-2xl' if p.featured else '' }}">{{ tp.text }}</p>
+        <ul class="mt-auto flex flex-wrap gap-2 pt-5">
+            {% for tech in p.stack %}<li class="tag">{{ tech }}</li>{% endfor %}
+        </ul>
+    </div>
+</article>
+{% endmacro %}

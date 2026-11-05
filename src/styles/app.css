@@ -1,5 +1,6 @@
 /* Self-hosted fonts (no Google Fonts requests, better for GDPR). */
 @import "@fontsource-variable/inter";
+@import "@fontsource-variable/inter-tight";
 @import "@fontsource-variable/jetbrains-mono";
 @import "tailwindcss";
 
@@ -12,6 +13,7 @@
  */
 @theme {
     --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Inter Tight Variable", "Inter Variable", ui-sans-serif, system-ui, sans-serif;
     --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
 
     --color-ink-950: #0b0c0e; /* page background */
@@ -23,12 +25,14 @@
     --color-accent: #c8f169; /* lime: links, highlights */
     --color-accent-ink: #0b0c0e; /* text on accent */
     --color-arsenal: #db0007;
+    --color-arsenal-soft: #ff6b6b; /* Arsenal red that is readable as text on dark */
+
 }
 
 @layer base {
     html {
         @apply scroll-smooth bg-ink-950 text-fg antialiased;
-        scroll-padding-top: 5rem;
+        scroll-padding-top: 5.5rem;
     }
 
     body {
@@ -62,12 +66,16 @@
 }
 
 @layer components {
-    .section-label {
-        @apply mb-6 flex items-center gap-3 font-mono text-xs tracking-widest text-muted uppercase;
+    .section-title {
+        @apply font-display text-[clamp(2rem,4vw,2.5rem)] font-semibold tracking-[-0.03em];
     }
 
-    .section-label::after {
-        @apply h-px flex-1 bg-ink-800 content-[''];
+    .btn-primary {
+        @apply inline-flex min-h-12 items-center rounded-[10px] bg-accent px-6 font-medium text-accent-ink transition hover:brightness-110;
+    }
+
+    .btn-secondary {
+        @apply inline-flex min-h-12 items-center rounded-[10px] border border-ink-700 px-6 font-medium transition hover:border-muted;
     }
 
     .tag {
@@ -75,19 +83,15 @@
     }
 
     .nav-link {
-        @apply flex items-center gap-3 py-1.5 text-sm text-muted transition-colors hover:text-fg;
-    }
-
-    .nav-link::before {
-        @apply h-px w-6 bg-ink-700 transition-all content-[''];
+        @apply relative py-2 text-muted transition-colors hover:text-fg;
     }
 
     .nav-link.is-active {
         @apply text-fg;
     }
 
-    .nav-link.is-active::before {
-        @apply w-12 bg-accent;
+    .nav-link.is-active::after {
+        @apply absolute inset-x-0 -bottom-0.5 h-0.5 rounded-full bg-accent content-[''];
     }
 }
 

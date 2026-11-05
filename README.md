@@ -23,7 +23,7 @@ Node 20.19+ (see `.nvmrc`).
 | Polish text | `src/content/pl.json` |
 | Links, projects, images, order of things (shared by both languages) | `src/content/site.json` |
 | Colours and fonts (design tokens) | `@theme` in `src/styles/app.css` |
-| Small interactions (menu, active section, ball) | `src/js/app.js` |
+| Small interactions (mobile menu, active nav link, ball) | `src/js/app.js` |
 | Images, favicon, robots.txt, sitemap.xml | `public/` |
 
 Templates use [Nunjucks](https://mozilla.github.io/nunjucks/) (`{{ }}`, `{% if %}`, `{% for %}`, close to Blade/Twig).
@@ -52,9 +52,10 @@ The build output is plain files in `dist/`, so any static host works.
 
 ## To do before launch
 
+- [ ] Screenshots: Imunify Connect (add `image` for `imunify` in `site.json`; until then a placeholder frame is shown) and a fresh one of onside.com.pl (`public/images/onside.webp` is the older landing page).
+- [ ] CloudLinux start year and job title (`about.jobs.cloudlinux` in both languages, now `[year]`).
+- [ ] Is the freelance line still current, and should "Open for projects" show? (`about.jobs.freelance`, `available` in `site.json`).
 - [ ] Real links for Buy me a beer and Patronite (`support` in `site.json`).
-- [ ] Check the current-role line in Experience (`experience.jobs.now` in both languages).
 - [ ] Read through all copy in `en.json` and `pl.json`.
-- [ ] OnSide link once it has a public address (`projects[0].url`).
 - [ ] Optional: client quotes (`testimonials` in `site.json` + `testimonials.quotes` in the language files).
 - [ ] Optional: a share image (`og:image`) for links posted on social media.
