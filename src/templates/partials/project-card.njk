@@ -53,15 +53,6 @@
 <article class="group relative flex flex-col overflow-hidden rounded-[18px] border border-ink-800 bg-ink-900 transition duration-300 hover:-translate-y-1 hover:border-ink-700 hover:shadow-[0_24px_50px_-28px_rgb(0_0_0/0.9)] motion-reduce:hover:translate-y-0">
     {% if p.image %}
     <div class="overflow-hidden border-b border-ink-800"><img src="{{ p.image }}" alt="{{ tp.title }}" loading="lazy" class="aspect-video w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"></div>
-    {% else %}
-    {# No screenshot (private or client asked not to show it): a quiet panel with the stack instead. #}
-    <div class="relative grid aspect-video w-full place-items-center overflow-hidden border-b border-ink-800 bg-ink-950 bg-[radial-gradient(var(--color-ink-800)_1px,transparent_1px)] bg-[size:18px_18px]">
-        <div class="rounded-xl border border-ink-700 bg-ink-900 px-5 py-4 text-center">
-            <p class="font-display text-xl font-semibold tracking-tight">{{ tp.title }}</p>
-            <p class="mt-1 font-mono text-xs text-muted">{{ p.stack | join(" · ") }}</p>
-        </div>
-        <span class="absolute right-3 bottom-3 font-mono text-[11px] text-muted">{{ t.work.noShot }}</span>
-    </div>
     {% endif %}
     <div class="flex flex-1 flex-col p-6 sm:p-7">
         <p class="font-mono text-xs tracking-wide text-accent uppercase">{{ tp.kind }}</p>

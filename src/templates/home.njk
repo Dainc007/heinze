@@ -95,8 +95,14 @@
         </div>
 
         <h3 class="mt-16 font-mono text-xs tracking-widest text-muted uppercase">{{ t.work.clients }}</h3>
-        <div class="mt-4 grid gap-6 md:grid-cols-2">
-            {% for p in site.projects %}{% if not p.featured %}
+        <div class="mt-4 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {% for p in site.projects %}{% if not p.featured and p.image %}
+            {{ card(p, t.work.projects[p.id], t) }}
+            {% endif %}{% endfor %}
+        </div>
+        {# Projects without a public screenshot: text-only cards. #}
+        <div class="mt-6 grid gap-6 md:grid-cols-2">
+            {% for p in site.projects %}{% if not p.featured and not p.image %}
             {{ card(p, t.work.projects[p.id], t) }}
             {% endif %}{% endfor %}
         </div>
