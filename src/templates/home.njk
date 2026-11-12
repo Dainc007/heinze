@@ -57,7 +57,7 @@
 
     {# NOW AT CLOUDLINUX: day job, with screenshots of Imunify Connect and cloudlinux.com #}
     {% set cl = site.cloudlinux %}{% set tc = t.cloudlinux %}
-    <section id="cloudlinux" aria-labelledby="cloudlinux-title" class="mx-auto max-w-6xl px-6 py-14">
+    <section data-reveal id="cloudlinux" aria-labelledby="cloudlinux-title" class="mx-auto max-w-6xl px-6 py-14">
         <div class="overflow-hidden rounded-[20px] border border-ink-800 bg-ink-900">
             <div class="grid md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
                 <div class="flex flex-col p-6 sm:p-9">
@@ -82,7 +82,7 @@
     </section>
 
     {# WORK #}
-    <section id="work" aria-labelledby="work-title" class="mx-auto max-w-6xl px-6 py-14">
+    <section data-reveal id="work" aria-labelledby="work-title" class="mx-auto max-w-6xl px-6 py-14">
         <div class="mb-10 flex flex-wrap items-baseline justify-between gap-4">
             <h2 id="work-title" class="section-title">{{ t.work.title }}</h2>
             <p class="text-muted">{{ t.work.subtitle }}</p>
@@ -137,7 +137,7 @@
     {% endif %}
 
     {# ABOUT + EXPERIENCE #}
-    <section id="about" aria-labelledby="about-title" class="mx-auto flex max-w-6xl flex-wrap gap-12 px-6 py-14">
+    <section data-reveal id="about" aria-labelledby="about-title" class="mx-auto flex max-w-6xl flex-wrap gap-12 px-6 py-14">
         <div class="flex-[1_1_320px]">
             <h2 id="about-title" class="section-title mb-5">{{ t.about.title }}</h2>
             <div class="max-w-md space-y-4 text-muted">
@@ -170,7 +170,7 @@
 
     {# AFTER HOURS: a match ticket, a "now playing" card and a trail profile #}
     {% set a = t.after %}
-    <section id="after" aria-labelledby="after-title" class="mx-auto max-w-6xl px-6 py-14">
+    <section data-reveal id="after" aria-labelledby="after-title" class="mx-auto max-w-6xl px-6 py-14">
         <h2 id="after-title" class="section-title mb-8">{{ a.title }}</h2>
         <div class="grid gap-5 md:grid-cols-3">
 
@@ -224,7 +224,7 @@
     </section>
 
     {# CONTACT #}
-    <section id="contact" aria-labelledby="contact-title" class="mx-auto max-w-6xl px-6 pt-14 pb-16">
+    <section data-reveal id="contact" aria-labelledby="contact-title" class="mx-auto max-w-6xl px-6 pt-14 pb-16">
         <h2 id="contact-title" class="sr-only">{{ t.contact.title }}</h2>
         <div class="flex flex-wrap items-end justify-between gap-8 rounded-3xl border border-ink-800 bg-ink-900 px-7 py-12 sm:px-12 sm:py-14">
             <div class="min-w-0 flex-[1_1_420px]">

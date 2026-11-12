@@ -211,3 +211,24 @@
     background-size: auto, 56px 56px, 56px 56px;
     mask-image: radial-gradient(ellipse 90% 80% at 50% 0%, #000 40%, transparent 100%);
 }
+
+/*
+ * Scroll reveal: sections with data-reveal fade up as they enter the screen.
+ * Pure CSS (scroll-driven animation). Browsers without support, and reduced motion, just show the content.
+ */
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+}
+
+@supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+        [data-reveal] {
+            animation: reveal linear both;
+            animation-timeline: view();
+            animation-range: entry 0% entry 35%;
+        }
+    }
+}
