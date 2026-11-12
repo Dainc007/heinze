@@ -6,6 +6,7 @@
     "skip": "Przejdź do treści",
     "menu": "Menu",
     "nav": {
+        "cloudlinux": "CloudLinux",
         "work": "Projekty",
         "about": "O mnie",
         "after": "Po godzinach",
@@ -46,9 +47,21 @@
             }
         ]
     },
+    "cloudlinux": {
+        "kind": "Praca na etacie",
+        "title": "Obecnie w CloudLinux",
+        "lead": "CloudLinux tworzy CloudLinux OS i Imunify360 dla firm hostingowych. Ich produkty działają na ponad 600 000 serwerów. Pracuję nad Imunify Connect.",
+        "productTitle": "Imunify Connect",
+        "text": "API i biblioteka PHP, dzięki którym wtyczki bezpieczeństwa WordPress i PHP dodają wykrywanie i usuwanie malware od Imunify pod własną marką. Skanuje pliki po hashach, a od ostatniego wydania także bazę danych WordPress.",
+        "visit": "Odwiedź",
+        "shots": {
+            "imunify": "Strona główna Imunify Connect",
+            "cloudlinux": "Strona główna CloudLinux"
+        }
+    },
     "work": {
         "title": "Wybrane projekty",
-        "subtitle": "Własny produkt, praca na etacie i projekty dla klientów",
+        "subtitle": "Własny produkt i projekty dla klientów",
         "more": "Inne projekty",
         "clients": "Projekty dla klientów",
         "screenshotSoon": "Zrzut ekranu wkrótce",
@@ -57,11 +70,6 @@
                 "title": "OnSide",
                 "kind": "Mój produkt",
                 "text": "Wszystko do EA FC Pro Clubs w jednym miejscu: samodzielna rejestracja, drużyny, automatyczne terminarze, wyniki weryfikowane przez API EA, publiczne ligi, statystyki, rankingi i osiągnięcia."
-            },
-            "imunify": {
-                "title": "Imunify Connect",
-                "kind": "Praca w CloudLinux",
-                "text": "API i biblioteka PHP, dzięki którym wtyczki bezpieczeństwa WordPress i PHP dodają wykrywanie i usuwanie malware od Imunify pod własną marką. Skanuje pliki po hashach, a od ostatniego wydania także bazę danych WordPress."
             },
             "partio": {
                 "title": "Partio",
@@ -75,13 +83,18 @@
             },
             "scanbot": {
                 "title": "Scanbot dla Filament",
-                "kind": "Wtyczka Filament · Leistungslotse",
-                "text": "Własny komponent Filament, który wprowadza skanowanie dokumentów Scanbot SDK do panelu administracyjnego."
+                "kind": "Wtyczka Filament · projekt dla klienta",
+                "text": "Własny komponent Filament oparty na Scanbot SDK. Użytkownicy skanują, przetwarzają i zarządzają dokumentami bezpośrednio w panelu Filament, korzystając z wykrywania dokumentów, OCR i odczytu kodów kreskowych Scanbot."
             },
             "fivio": {
                 "title": "Fivio",
                 "kind": "Zaopatrzenie",
                 "text": "Informuje dostawców o zapotrzebowaniu na produkty i prowadzi aukcję na najlepszą ofertę."
+            },
+            "webratings": {
+                "title": "Webratings",
+                "kind": "Panel administracyjny i API",
+                "text": "Panel Filament i REST API do danych o produktach: oczyszczaczach, nawilżaczach i osuszaczach powietrza, klimatyzatorach i odkurzaczach. Redaktorzy zarządzają specyfikacjami, polami, etykietami i shortcode'ami, a API udostępnia dane."
             }
         },
         "moreProjects": {
@@ -118,7 +131,8 @@
                 "note": "Zespół ModulesGarden"
             }
         },
-        "visit": "Odwiedź"
+        "visit": "Odwiedź",
+        "noShot": "Brak publicznego zrzutu ekranu"
     },
     "testimonials": {
         "title": "Co mówią klienci",

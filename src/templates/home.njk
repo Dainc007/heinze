@@ -1,6 +1,6 @@
 {% extends "layout.njk" %}
-{% from "partials/icons.njk" import arrow, ball %}
-{% from "partials/project-card.njk" import featured, card %}
+{% from "partials/icons.njk" import arrow, ball, github, linkedin, discord, socials %}
+{% from "partials/project-card.njk" import featured, card, frame %}
 
 {% block body %}
 {% include "partials/header.njk" %}
@@ -35,6 +35,7 @@
                 <a href="#work" class="btn-primary">{{ t.hero.primary }}</a>
                 <a href="#contact" class="btn-secondary">{{ t.hero.secondary }}</a>
             </div>
+            {{ socials(site, "mt-6") }}
         </div>
         <div x-data="typewriter" class="w-full max-w-[470px] min-w-0 flex-[1_1_340px] overflow-hidden rounded-[18px] border border-ink-800 bg-ink-900">
             <div class="flex items-center gap-2 border-b border-ink-800 px-4 py-3">
@@ -49,6 +50,32 @@
                 {% endfor %}
                 {% endfor %}
                 <p data-row="prompt" class="mt-3"><span class="text-accent">$</span> <span x-ref="cursor" class="term-cursor inline-block h-[1.1em] w-[0.6em] translate-y-[0.15em] bg-accent" aria-hidden="true"></span></p>
+            </div>
+        </div>
+    </section>
+
+    {# NOW AT CLOUDLINUX: day job, with screenshots of Imunify Connect and cloudlinux.com #}
+    {% set cl = site.cloudlinux %}{% set tc = t.cloudlinux %}
+    <section id="cloudlinux" aria-labelledby="cloudlinux-title" class="mx-auto max-w-6xl px-6 py-14">
+        <div class="overflow-hidden rounded-[20px] border border-ink-800 bg-ink-900">
+            <div class="grid md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
+                <div class="flex flex-col p-6 sm:p-9">
+                    <p class="font-mono text-xs tracking-wide text-accent uppercase">{{ tc.kind }}</p>
+                    <h2 id="cloudlinux-title" class="section-title mt-3">{{ tc.title }}</h2>
+                    <p class="mt-4 text-muted">{{ tc.lead }}</p>
+                    <h3 class="mt-7 font-display text-2xl font-semibold tracking-tight">{{ tc.productTitle }}</h3>
+                    <p class="mt-2 text-muted">{{ tc.text }}</p>
+                    <ul class="mt-5 flex flex-wrap gap-2">
+                        {% for tech in cl.stack %}<li class="tag">{{ tech }}</li>{% endfor %}
+                    </ul>
+                    <div class="mt-8 flex flex-wrap gap-3">
+                        <a href="{{ cl.product.url }}" class="inline-flex min-h-11 items-center gap-2 rounded-full border border-ink-700 px-5 text-sm font-medium transition hover:border-accent hover:text-accent">{{ tc.visit }} {{ cl.product.domain }} {{ arrow("size-4") }}</a>
+                        <a href="{{ cl.url }}" class="inline-flex min-h-11 items-center gap-2 rounded-full border border-ink-700 px-5 text-sm font-medium transition hover:border-accent hover:text-accent">cloudlinux.com {{ arrow("size-4") }}</a>
+                    </div>
+                </div>
+                <div class="grid content-center gap-6 border-t border-ink-800 bg-ink-950/60 p-4 sm:p-6 md:border-t-0 md:border-l md:p-8">
+                    {% for s in cl.shots %}{{ frame(s, { title: tc.shots[s.id] }, t) }}{% endfor %}
+                </div>
             </div>
         </div>
     </section>
@@ -198,9 +225,9 @@
                 <a href="mailto:{{ site.email }}" class="font-display text-[clamp(1.5rem,4.5vw,2.75rem)] leading-tight font-semibold tracking-[-0.03em] break-words text-accent hover:underline">{{ site.email }}</a>
             </div>
             <ul class="flex flex-wrap gap-x-6 gap-y-3 text-[15px]">
-                <li><a href="{{ site.links.github }}" class="inline-flex min-h-11 items-center gap-1 hover:text-accent">GitHub {{ arrow("size-3.5") }}</a></li>
-                <li><a href="{{ site.links.linkedin }}" class="inline-flex min-h-11 items-center gap-1 hover:text-accent">LinkedIn {{ arrow("size-3.5") }}</a></li>
-                <li><a href="{{ site.links.useme }}" class="inline-flex min-h-11 items-center gap-1 hover:text-accent">Useme {{ arrow("size-3.5") }}</a></li>
+                <li><a href="{{ site.links.github }}" class="inline-flex min-h-11 items-center gap-2 hover:text-accent">{{ github() }} GitHub</a></li>
+                <li><a href="{{ site.links.linkedin }}" class="inline-flex min-h-11 items-center gap-2 hover:text-accent">{{ linkedin() }} LinkedIn</a></li>
+                <li><a href="{{ site.links.discord }}" class="inline-flex min-h-11 items-center gap-2 hover:text-accent">{{ discord() }} Discord</a></li>
             </ul>
         </div>
     </section>

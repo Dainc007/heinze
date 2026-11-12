@@ -52,7 +52,7 @@ The build output is plain files in `dist/`, so any static host works.
 
 ## To do before launch
 
-- [ ] Screenshots: Imunify Connect (add `image` for `imunify` in `site.json`; until then a placeholder frame is shown) and a fresh one of onside.com.pl (`public/images/onside.webp` is the older landing page).
+- [ ] Screenshot: a fresh one of onside.com.pl (`public/images/onside.webp` is the older landing page).
 - [ ] CloudLinux start year and job title (`about.jobs.cloudlinux` in both languages, now `[year]`).
 - [ ] Is the freelance line still current, and should "Open for projects" show? (`about.jobs.freelance`, `available` in `site.json`).
 - [ ] Real links for Buy me a beer and Patronite (`support` in `site.json`).

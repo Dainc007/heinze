@@ -3,11 +3,11 @@
     "name": "Daniel Heinze",
     "email": "danielheinze96@gmail.com",
     "available": true,
-    "sections": ["work", "about", "after", "contact"],
+    "sections": ["cloudlinux", "work", "about", "after", "contact"],
     "links": {
         "github": "https://github.com/Dainc007",
         "linkedin": "https://www.linkedin.com/in/daniel-heinze-199ab4209/",
-        "useme": "https://useme.com/en/roles/contractor/daniel-heinze,137196/",
+        "discord": "#TODO-discord",
         "onside": "https://onside.com.pl"
     },
     "support": {
@@ -15,6 +15,15 @@
         "patronite": "#TODO-patronite"
     },
     "stack": ["PHP", "Laravel", "Filament", "Livewire", "Alpine.js", "Tailwind", "MySQL", "WordPress", "REST APIs"],
+    "cloudlinux": {
+        "url": "https://cloudlinux.com/",
+        "product": { "url": "https://connect.imunify.com/", "domain": "connect.imunify.com" },
+        "stack": ["PHP", "REST API", "WordPress"],
+        "shots": [
+            { "id": "imunify", "image": "/images/imunify.webp", "domain": "connect.imunify.com" },
+            { "id": "cloudlinux", "image": "/images/cloudlinux.webp", "domain": "cloudlinux.com" }
+        ]
+    },
     "projects": [
         {
             "id": "onside",
@@ -22,14 +31,6 @@
             "domain": "onside.com.pl",
             "url": "https://onside.com.pl",
             "stack": ["Laravel", "Filament", "Livewire", "EA API"],
-            "featured": true
-        },
-        {
-            "id": "imunify",
-            "image": "",
-            "domain": "connect.imunify.com",
-            "url": "https://connect.imunify.com/",
-            "stack": ["PHP", "REST API", "WordPress"],
             "featured": true
         },
         {
@@ -46,9 +47,11 @@
         },
         {
             "id": "scanbot",
-            "image": "/images/scanbot.webp",
-            "url": "https://leistungslotse.com/",
-            "stack": ["Filament", "Scanbot SDK"]
+            "stack": ["Filament", "Scanbot SDK", "OCR"]
+        },
+        {
+            "id": "webratings",
+            "stack": ["Laravel", "Filament", "MySQL", "REST API"]
         },
         {
             "id": "fivio",
