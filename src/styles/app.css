@@ -201,3 +201,13 @@
 .ball-kicked {
     animation: kick 0.7s cubic-bezier(0.3, 0.7, 0.4, 1);
 }
+
+/* Hero backdrop: faint grid fading out, with a soft lime glow. Purely decorative. */
+.hero-backdrop {
+    background-image:
+        radial-gradient(45% 60% at 18% 0%, color-mix(in oklab, var(--color-accent) 13%, transparent), transparent 70%),
+        linear-gradient(to right, rgb(255 255 255 / 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+    background-size: auto, 56px 56px, 56px 56px;
+    mask-image: radial-gradient(ellipse 90% 80% at 50% 0%, #000 40%, transparent 100%);
+}

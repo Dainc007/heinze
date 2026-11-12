@@ -5,7 +5,8 @@
 {% block body %}
 {% include "partials/header.njk" %}
 
-<main id="content">
+<main id="content" class="relative isolate">
+    <div aria-hidden="true" class="hero-backdrop pointer-events-none absolute inset-x-0 -top-18 -z-10 h-[820px]"></div>
 
     {# HERO #}
     <section class="mx-auto flex max-w-6xl flex-wrap items-center gap-12 px-6 pt-14 pb-20 md:pt-20 lg:gap-14">
