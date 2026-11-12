@@ -7,12 +7,12 @@
     "links": {
         "github": "https://github.com/Dainc007",
         "linkedin": "https://www.linkedin.com/in/daniel-heinze-199ab4209/",
-        "discord": "#TODO-discord",
+        "discord": "",
         "onside": "https://onside.com.pl"
     },
     "support": {
-        "beer": "#TODO-buy-me-a-beer",
-        "patronite": "#TODO-patronite"
+        "beer": "",
+        "patronite": ""
     },
     "stack": ["PHP", "Laravel", "Filament", "Livewire", "Alpine.js", "Tailwind", "MySQL", "WordPress", "REST APIs"],
     "cloudlinux": {

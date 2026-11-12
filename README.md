@@ -43,19 +43,16 @@ and the template in `src/templates/`.
 
 ## Deploy
 
-The build output is plain files in `dist/`, so any static host works.
+Hosted on **Cloudflare Pages**, connected to this GitHub repo. Every push to `main` builds and publishes the site.
+Build command `npm run build`, output directory `dist`, custom domain `heinze.com.pl` (DNS is on Cloudflare).
 
-- **Cloudflare Pages:** connect the GitHub repo, build command `npm run build`, output directory `dist`.
-  Add `heinze.com.pl` under Custom domains.
-- **GitHub Pages:** deploy `dist/` with the official `actions/deploy-pages` workflow and set the custom domain in the repo settings.
-- **Own server (nginx):** `npm run build && rsync -a --delete dist/ user@server:/var/www/heinze.com.pl/`.
+## To do
 
-## To do before launch
-
-- [ ] Screenshot: a fresh one of onside.com.pl (`public/images/onside.webp` is the older landing page).
-- [ ] CloudLinux start year and job title (`about.jobs.cloudlinux` in both languages, now `[year]`).
-- [ ] Is the freelance line still current, and should "Open for projects" show? (`about.jobs.freelance`, `available` in `site.json`).
-- [ ] Real links for Buy me a beer and Patronite (`support` in `site.json`).
+- [ ] CloudLinux start year (`about.jobs.cloudlinux.dates` in both languages, now just "Now").
+- [ ] Discord profile link (`links.discord` in `site.json`). The icon shows once it is set.
+- [ ] Buy me a beer and Patronite links (`support` in `site.json`). Each shows once it is set.
+- [ ] Is the "Open for projects" badge still wanted? (`available` in `site.json`).
 - [ ] Read through all copy in `en.json` and `pl.json`.
+- [ ] Optional: a Webratings screenshot (add `image` to its entry in `site.json`).
 - [ ] Optional: client quotes (`testimonials` in `site.json` + `testimonials.quotes` in the language files).
 - [ ] Optional: a share image (`og:image`) for links posted on social media.

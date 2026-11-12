@@ -234,7 +234,7 @@
             <ul class="flex flex-wrap gap-x-6 gap-y-3 text-[15px]">
                 <li><a href="{{ site.links.github }}" class="inline-flex min-h-11 items-center gap-2 hover:text-accent">{{ github() }} GitHub</a></li>
                 <li><a href="{{ site.links.linkedin }}" class="inline-flex min-h-11 items-center gap-2 hover:text-accent">{{ linkedin() }} LinkedIn</a></li>
-                <li><a href="{{ site.links.discord }}" class="inline-flex min-h-11 items-center gap-2 hover:text-accent">{{ discord() }} Discord</a></li>
+                {% if site.links.discord %}<li><a href="{{ site.links.discord }}" class="inline-flex min-h-11 items-center gap-2 hover:text-accent">{{ discord() }} Discord</a></li>{% endif %}
             </ul>
         </div>
     </section>
@@ -245,11 +245,14 @@
         <p>© {{ year }} {{ site.name }}</p>
         <p class="mt-1 text-xs">{{ t.footer.built }}</p>
     </div>
+    {# Support links: each shows only once its URL is set in site.json. #}
+    {% if site.support.beer or site.support.patronite %}
     <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
         <span>{{ t.footer.support }}</span>
-        <a href="{{ site.support.beer }}" class="text-fg hover:text-accent">{{ t.footer.beer }}</a>
-        <a href="{{ site.support.patronite }}" class="text-fg hover:text-accent">{{ t.footer.patronite }}</a>
+        {% if site.support.beer %}<a href="{{ site.support.beer }}" class="text-fg hover:text-accent">{{ t.footer.beer }}</a>{% endif %}
+        {% if site.support.patronite %}<a href="{{ site.support.patronite }}" class="text-fg hover:text-accent">{{ t.footer.patronite }}</a>{% endif %}
     </div>
+    {% endif %}
     <div x-data="ball" class="flex items-center gap-3">
         <button type="button" @click="kick()" aria-label="{{ t.footer.kick }}" title="{{ t.footer.kick }}" class="relative flex h-11 w-24 items-center rounded-full border border-ink-800 px-2 hover:border-ink-700">
             <span class="inline-flex" :class="kicking && 'ball-kicked'">{{ ball("size-6") }}</span>

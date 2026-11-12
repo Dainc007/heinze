@@ -38,7 +38,7 @@
 <ul class="flex flex-wrap gap-2 {{ class }}">
     <li><a href="{{ site.links.github }}" aria-label="GitHub" title="GitHub" class="icon-link">{{ github() }}</a></li>
     <li><a href="{{ site.links.linkedin }}" aria-label="LinkedIn" title="LinkedIn" class="icon-link">{{ linkedin() }}</a></li>
-    <li><a href="{{ site.links.discord }}" aria-label="Discord" title="Discord" class="icon-link">{{ discord() }}</a></li>
+    {% if site.links.discord %}<li><a href="{{ site.links.discord }}" aria-label="Discord" title="Discord" class="icon-link">{{ discord() }}</a></li>{% endif %}
     <li><a href="mailto:{{ site.email }}" aria-label="E-mail" title="E-mail" class="icon-link">{{ mail("size-5") }}</a></li>
 </ul>
 {% endmacro %}

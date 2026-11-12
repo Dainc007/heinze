@@ -146,7 +146,7 @@
         "stack": "Daily tools",
         "jobs": {
             "cloudlinux": {
-                "dates": "[year] — now",
+                "dates": "Now",
                 "role": "Software developer",
                 "company": "CloudLinux",
                 "text": "Imunify Connect: malware scanning API and PHP library for WordPress and PHP plugin developers."
