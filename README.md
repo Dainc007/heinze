@@ -48,8 +48,6 @@ Build command `npm run build`, deploy command `npx wrangler deploy`, custom doma
 
 ## To do
 
-- [ ] CloudLinux start year (`about.jobs.cloudlinux.dates` in both languages, now just "Now").
-- [ ] Discord profile link (`links.discord` in `site.json`). The icon shows once it is set.
 - [ ] Buy me a beer and Patronite links (`support` in `site.json`). Each shows once it is set.
 - [ ] Is the "Open for projects" badge still wanted? (`available` in `site.json`).
 - [ ] Read through all copy in `en.json` and `pl.json`.

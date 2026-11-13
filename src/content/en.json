@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Daniel Heinze — Software Developer",
-        "description": "Daniel Heinze, Software Developer from Poland. Works on Imunify Connect at CloudLinux and builds OnSide, a platform for EA FC Pro Clubs."
+        "description": "Daniel Heinze, a software developer from Poland. Works on Imunify Connect at CloudLinux and builds OnSide, a platform for EA FC Pro Clubs."
     },
     "skip": "Skip to content",
     "menu": "Menu",
@@ -21,7 +21,7 @@
             "use every day.",
             "can rely on."
         ],
-        "lead": "Hi, I'm Daniel. At CloudLinux I work on Imunify Connect, a malware scanning API for WordPress and PHP plugins. After hours I build OnSide, my own platform for EA FC Pro Clubs.",
+        "lead": "Hi, I'm Daniel, a PHP developer from Poland. By day I work on Imunify Connect at CloudLinux, a malware scanning API for WordPress and PHP plugins. After hours I build OnSide, a platform for EA FC Pro Clubs.",
         "primary": "See my work",
         "secondary": "Write to me",
         "terminalLabel": "Terminal: Daniel Heinze, Software Developer. Works on Imunify Connect at CloudLinux and on OnSide.",
@@ -50,9 +50,9 @@
     "cloudlinux": {
         "kind": "Day job",
         "title": "Now at CloudLinux",
-        "lead": "CloudLinux makes CloudLinux OS and Imunify360 for web hosting. Its products run on more than 600,000 servers. I work on Imunify Connect.",
+        "lead": "CloudLinux builds CloudLinux OS and Imunify360 for web hosting companies. Their products run on more than 600,000 servers. I joined in September 2025 and work on Imunify Connect.",
         "productTitle": "Imunify Connect",
-        "text": "An API and PHP library that lets WordPress and PHP security plugins add Imunify's malware detection and cleanup under their own brand. Scans files by hash and, since the latest release, the WordPress database too.",
+        "text": "An API and PHP library that lets WordPress and PHP security plugins offer Imunify's malware detection and cleanup under their own brand. It scans files by their hash and, since the latest release, the WordPress database as well.",
         "visit": "Visit",
         "shots": {
             "imunify": "Imunify Connect home page",
@@ -69,38 +69,38 @@
             "onside": {
                 "title": "OnSide",
                 "kind": "My own product",
-                "text": "Everything for EA FC Pro Clubs in one place: self-service sign-up, teams, auto-generated fixtures, results verified through the EA API, public leagues, stats, rankings and achievements."
+                "text": "Everything a Pro Clubs league needs, in one place: sign-up, teams, automatic fixtures, results checked against the EA API, public leagues, stats, rankings and achievements."
             },
             "partio": {
                 "title": "Partio",
                 "kind": "Automotive parts",
-                "text": "Fast product import and search over a database of millions of records, with file uploads for the team."
+                "text": "Fast product import and search across millions of records, plus file uploads for the team."
             },
             "grupapwc": {
                 "title": "Grupa PWC",
                 "kind": "Construction",
-                "text": "One panel for staff and machinery: worked hours, meetings and holidays."
+                "text": "One panel for staff and machines: hours worked, meetings and holidays."
             },
             "scanbot": {
                 "title": "Scanbot for Filament",
                 "kind": "Filament plugin · client project",
-                "text": "A custom Filament component built on the Scanbot SDK. Users scan, process and manage documents right inside a Filament admin panel, using Scanbot's document detection, OCR and barcode recognition."
+                "text": "A custom Filament component built on the Scanbot SDK. Users scan and manage documents straight from the admin panel, with document detection, OCR and barcode scanning."
             },
             "fivio": {
                 "title": "Fivio",
                 "kind": "Supply",
-                "text": "Tells suppliers what products are in demand and runs an auction for the best offer."
+                "text": "Shows suppliers which products are in demand and runs an auction for the best offer."
             },
             "webratings": {
                 "title": "Webratings",
                 "kind": "Admin panel and API",
-                "text": "A Filament admin panel and REST API for product data: air purifiers, humidifiers, dehumidifiers, air conditioners and vacuums. Editors manage specs, custom fields, labels and shortcodes, and the API serves the data."
+                "text": "An admin panel and REST API for product data on air purifiers, humidifiers, dehumidifiers, air conditioners and vacuums. Editors manage specs, fields and labels, and the API serves the data."
             }
         },
         "moreProjects": {
             "menago": {
                 "title": "Menago League",
-                "note": "Own project · EA FC career-mode league"
+                "note": "Own project · EA FC career mode league"
             },
             "wordpress": {
                 "title": "WordPress Manager for WHMCS",
@@ -140,16 +140,16 @@
     "about": {
         "title": "About",
         "body": [
-            "Five years of PHP, most of them in web hosting. First WHMCS modules at ModulesGarden, now security products at CloudLinux, the company behind CloudLinux OS and Imunify360.",
-            "Next to that I build Laravel apps for clients and my own platform, OnSide. I like simple, reliable code and admin panels that are fast to work with."
+            "Five years of PHP, most of them in web hosting: first WHMCS modules at ModulesGarden, now security products at CloudLinux.",
+            "I also build Laravel apps for clients and my own platform, OnSide. I like simple, reliable code and admin panels that are quick to work in."
         ],
         "stack": "Daily tools",
         "jobs": {
             "cloudlinux": {
-                "dates": "Now",
+                "dates": "2025 — now",
                 "role": "Software developer",
                 "company": "CloudLinux",
-                "text": "Imunify Connect: malware scanning API and PHP library for WordPress and PHP plugin developers."
+                "text": "Imunify Connect: a malware scanning API and PHP library for WordPress and PHP plugin developers."
             },
             "freelance": {
                 "dates": "2024 — now",
@@ -167,7 +167,7 @@
                 "dates": "2021",
                 "role": "Software developer",
                 "company": "Jomafive",
-                "text": "A web app for organising events and tournaments for kids' football."
+                "text": "A web app for organising kids' football events and tournaments."
             }
         }
     },
@@ -176,7 +176,7 @@
         "arsenal": {
             "label": "Matchday",
             "title": "Arsenal",
-            "text": "Every Premier League match. Weekends are planned around kick-off.",
+            "text": "Every Premier League match. Weekends get planned around kick-off.",
             "admit": "Admit one",
             "seatLabel": "Seat",
             "seat": "My sofa",
@@ -186,13 +186,13 @@
         "proclubs": {
             "label": "Now playing",
             "title": "EA FC Pro Clubs",
-            "text": "Evenings with the squad. It's also why OnSide exists.",
+            "text": "Evenings with the squad. That's also why OnSide exists.",
             "link": "See OnSide"
         },
         "outdoors": {
             "label": "Offline",
             "title": "Mountains & books",
-            "text": "Trails close to home, and a good book after."
+            "text": "Trails near home, then a good book."
         }
     },
     "contact": {
@@ -200,7 +200,7 @@
         "lead": "Have a project in mind?"
     },
     "footer": {
-        "built": "Built with HTML, Tailwind and Alpine.js.",
+        "built": "Built with HTML, Tailwind CSS and Alpine.js.",
         "support": "Like OnSide?",
         "beer": "Buy me a beer",
         "patronite": "Patronite",

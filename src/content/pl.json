@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Daniel Heinze — Software Developer",
-        "description": "Daniel Heinze, Software Developer z Polski. Pracuje nad Imunify Connect w CloudLinux i tworzy OnSide, platformę dla EA FC Pro Clubs."
+        "description": "Daniel Heinze, programista z Polski. Rozwija Imunify Connect w CloudLinux i tworzy OnSide, platformę dla EA FC Pro Clubs."
     },
     "skip": "Przejdź do treści",
     "menu": "Menu",
@@ -13,15 +13,15 @@
         "contact": "Kontakt"
     },
     "hero": {
-        "eyebrow": "Software Developer · Polska",
-        "available": "Przyjmuję projekty",
-        "title": "Tworzę oprogramowanie, na którym firmy",
+        "eyebrow": "Programista · Polska",
+        "available": "Przyjmuję zlecenia",
+        "title": "Tworzę oprogramowanie, z którego firmy",
         "titlePhrases": [
-            "naprawdę pracują.",
-            "pracują codziennie.",
-            "mogą polegać."
+            "korzystają codziennie.",
+            "naprawdę korzystają.",
+            "korzystają bez obaw."
         ],
-        "lead": "Cześć, jestem Daniel. W CloudLinux pracuję nad Imunify Connect, API do skanowania malware dla wtyczek WordPress i PHP. Po godzinach rozwijam OnSide, własną platformę dla EA FC Pro Clubs.",
+        "lead": "Cześć, jestem Daniel, programista PHP z Polski. Na co dzień w CloudLinux rozwijam Imunify Connect, API do skanowania malware dla wtyczek WordPressa i PHP. Po godzinach tworzę OnSide, platformę dla graczy EA FC Pro Clubs.",
         "primary": "Zobacz projekty",
         "secondary": "Napisz do mnie",
         "terminalLabel": "Terminal: Daniel Heinze, Software Developer. Pracuje nad Imunify Connect w CloudLinux i nad OnSide.",
@@ -48,11 +48,11 @@
         ]
     },
     "cloudlinux": {
-        "kind": "Praca na etacie",
+        "kind": "Etat",
         "title": "Obecnie w CloudLinux",
-        "lead": "CloudLinux tworzy CloudLinux OS i Imunify360 dla firm hostingowych. Ich produkty działają na ponad 600 000 serwerów. Pracuję nad Imunify Connect.",
+        "lead": "CloudLinux tworzy CloudLinux OS i Imunify360 dla firm hostingowych. Ich produkty działają na ponad 600 000 serwerów. Dołączyłem we wrześniu 2025 i rozwijam Imunify Connect.",
         "productTitle": "Imunify Connect",
-        "text": "API i biblioteka PHP, dzięki którym wtyczki bezpieczeństwa WordPress i PHP dodają wykrywanie i usuwanie malware od Imunify pod własną marką. Skanuje pliki po hashach, a od ostatniego wydania także bazę danych WordPress.",
+        "text": "API i biblioteka PHP, dzięki którym wtyczki bezpieczeństwa do WordPressa i PHP mogą oferować wykrywanie i usuwanie malware od Imunify pod własną marką. Skanuje pliki na podstawie ich hashy, a od ostatniego wydania także bazę danych WordPressa.",
         "visit": "Odwiedź",
         "shots": {
             "imunify": "Strona główna Imunify Connect",
@@ -69,38 +69,38 @@
             "onside": {
                 "title": "OnSide",
                 "kind": "Mój produkt",
-                "text": "Wszystko do EA FC Pro Clubs w jednym miejscu: samodzielna rejestracja, drużyny, automatyczne terminarze, wyniki weryfikowane przez API EA, publiczne ligi, statystyki, rankingi i osiągnięcia."
+                "text": "Wszystko, czego potrzebuje liga Pro Clubs, w jednym miejscu: rejestracja, drużyny, automatyczne terminarze, wyniki sprawdzane przez API EA, publiczne ligi, statystyki, rankingi i osiągnięcia."
             },
             "partio": {
                 "title": "Partio",
                 "kind": "Części samochodowe",
-                "text": "Szybki import i wyszukiwanie produktów w bazie liczącej miliony rekordów oraz wgrywanie plików przez zespół."
+                "text": "Szybki import i wyszukiwanie produktów w bazie z milionami rekordów oraz wgrywanie plików przez zespół."
             },
             "grupapwc": {
                 "title": "Grupa PWC",
                 "kind": "Budownictwo",
-                "text": "Jeden panel dla pracowników i maszyn: przepracowane godziny, spotkania i urlopy."
+                "text": "Jeden panel do zarządzania pracownikami i maszynami: godziny pracy, spotkania i urlopy."
             },
             "scanbot": {
                 "title": "Scanbot dla Filament",
                 "kind": "Wtyczka Filament · projekt dla klienta",
-                "text": "Własny komponent Filament oparty na Scanbot SDK. Użytkownicy skanują, przetwarzają i zarządzają dokumentami bezpośrednio w panelu Filament, korzystając z wykrywania dokumentów, OCR i odczytu kodów kreskowych Scanbot."
+                "text": "Własny komponent Filament oparty na Scanbot SDK. Użytkownicy skanują dokumenty i zarządzają nimi bezpośrednio w panelu, z wykrywaniem dokumentów, OCR i odczytem kodów kreskowych."
             },
             "fivio": {
                 "title": "Fivio",
                 "kind": "Zaopatrzenie",
-                "text": "Informuje dostawców o zapotrzebowaniu na produkty i prowadzi aukcję na najlepszą ofertę."
+                "text": "Pokazuje dostawcom, na które produkty jest popyt, i prowadzi aukcję o najlepszą ofertę."
             },
             "webratings": {
                 "title": "Webratings",
                 "kind": "Panel administracyjny i API",
-                "text": "Panel Filament i REST API do danych o produktach: oczyszczaczach, nawilżaczach i osuszaczach powietrza, klimatyzatorach i odkurzaczach. Redaktorzy zarządzają specyfikacjami, polami, etykietami i shortcode'ami, a API udostępnia dane."
+                "text": "Panel administracyjny i REST API z danymi o produktach: oczyszczaczach i nawilżaczach powietrza, osuszaczach, klimatyzatorach i odkurzaczach. Redaktorzy zarządzają specyfikacjami, polami i etykietami, a API udostępnia dane."
             }
         },
         "moreProjects": {
             "menago": {
                 "title": "Menago League",
-                "note": "Własny projekt · liga trybu kariery EA FC"
+                "note": "Własny projekt · liga w trybie kariery EA FC"
             },
             "wordpress": {
                 "title": "WordPress Manager for WHMCS",
@@ -140,16 +140,16 @@
     "about": {
         "title": "O mnie",
         "body": [
-            "Pięć lat z PHP, głównie w branży hostingowej. Najpierw moduły WHMCS w ModulesGarden, dziś produkty bezpieczeństwa w CloudLinux, firmie stojącej za CloudLinux OS i Imunify360.",
-            "Obok tego tworzę aplikacje w Laravelu dla klientów i własną platformę OnSide. Lubię prosty, niezawodny kod i panele, w których szybko się pracuje."
+            "Pięć lat z PHP, głównie w branży hostingowej: najpierw moduły WHMCS w ModulesGarden, teraz produkty bezpieczeństwa w CloudLinux.",
+            "Poza tym tworzę aplikacje w Laravelu dla klientów i rozwijam własną platformę OnSide. Lubię prosty, niezawodny kod i panele, w których pracuje się szybko."
         ],
         "stack": "Na co dzień",
         "jobs": {
             "cloudlinux": {
-                "dates": "Obecnie",
+                "dates": "2025 — obecnie",
                 "role": "Programista",
                 "company": "CloudLinux",
-                "text": "Imunify Connect: API do skanowania malware i biblioteka PHP dla twórców wtyczek WordPress i PHP."
+                "text": "Imunify Connect: API do skanowania malware i biblioteka PHP dla twórców wtyczek do WordPressa i PHP."
             },
             "freelance": {
                 "dates": "2024 — obecnie",
@@ -176,7 +176,7 @@
         "arsenal": {
             "label": "Dzień meczowy",
             "title": "Arsenal",
-            "text": "Każdy mecz Premier League. Weekendy planuję pod godzinę rozpoczęcia.",
+            "text": "Każdy mecz Premier League. Weekend planuję pod godzinę meczu.",
             "admit": "Wejściówka",
             "seatLabel": "Miejsce",
             "seat": "Moja kanapa",
@@ -186,13 +186,13 @@
         "proclubs": {
             "label": "Teraz gram",
             "title": "EA FC Pro Clubs",
-            "text": "Wieczory ze składem. To dlatego powstał OnSide.",
+            "text": "Wieczory z drużyną. Właśnie dlatego powstał OnSide.",
             "link": "Zobacz OnSide"
         },
         "outdoors": {
             "label": "Offline",
             "title": "Góry i książki",
-            "text": "Szlaki niedaleko domu, a potem dobra książka."
+            "text": "Szlaki blisko domu, a potem dobra książka."
         }
     },
     "contact": {
@@ -200,7 +200,7 @@
         "lead": "Masz pomysł na projekt?"
     },
     "footer": {
-        "built": "Zbudowane w HTML, Tailwind i Alpine.js.",
+        "built": "Strona zbudowana w HTML, Tailwind CSS i Alpine.js.",
         "support": "Podoba ci się OnSide?",
         "beer": "Postaw mi piwo",
         "patronite": "Patronite",
