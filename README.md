@@ -43,8 +43,8 @@ and the template in `src/templates/`.
 
 ## Deploy
 
-Hosted on **Cloudflare Pages**, connected to this GitHub repo. Every push to `main` builds and publishes the site.
-Build command `npm run build`, output directory `dist`, custom domain `heinze.com.pl` (DNS is on Cloudflare).
+Hosted on **Cloudflare Workers** (static assets, see `wrangler.jsonc`), connected to this GitHub repo. Every push to `main` builds and publishes the site.
+Build command `npm run build`, deploy command `npx wrangler deploy`, custom domain `heinze.com.pl` (DNS is on Cloudflare).
 
 ## To do
 

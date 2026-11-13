@@ -1,0 +1,9 @@
+// Cloudflare Workers config: serve the built static site from dist/.
+// Cloudflare runs `npm run build`, then `npx wrangler deploy` uploads dist/.
+{
+    "name": "heinze",
+    "compatibility_date": "2026-11-01",
+    "assets": {
+        "directory": "./dist"
+    }
+}
